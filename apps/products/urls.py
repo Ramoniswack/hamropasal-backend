@@ -1,0 +1,10 @@
+from django.urls import path
+from .views import ProductListView, ProductDetailView, FeaturedProductListView
+
+app_name = 'products'
+
+urlpatterns = [
+    path('', ProductListView.as_view(), name='product-list'),
+    path('featured/', FeaturedProductListView.as_view(), name='featured-products'),
+    path('<slug:slug>/', ProductDetailView.as_view(), name='product-detail'),
+]
