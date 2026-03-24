@@ -1,8 +1,8 @@
 from django.core.management.base import BaseCommand
 from django.utils.text import slugify
-from django.core.files.base import ContentFile
-from PIL import Image, ImageDraw, ImageFont
-from io import BytesIO
+from django.core.files import File
+from pathlib import Path
+import shutil
 from apps.categories.models import Category
 from apps.products.models import Product, ProductImage
 from apps.banners.models import HeroBanner, MarketplaceBanner, PromoBanner, ScrollingBanner
@@ -13,10 +13,24 @@ from apps.cms.models import (
 
 
 class Command(BaseCommand):
-    help = 'Seed ALL database with complete ecommerce data'
+    help = 'Seed ALL database with complete ecommerce data using real images from frontend'
+
+    def __init__(self):
+        super().__init__()
+        # Path to frontend public folder
+        self.frontend_public = Path(__file__).resolve().parent.parent.parent.parent.parent.parent / 'frontend' / 'public'
+        self.media_root = Path(__file__).resolve().parent.parent.parent.parent.parent / 'media'
 
     def handle(self, *args, **kwargs):
-        self.stdout.write('[*] Starting comprehensive data seeding...')
+        self.stdout.write('[*] Starting comprehensive data seeding with real images...')
+        self.stdout.write(f'[*] Frontend public folder: {self.frontend_public}')
+        self.stdout.write(f'[*] Media root: {self.media_root}')
+        
+        # Check if frontend public folder exists
+        if not self.frontend_public.exists():
+            self.stdout.write(self.style.ERROR(f'[!] Frontend public folder not found: {self.frontend_public}'))
+            self.stdout.write(self.style.WARNING('[!] Please ensure frontend folder is in the correct location'))
+            return
         
         # Seed in order
         self.seed_site_settings()
@@ -34,32 +48,36 @@ class Command(BaseCommand):
         self.seed_testimonials()
         self.seed_vendors()
         
-        self.stdout.write(self.style.SUCCESS('[OK] ALL DATA SEEDED SUCCESSFULLY!'))
-        self.stdout.write(self.style.SUCCESS('[DONE] Your backend is now 100% ready!'))
+        self.stdout.write(self.style.SUCCESS('[OK] ALL DATA SEEDED SUCCESSFULLY WITH REAL IMAGES!'))
+        self.stdout.write(self.style.SUCCESS('[DONE] Your backend is now 100% ready with real images!'))
 
-    def create_placeholder_image(self, width, height, text, bg_color='#4CAF50'):
-        """Create a simple placeholder image using PIL"""
+    def copy_image(self, source_filename, destination_path, destination_filename=None):
+        """Copy image from frontend/public to media folder"""
         try:
-            # Create image with background color
-            img = Image.new('RGB', (width, height), bg_color)
-            draw = ImageDraw.Draw(img)
+            source = self.frontend_public / source_filename
             
-            # Add text in center
-            text_bbox = draw.textbbox((0, 0), text)
-            text_width = text_bbox[2] - text_bbox[0]
-            text_height = text_bbox[3] - text_bbox[1]
+            if not source.exists():
+                self.stdout.write(f'    [!] Image not found: {source_filename}')
+                return None
             
-            x = (width - text_width) // 2
-            y = (height - text_height) // 2
-            draw.text((x, y), text, fill='white')
+            # Create destination directory if it doesn't exist
+            dest_dir = self.media_root / destination_path
+            dest_dir.mkdir(parents=True, exist_ok=True)
             
-            # Save to BytesIO
-            buffer = BytesIO()
-            img.save(buffer, format='JPEG', quality=85)
-            buffer.seek(0)
-            return ContentFile(buffer.read())
+            # Use original filename if not specified
+            if destination_filename is None:
+                destination_filename = source_filename
+            
+            destination = dest_dir / destination_filename
+            
+            # Copy the file
+            shutil.copy2(source, destination)
+            
+            # Return the relative path for Django
+            return f'{destination_path}/{destination_filename}'
+            
         except Exception as e:
-            self.stdout.write(f'    [!] Could not create image: {e}')
+            self.stdout.write(f'    [!] Error copying image {source_filename}: {e}')
             return None
 
     def seed_site_settings(self):
@@ -83,18 +101,19 @@ class Command(BaseCommand):
             }
         )
         
-        # Add site logos
+        # Add site logos from frontend
         if not settings.site_logo:
-            image_content = self.create_placeholder_image(200, 60, 'LOGO')
-            if image_content:
-                settings.site_logo.save('site-logo.jpg', image_content, save=True)
+            logo_path = self.copy_image('logoecommerce.png', 'site', 'site-logo.png')
+            if logo_path:
+                settings.site_logo = logo_path
         
         if not settings.site_logo_footer:
-            image_content = self.create_placeholder_image(200, 60, 'FOOTER')
-            if image_content:
-                settings.site_logo_footer.save('site-logo-footer.jpg', image_content, save=True)
+            footer_logo_path = self.copy_image('logo-footer-41ef32.png', 'site', 'site-logo-footer.png')
+            if footer_logo_path:
+                settings.site_logo_footer = footer_logo_path
         
-        self.stdout.write('  [+] Site settings configured with logos')
+        settings.save()
+        self.stdout.write('  [+] Site settings configured with real logos')
 
 
     def seed_navigation(self):
@@ -197,12 +216,19 @@ class Command(BaseCommand):
     def seed_categories(self):
         self.stdout.write('Seeding categories...')
         categories_data = [
-            'Bakery', 'Beverages', 'Dairy & Eggs', 'Deli', 'Frozen Foods',
-            'Fruits & Vegetables', 'Healthcare', 'Meat & Seafood', 'Snacks'
+            ('Bakery', 'categ1.png'),
+            ('Beverages', 'categ2.png'),
+            ('Dairy & Eggs', 'categ3.png'),
+            ('Deli', 'categ4.png'),
+            ('Frozen Foods', 'categ5.png'),
+            ('Fruits & Vegetables', 'categ6.png'),
+            ('Healthcare', 'categ7.png'),
+            ('Meat & Seafood', 'categ8.png'),
+            ('Snacks', 'categ9.png'),
         ]
         
         categories_created = 0
-        for cat_name in categories_data:
+        for cat_name, image_file in categories_data:
             category, created = Category.objects.get_or_create(
                 name=cat_name,
                 defaults={'slug': slugify(cat_name), 'is_active': True}
@@ -211,17 +237,18 @@ class Command(BaseCommand):
             if created:
                 categories_created += 1
             
-            # Add category image
+            # Add category image from frontend
             if not category.image:
-                image_content = self.create_placeholder_image(300, 300, cat_name[:15])
-                if image_content:
-                    category.image.save(f'{category.slug}.jpg', image_content, save=True)
+                image_path = self.copy_image(image_file, 'categories', f'{category.slug}.png')
+                if image_path:
+                    category.image = image_path
+                    category.save()
         
-        self.stdout.write(f'  [+] Created {categories_created} categories with images')
+        self.stdout.write(f'  [+] Created {categories_created} categories with real images')
 
 
     def seed_products_with_images(self):
-        self.stdout.write('Seeding products with images...')
+        self.stdout.write('Seeding products with real images...')
         
         # Get categories
         bakery = Category.objects.get(name='Bakery')
@@ -230,44 +257,53 @@ class Command(BaseCommand):
         meat = Category.objects.get(name='Meat & Seafood')
         dairy = Category.objects.get(name='Dairy & Eggs')
         
+        # Product images mapping (product name -> [image files])
+        product_images = {
+            'product1': ['product1image.webp', 'product-thumb-1-76eae0.png', 'product-main-image-56586a.png'],
+            'product2': ['product2image.webp', 'product-thumb-2-76eae0.png', 'product-ritz-crackers-56586a.png'],
+            'product3': ['product3image.webp', 'product-thumb-3-76eae0.png', 'product-lettuce-56586a.png'],
+            'product4': ['product4image.webp', 'product-chicken-nuggets-56586a.png', 'product-pumpkin-cookies-56586a.png'],
+            'product5': ['product5image.webp', 'product-honey-ointment-56586a.png', 'product-main-image-56586a.png'],
+        }
+        
         products_data = [
             # Bakery (6 products)
-            {'name': 'Artisan Sourdough Bread Loaf', 'category': bakery, 'price': 7.80, 'discount_price': 4.99, 'stock': 28, 'short_desc': 'Fresh artisan sourdough bread'},
-            {'name': 'Fresh Croissants Pack of 6', 'category': bakery, 'price': 12.25, 'discount_price': 6.99, 'stock': 15, 'short_desc': 'Buttery fresh croissants'},
-            {'name': 'Whole Grain Dinner Rolls', 'category': bakery, 'price': 7.25, 'discount_price': 3.49, 'stock': 42, 'short_desc': 'Healthy whole grain rolls'},
-            {'name': 'Chocolate Chip Muffins 4-Pack', 'category': bakery, 'price': 10.15, 'discount_price': 5.99, 'stock': 33, 'short_desc': 'Delicious chocolate chip muffins'},
-            {'name': 'Cinnamon Swirl Coffee Cake', 'category': bakery, 'price': 14.50, 'discount_price': 8.99, 'stock': 12, 'short_desc': 'Sweet cinnamon coffee cake'},
-            {'name': 'Honey Wheat Sandwich Bread', 'category': bakery, 'price': 9.99, 'discount_price': 5.49, 'stock': 18, 'short_desc': 'Soft honey wheat bread'},
+            {'name': 'Artisan Sourdough Bread Loaf', 'category': bakery, 'price': 7.80, 'discount_price': 4.99, 'stock': 28, 'short_desc': 'Fresh artisan sourdough bread', 'images': 'product1'},
+            {'name': 'Fresh Croissants Pack of 6', 'category': bakery, 'price': 12.25, 'discount_price': 6.99, 'stock': 15, 'short_desc': 'Buttery fresh croissants', 'images': 'product2'},
+            {'name': 'Whole Grain Dinner Rolls', 'category': bakery, 'price': 7.25, 'discount_price': 3.49, 'stock': 42, 'short_desc': 'Healthy whole grain rolls', 'images': 'product3'},
+            {'name': 'Chocolate Chip Muffins 4-Pack', 'category': bakery, 'price': 10.15, 'discount_price': 5.99, 'stock': 33, 'short_desc': 'Delicious chocolate chip muffins', 'images': 'product4'},
+            {'name': 'Cinnamon Swirl Coffee Cake', 'category': bakery, 'price': 14.50, 'discount_price': 8.99, 'stock': 12, 'short_desc': 'Sweet cinnamon coffee cake', 'images': 'product5'},
+            {'name': 'Honey Wheat Sandwich Bread', 'category': bakery, 'price': 9.99, 'discount_price': 5.49, 'stock': 18, 'short_desc': 'Soft honey wheat bread', 'images': 'product1'},
             
             # Beverages (6 products)
-            {'name': 'Fresh Orange Juice 1L', 'category': beverages, 'price': 5.32, 'discount_price': 3.99, 'stock': 45, 'short_desc': '100% fresh orange juice'},
-            {'name': 'Premium Coffee Beans 500g', 'category': beverages, 'price': 18.56, 'discount_price': 12.99, 'stock': 22, 'short_desc': 'Premium arabica coffee beans'},
-            {'name': 'Sparkling Water 6-Pack', 'category': beverages, 'price': 5.61, 'discount_price': 4.49, 'stock': 38, 'short_desc': 'Refreshing sparkling water'},
-            {'name': 'Green Tea Variety Pack', 'category': beverages, 'price': 13.83, 'discount_price': 8.99, 'stock': 16, 'short_desc': 'Assorted green tea flavors'},
-            {'name': 'Energy Drink 4-Pack', 'category': beverages, 'price': 11.10, 'discount_price': 7.99, 'stock': 31, 'short_desc': 'Boost your energy'},
-            {'name': 'Coconut Water 12-Pack', 'category': beverages, 'price': 26.65, 'discount_price': 15.99, 'stock': 24, 'short_desc': 'Natural coconut water'},
+            {'name': 'Fresh Orange Juice 1L', 'category': beverages, 'price': 5.32, 'discount_price': 3.99, 'stock': 45, 'short_desc': '100% fresh orange juice', 'images': 'product2'},
+            {'name': 'Premium Coffee Beans 500g', 'category': beverages, 'price': 18.56, 'discount_price': 12.99, 'stock': 22, 'short_desc': 'Premium arabica coffee beans', 'images': 'product3'},
+            {'name': 'Sparkling Water 6-Pack', 'category': beverages, 'price': 5.61, 'discount_price': 4.49, 'stock': 38, 'short_desc': 'Refreshing sparkling water', 'images': 'product4'},
+            {'name': 'Green Tea Variety Pack', 'category': beverages, 'price': 13.83, 'discount_price': 8.99, 'stock': 16, 'short_desc': 'Assorted green tea flavors', 'images': 'product5'},
+            {'name': 'Energy Drink 4-Pack', 'category': beverages, 'price': 11.10, 'discount_price': 7.99, 'stock': 31, 'short_desc': 'Boost your energy', 'images': 'product1'},
+            {'name': 'Coconut Water 12-Pack', 'category': beverages, 'price': 26.65, 'discount_price': 15.99, 'stock': 24, 'short_desc': 'Natural coconut water', 'images': 'product2'},
             
             # Fruits & Vegetables (6 products)
-            {'name': 'Organic Banana Bunch', 'category': fruits, 'price': 3.52, 'discount_price': 2.99, 'stock': 67, 'short_desc': 'Fresh organic bananas'},
-            {'name': 'Fresh Strawberries 500g', 'category': fruits, 'price': 7.68, 'discount_price': 5.99, 'stock': 43, 'short_desc': 'Sweet fresh strawberries'},
-            {'name': 'Mixed Salad Greens 300g', 'category': fruits, 'price': 4.26, 'discount_price': 3.49, 'stock': 52, 'short_desc': 'Fresh mixed salad greens'},
-            {'name': 'Organic Carrots 1kg', 'category': fruits, 'price': 3.32, 'discount_price': 2.49, 'stock': 38, 'short_desc': 'Organic fresh carrots'},
-            {'name': 'Fresh Avocados 4-Pack', 'category': fruits, 'price': 9.99, 'discount_price': 6.99, 'stock': 29, 'short_desc': 'Ripe fresh avocados'},
-            {'name': 'Bell Peppers Mix 3-Pack', 'category': fruits, 'price': 6.24, 'discount_price': 4.99, 'stock': 35, 'short_desc': 'Colorful bell peppers'},
+            {'name': 'Organic Banana Bunch', 'category': fruits, 'price': 3.52, 'discount_price': 2.99, 'stock': 67, 'short_desc': 'Fresh organic bananas', 'images': 'product3'},
+            {'name': 'Fresh Strawberries 500g', 'category': fruits, 'price': 7.68, 'discount_price': 5.99, 'stock': 43, 'short_desc': 'Sweet fresh strawberries', 'images': 'product4'},
+            {'name': 'Mixed Salad Greens 300g', 'category': fruits, 'price': 4.26, 'discount_price': 3.49, 'stock': 52, 'short_desc': 'Fresh mixed salad greens', 'images': 'product5'},
+            {'name': 'Organic Carrots 1kg', 'category': fruits, 'price': 3.32, 'discount_price': 2.49, 'stock': 38, 'short_desc': 'Organic fresh carrots', 'images': 'product1'},
+            {'name': 'Fresh Avocados 4-Pack', 'category': fruits, 'price': 9.99, 'discount_price': 6.99, 'stock': 29, 'short_desc': 'Ripe fresh avocados', 'images': 'product2'},
+            {'name': 'Bell Peppers Mix 3-Pack', 'category': fruits, 'price': 6.24, 'discount_price': 4.99, 'stock': 35, 'short_desc': 'Colorful bell peppers', 'images': 'product3'},
             
             # Meat & Seafood (6 products)
-            {'name': 'Fresh Salmon Fillet 500g', 'category': meat, 'price': 29.22, 'discount_price': 18.99, 'stock': 14, 'short_desc': 'Premium salmon fillet'},
-            {'name': 'Premium Beef Steak 400g', 'category': meat, 'price': 34.71, 'discount_price': 24.99, 'stock': 8, 'short_desc': 'Premium quality beef steak'},
-            {'name': 'Chicken Breast 1kg', 'category': meat, 'price': 19.10, 'discount_price': 12.99, 'stock': 22, 'short_desc': 'Fresh chicken breast'},
-            {'name': 'Fresh Shrimp 300g', 'category': meat, 'price': 26.65, 'discount_price': 15.99, 'stock': 11, 'short_desc': 'Fresh premium shrimp'},
-            {'name': 'Ground Turkey 500g', 'category': meat, 'price': 11.99, 'discount_price': 8.99, 'stock': 19, 'short_desc': 'Lean ground turkey'},
-            {'name': 'Fresh Cod Fillet 400g', 'category': meat, 'price': 24.27, 'discount_price': 16.99, 'stock': 16, 'short_desc': 'Fresh cod fillet'},
+            {'name': 'Fresh Salmon Fillet 500g', 'category': meat, 'price': 29.22, 'discount_price': 18.99, 'stock': 14, 'short_desc': 'Premium salmon fillet', 'images': 'product4'},
+            {'name': 'Premium Beef Steak 400g', 'category': meat, 'price': 34.71, 'discount_price': 24.99, 'stock': 8, 'short_desc': 'Premium quality beef steak', 'images': 'product5'},
+            {'name': 'Chicken Breast 1kg', 'category': meat, 'price': 19.10, 'discount_price': 12.99, 'stock': 22, 'short_desc': 'Fresh chicken breast', 'images': 'product1'},
+            {'name': 'Fresh Shrimp 300g', 'category': meat, 'price': 26.65, 'discount_price': 15.99, 'stock': 11, 'short_desc': 'Fresh premium shrimp', 'images': 'product2'},
+            {'name': 'Ground Turkey 500g', 'category': meat, 'price': 11.99, 'discount_price': 8.99, 'stock': 19, 'short_desc': 'Lean ground turkey', 'images': 'product3'},
+            {'name': 'Fresh Cod Fillet 400g', 'category': meat, 'price': 24.27, 'discount_price': 16.99, 'stock': 16, 'short_desc': 'Fresh cod fillet', 'images': 'product4'},
             
             # Dairy & Eggs (4 products)
-            {'name': 'Organic Whole Milk 1 Gallon', 'category': dairy, 'price': 6.50, 'discount_price': 4.99, 'stock': 35, 'short_desc': 'Fresh organic milk'},
-            {'name': 'Free Range Eggs Dozen', 'category': dairy, 'price': 7.20, 'discount_price': 5.49, 'stock': 42, 'short_desc': 'Farm fresh eggs'},
-            {'name': 'Greek Yogurt 32oz', 'category': dairy, 'price': 9.50, 'discount_price': 6.99, 'stock': 28, 'short_desc': 'Creamy Greek yogurt'},
-            {'name': 'Cheddar Cheese Block 16oz', 'category': dairy, 'price': 10.99, 'discount_price': 7.49, 'stock': 19, 'short_desc': 'Sharp cheddar cheese'},
+            {'name': 'Organic Whole Milk 1 Gallon', 'category': dairy, 'price': 6.50, 'discount_price': 4.99, 'stock': 35, 'short_desc': 'Fresh organic milk', 'images': 'product5'},
+            {'name': 'Free Range Eggs Dozen', 'category': dairy, 'price': 7.20, 'discount_price': 5.49, 'stock': 42, 'short_desc': 'Farm fresh eggs', 'images': 'product1'},
+            {'name': 'Greek Yogurt 32oz', 'category': dairy, 'price': 9.50, 'discount_price': 6.99, 'stock': 28, 'short_desc': 'Creamy Greek yogurt', 'images': 'product2'},
+            {'name': 'Cheddar Cheese Block 16oz', 'category': dairy, 'price': 10.99, 'discount_price': 7.49, 'stock': 19, 'short_desc': 'Sharp cheddar cheese', 'images': 'product3'},
         ]
         
         products_created = 0
@@ -292,24 +328,22 @@ class Command(BaseCommand):
             if created:
                 products_created += 1
             
-            # Create product images (primary + 2 additional)
+            # Create product images from frontend
             if not product.images.exists():
-                # Primary image
-                image_content = self.create_placeholder_image(400, 400, prod_data['category'].name)
-                if image_content:
-                    img = ProductImage(product=product, is_primary=True)
-                    img.image.save(f'{product.slug}-1.jpg', image_content, save=True)
-                    images_created += 1
+                image_key = prod_data['images']
+                image_files = product_images.get(image_key, [])
                 
-                # Additional images
-                for i in range(2, 4):
-                    image_content = self.create_placeholder_image(400, 400, f'{prod_data["category"].name} {i}')
-                    if image_content:
-                        img = ProductImage(product=product, is_primary=False)
-                        img.image.save(f'{product.slug}-{i}.jpg', image_content, save=True)
+                for idx, image_file in enumerate(image_files):
+                    image_path = self.copy_image(image_file, 'products', f'{product.slug}-{idx+1}.{image_file.split(".")[-1]}')
+                    if image_path:
+                        ProductImage.objects.create(
+                            product=product,
+                            image=image_path,
+                            is_primary=(idx == 0)
+                        )
                         images_created += 1
         
-        self.stdout.write(f'  [+] Created {products_created} products with {images_created} images')
+        self.stdout.write(f'  [+] Created {products_created} products with {images_created} real images')
 
 
     def seed_hero_banners(self):
@@ -322,7 +356,8 @@ class Command(BaseCommand):
                 'discount_text': 'Special discount for a limited number, hurry and do not miss out.',
                 'price': 24.99,
                 'price_text': 'With prices starting from',
-                'order': 1
+                'order': 1,
+                'image': 'slider-01-b.webp'
             },
             {
                 'title': 'Smart marketplace essentials created for modern daily needs',
@@ -331,12 +366,14 @@ class Command(BaseCommand):
                 'discount_text': 'Special discount for a limited number, hurry and do not miss out.',
                 'price': 24.99,
                 'price_text': 'With prices starting from',
-                'order': 2
+                'order': 2,
+                'image': 'hero-background.png'
             }
         ]
         
         banners_created = 0
         for banner_data in banners:
+            image_file = banner_data.pop('image')
             banner, created = HeroBanner.objects.get_or_create(
                 title=banner_data['title'],
                 defaults=banner_data
@@ -345,13 +382,14 @@ class Command(BaseCommand):
             if created:
                 banners_created += 1
             
-            # Add banner image
+            # Add banner image from frontend
             if not banner.image:
-                image_content = self.create_placeholder_image(1200, 500, 'Hero Banner')
-                if image_content:
-                    banner.image.save(f'hero-banner-{banner.order}.jpg', image_content, save=True)
+                image_path = self.copy_image(image_file, 'banners/hero', f'hero-banner-{banner.order}.{image_file.split(".")[-1]}')
+                if image_path:
+                    banner.image = image_path
+                    banner.save()
         
-        self.stdout.write(f'  [+] Created {banners_created} hero banners with images')
+        self.stdout.write(f'  [+] Created {banners_created} hero banners with real images')
 
     def seed_marketplace_banners(self):
         self.stdout.write('Seeding marketplace banners...')
@@ -359,22 +397,26 @@ class Command(BaseCommand):
             {
                 'title': 'Smart Marketplace Products for Quality-Conscious Buyers',
                 'description': 'Shop smart with our carefully selected marketplace products. Find quality items that offer great value, durability, and practical functionality for your everyday needs.',
-                'order': 1
+                'order': 1,
+                'image': 'banner1card.webp'
             },
             {
                 'title': 'Premium Curated Goods for Modern Daily Living',
                 'description': 'Discover premium marketplace products curated for modern living. Browse trusted sellers offering quality goods that enhance your daily routine and lifestyle.',
-                'order': 2
+                'order': 2,
+                'image': 'banner2card.webp'
             },
             {
                 'title': 'Trusted Marketplace Items for Essential Daily Needs',
                 'description': 'Find reliable marketplace solutions for your daily essentials. Shop with confidence knowing every product is selected for quality, value, and customer satisfaction.',
-                'order': 3
+                'order': 3,
+                'image': 'banner3card.webp'
             }
         ]
         
         banners_created = 0
         for banner_data in banners:
+            image_file = banner_data.pop('image')
             banner, created = MarketplaceBanner.objects.get_or_create(
                 title=banner_data['title'],
                 defaults=banner_data
@@ -383,13 +425,14 @@ class Command(BaseCommand):
             if created:
                 banners_created += 1
             
-            # Add banner image
+            # Add banner image from frontend
             if not banner.image:
-                image_content = self.create_placeholder_image(600, 400, f'Marketplace {banner.order}')
-                if image_content:
-                    banner.image.save(f'marketplace-banner-{banner.order}.jpg', image_content, save=True)
+                image_path = self.copy_image(image_file, 'banners/marketplace', f'marketplace-banner-{banner.order}.webp')
+                if image_path:
+                    banner.image = image_path
+                    banner.save()
         
-        self.stdout.write(f'  [+] Created {banners_created} marketplace banners with images')
+        self.stdout.write(f'  [+] Created {banners_created} marketplace banners with real images')
 
 
     def seed_promo_banner(self):
@@ -403,13 +446,14 @@ class Command(BaseCommand):
             }
         )
         
-        # Add promo banner image
+        # Add promo banner image from frontend
         if not promo.image:
-            image_content = self.create_placeholder_image(1000, 400, 'Promo Banner')
-            if image_content:
-                promo.image.save('promo-banner.jpg', image_content, save=True)
+            image_path = self.copy_image('promobanner.webp', 'banners/promo', 'promo-banner.webp')
+            if image_path:
+                promo.image = image_path
+                promo.save()
         
-        self.stdout.write('  [+] Created promo banner with image')
+        self.stdout.write('  [+] Created promo banner with real image')
 
     def seed_scrolling_banner(self):
         self.stdout.write('Seeding scrolling banner...')
@@ -569,19 +613,22 @@ class Command(BaseCommand):
                 'description': 'Premium marketplace vendor offering quality products with fast shipping and excellent customer service for everyday needs.',
                 'rating': 4.17,
                 'review_count': 12000,
-                'review_text': 'Verified Reviews'
+                'review_text': 'Verified Reviews',
+                'image': 'logoecommerce.png'
             },
             {
                 'name': 'Grogin',
                 'description': 'Trusted grocery marketplace specializing in organic foods, beverages, and healthy lifestyle products with competitive pricing.',
                 'rating': 3.33,
                 'review_count': 15000,
-                'review_text': 'Customer Reviews'
+                'review_text': 'Customer Reviews',
+                'image': 'logo-footer-41ef32.png'
             }
         ]
         
         vendors_created = 0
         for vendor_data in vendors:
+            image_file = vendor_data.pop('image')
             vendor, created = Vendor.objects.get_or_create(
                 name=vendor_data['name'],
                 defaults=vendor_data
@@ -590,10 +637,11 @@ class Command(BaseCommand):
             if created:
                 vendors_created += 1
             
-            # Add vendor logo
+            # Add vendor logo from frontend
             if not vendor.logo:
-                image_content = self.create_placeholder_image(150, 150, vendor.name)
-                if image_content:
-                    vendor.logo.save(f'{slugify(vendor.name)}-logo.jpg', image_content, save=True)
+                image_path = self.copy_image(image_file, 'vendors', f'{slugify(vendor.name)}-logo.png')
+                if image_path:
+                    vendor.logo = image_path
+                    vendor.save()
         
-        self.stdout.write(f'  [+] Created {vendors_created} vendors with logos')
+        self.stdout.write(f'  [+] Created {vendors_created} vendors with real logos')
