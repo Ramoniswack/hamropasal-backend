@@ -35,17 +35,42 @@ class RegisterView(generics.CreateAPIView):
         
         return Response({
             'user': UserSerializer(user).data,
-            'tokens': {
-                'refresh': str(refresh),
-                'access': str(refresh.access_token),
-            },
+            'refresh': str(refresh),
+            'access': str(refresh.access_token),
             'message': 'User registered successfully'
         }, status=status.HTTP_201_CREATED)
 
 
 class LoginView(TokenObtainPairView):
-    """User login endpoint - returns JWT tokens"""
-    pass
+    """User login endpoint - accepts email or username"""
+    
+    def post(self, request, *args, **kwargs):
+        # Check if user is trying to login with email
+        username_or_email = request.data.get('username', '')
+        password = request.data.get('password', '')
+        
+        # Try to find user by email if @ is in the username field
+        if '@' in username_or_email:
+            try:
+                user = User.objects.get(email=username_or_email)
+                # Create new data dict with actual username
+                data = request.data.copy()
+                data['username'] = user.username
+                request._full_data = data
+            except User.DoesNotExist:
+                return Response(
+                    {'detail': 'Invalid email or password'},
+                    status=status.HTTP_401_UNAUTHORIZED
+                )
+        
+        # Call parent class to handle JWT token generation
+        try:
+            return super().post(request, *args, **kwargs)
+        except Exception:
+            return Response(
+                {'detail': 'Invalid email or password'},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
 
 
 class LogoutView(APIView):

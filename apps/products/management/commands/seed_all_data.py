@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 from django.utils.text import slugify
 from django.core.files import File
+from django.utils import timezone
 from pathlib import Path
 import shutil
 from apps.categories.models import Category
@@ -10,6 +11,10 @@ from apps.cms.models import (
     Testimonial, FAQ, Feature, Vendor, SiteSettings,
     NavigationMenu, FooterColumn, FooterLink, Store
 )
+from apps.blog.models import BlogCategory, BlogTag, BlogPost, BlogComment
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class Command(BaseCommand):
@@ -47,6 +52,7 @@ class Command(BaseCommand):
         self.seed_faqs()
         self.seed_testimonials()
         self.seed_vendors()
+        self.seed_blog_data()  # Add blog seeding
         
         self.stdout.write(self.style.SUCCESS('[OK] ALL DATA SEEDED SUCCESSFULLY WITH REAL IMAGES!'))
         self.stdout.write(self.style.SUCCESS('[DONE] Your backend is now 100% ready with real images!'))
@@ -645,3 +651,329 @@ class Command(BaseCommand):
                     vendor.save()
         
         self.stdout.write(f'  [+] Created {vendors_created} vendors with real logos')
+
+
+    def seed_blog_data(self):
+        """Seed comprehensive blog data with categories, tags, posts, and comments"""
+        self.stdout.write('Seeding blog data...')
+        
+        # Get or create admin user for blog posts
+        admin_user, _ = User.objects.get_or_create(
+            username='admin',
+            defaults={
+                'email': 'admin@hamropasal.com',
+                'is_staff': True,
+                'is_superuser': True,
+                'first_name': 'Admin',
+                'last_name': 'User'
+            }
+        )
+        
+        # Seed Blog Categories
+        self.stdout.write('  [*] Seeding blog categories...')
+        categories_data = [
+            {
+                'name': 'Tech & Tools',
+                'description': 'Latest technology trends, tools, and innovations in e-commerce and marketplace platforms.'
+            },
+            {
+                'name': 'Selling Tips',
+                'description': 'Expert tips and strategies for successful selling on marketplace platforms.'
+            },
+            {
+                'name': 'Business Strategy',
+                'description': 'Business insights, growth strategies, and marketplace success stories.'
+            },
+            {
+                'name': 'Customer Experience',
+                'description': 'Enhancing customer satisfaction and building lasting relationships.'
+            },
+            {
+                'name': 'Product Reviews',
+                'description': 'In-depth product reviews and marketplace insights.'
+            }
+        ]
+        
+        blog_categories = {}
+        for cat_data in categories_data:
+            category, created = BlogCategory.objects.get_or_create(
+                name=cat_data['name'],
+                defaults={
+                    'slug': slugify(cat_data['name']),
+                    'description': cat_data['description'],
+                    'is_active': True
+                }
+            )
+            blog_categories[cat_data['name']] = category
+        
+        self.stdout.write(f'    [+] Created {len(categories_data)} blog categories')
+        
+        # Seed Blog Tags
+        self.stdout.write('  [*] Seeding blog tags...')
+        tags_data = ['Klbtheme', 'Themeforest', 'E-commerce', 'Marketplace', 'Business', 
+                     'Technology', 'Reviews', 'Tips', 'Strategy', 'Growth', 'Selling Tips']
+        
+        blog_tags = {}
+        for tag_name in tags_data:
+            tag, created = BlogTag.objects.get_or_create(
+                name=tag_name,
+                defaults={'slug': slugify(tag_name)}
+            )
+            blog_tags[tag_name] = tag
+        
+        self.stdout.write(f'    [+] Created {len(tags_data)} blog tags')
+        
+        # Seed Blog Posts
+        self.stdout.write('  [*] Seeding blog posts...')
+        posts_data = [
+            {
+                'title': 'Unlocking the Power of Product Reviews',
+                'excerpt': 'Integer mattis ultricies augue, ac bibendum arcu viverra vel. Etiam eu facilisis velit. Mauris auctor efficitur turpis feugiat laoreet. Nam ac posuere eros. Sed blandit et ipsum a porttitor. Curabitur sagittis ligula in ullamcorper vehicula. Sed consequat ipsum vitae ante ultricies tincidunt. Nulla egestas nisi non elementum semper. Aenean molestie mi purus, at commodo massa',
+                'content': '''<h2>Understanding the Impact of Customer Reviews</h2>
+<p>Integer mattis ultricies augue, ac bibendum arcu viverra vel. Etiam eu facilisis velit. Mauris auctor efficitur turpis feugiat laoreet. Nam ac posuere eros. Sed blandit et ipsum a porttitor. Curabitur sagittis ligula in ullamcorper vehicula. Sed consequat ipsum vitae ante ultricies tincidunt.</p>
+
+<p>Nulla egestas nisi non elementum semper. Aenean molestie mi purus, at commodo massa placerat non. Donec vel arcu nec nulla egestas imperdiet. Phasellus malesuada sapien quis nunc hendrerit pulvinar. Quisque porttitor, lorem in tempus cursus, leo leo aliquet urna, vitae convallis augue nisl non lacus.</p>
+
+<h3>Why Product Reviews Matter</h3>
+<p>Pellentesque condimentum pharetra ullamcorper. Aenean non sapien sagittis, dignissim elit sit amet, congue metus. Aliquam erat volutpat. Nulla elementum dictum velit et vehicula. Vivamus quis arcu semper, iaculis justo vitae, vehicula massa. Nam viverra ex vel turpis venenatis, id laoreet nibh laoreet.</p>
+
+<ul>
+<li>Build trust with potential customers</li>
+<li>Improve product visibility and SEO</li>
+<li>Gather valuable customer feedback</li>
+<li>Increase conversion rates significantly</li>
+</ul>
+
+<p>Curabitur a libero id lectus malesuada sollicitudin vel non lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt dolor viverra arcu consequat, id porta lorem maximus. Integer mattis ultricies augue, ac bibendum arcu viverra vel.</p>
+
+<h3>Best Practices for Managing Reviews</h3>
+<p>Duis non urna maximus, scelerisque dui quis, rhoncus justo. Donec at nisi et purus congue ultricies vitae in dui. Aliquam erat volutpat. Etiam ex quam, porttitor a sapien eget, lobortis bibendum ligula. In ornare cursus justo, ut condimentum dolor molestie sed.</p>''',
+                'category': 'Tech & Tools',
+                'tags': ['Klbtheme', 'Themeforest', 'Reviews'],
+                'image': 'blog-post-1-27b4c1.png',
+                'is_featured': True,
+                'meta_description': 'Learn how product reviews can transform your e-commerce business and build customer trust.',
+                'meta_keywords': 'product reviews, customer feedback, e-commerce, trust building'
+            },
+            {
+                'title': 'Understanding Customer Behavior in E-commerce',
+                'excerpt': 'Integer mattis ultricies augue, ac bibendum arcu viverra vel. Etiam eu facilisis velit. Mauris auctor efficitur turpis feugiat laoreet. Nam ac posuere eros. Sed blandit et ipsum a porttitor. Curabitur sagittis ligula in ullamcorper vehicula. Sed consequat ipsum vitae ante ultricies tincidunt. Nulla egestas nisi non elementum semper. Aenean molestie mi purus, at commodo massa',
+                'content': '''<h2>Analyzing Customer Shopping Patterns</h2>
+<p>Understanding customer behavior is crucial for e-commerce success. By analyzing shopping patterns, preferences, and pain points, businesses can optimize their marketplace experience and drive more sales.</p>
+
+<h3>Key Customer Behavior Metrics</h3>
+<p>Tracking the right metrics helps you understand what drives customer decisions:</p>
+<ul>
+<li>Browse-to-purchase conversion rates</li>
+<li>Average order value and frequency</li>
+<li>Cart abandonment patterns</li>
+<li>Product page engagement time</li>
+<li>Return customer rate</li>
+</ul>
+
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.</p>
+
+<h3>Personalization Strategies</h3>
+<p>Modern customers expect personalized experiences. Implement these strategies to meet their expectations and increase engagement.</p>''',
+                'category': 'Tech & Tools',
+                'tags': ['E-commerce', 'Business', 'Strategy'],
+                'image': 'blog-post-2-27b4c1.png',
+                'is_featured': True,
+                'meta_description': 'Discover insights into customer behavior patterns and how to leverage them for e-commerce success.',
+                'meta_keywords': 'customer behavior, e-commerce analytics, shopping patterns, personalization'
+            },
+            {
+                'title': 'Maximize Your Marketplace Success: Tips & Strategies',
+                'excerpt': 'Integer mattis ultricies augue, ac bibendum arcu viverra vel. Etiam eu facilisis velit. Mauris auctor efficitur turpis feugiat laoreet. Nam ac posuere eros. Sed blandit et ipsum a porttitor. Curabitur sagittis ligula in ullamcorper vehicula. Sed consequat ipsum vitae ante ultricies tincidunt. Nulla egestas nisi non elementum semper. Aenean molestie mi purus, at commodo massa',
+                'content': '''<h2>Proven Strategies for Marketplace Growth</h2>
+<p>Success in marketplace selling requires a combination of strategic planning, quality products, and excellent customer service. Here are proven strategies to help you maximize your marketplace potential.</p>
+
+<h3>Optimize Your Product Listings</h3>
+<p>Your product listings are your digital storefront. Make them count:</p>
+<ul>
+<li>Use high-quality, professional product images</li>
+<li>Write compelling, SEO-optimized descriptions</li>
+<li>Include detailed specifications and features</li>
+<li>Set competitive pricing strategies</li>
+<li>Maintain accurate inventory levels</li>
+</ul>
+
+<h3>Build Your Brand Reputation</h3>
+<p>Trust is everything in marketplace selling. Focus on building a strong reputation through consistent quality, responsive customer service, and transparent communication.</p>
+
+<p>Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.</p>
+
+<h3>Leverage Marketing Tools</h3>
+<p>Utilize marketplace advertising, social media marketing, and email campaigns to reach more customers and drive sales growth.</p>''',
+                'category': 'Selling Tips',
+                'tags': ['Marketplace', 'Tips', 'Growth'],
+                'image': 'blog-post-3-27b4c1.png',
+                'is_featured': True,
+                'meta_description': 'Learn essential tips and strategies to maximize your success on marketplace platforms.',
+                'meta_keywords': 'marketplace success, selling tips, e-commerce strategies, online selling'
+            },
+            {
+                'title': 'Building Trust Through Transparent Communication',
+                'excerpt': 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.',
+                'content': '''<h2>The Foundation of Customer Trust</h2>
+<p>Transparent communication is the cornerstone of building lasting customer relationships in e-commerce. When customers feel informed and valued, they're more likely to become repeat buyers and brand advocates.</p>
+
+<h3>Key Communication Principles</h3>
+<ul>
+<li>Be honest about product capabilities and limitations</li>
+<li>Provide clear shipping and return policies</li>
+<li>Respond promptly to customer inquiries</li>
+<li>Keep customers updated on order status</li>
+<li>Address issues proactively and professionally</li>
+</ul>
+
+<p>Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+<h3>Building Long-term Relationships</h3>
+<p>Trust isn't built overnight. It requires consistent, transparent communication across all customer touchpoints. From product descriptions to post-purchase support, every interaction matters.</p>''',
+                'category': 'Business Strategy',
+                'tags': ['Business', 'Strategy', 'Tips'],
+                'image': 'blog-post-1-27b4c1.png',
+                'is_featured': False,
+                'meta_description': 'Learn how transparent communication builds customer trust and drives business success.',
+                'meta_keywords': 'customer trust, transparent communication, business strategy, customer relationships'
+            },
+            {
+                'title': 'The Future of E-commerce: Trends to Watch',
+                'excerpt': 'Discover the emerging trends shaping the future of e-commerce and marketplace platforms. Stay ahead of the curve with insights into technology, customer expectations, and market dynamics.',
+                'content': '''<h2>Emerging E-commerce Trends</h2>
+<p>The e-commerce landscape is constantly evolving. Understanding upcoming trends helps businesses stay competitive and meet changing customer expectations.</p>
+
+<h3>Technology Innovations</h3>
+<ul>
+<li>AI-powered personalization and recommendations</li>
+<li>Augmented reality for product visualization</li>
+<li>Voice commerce and smart assistants</li>
+<li>Blockchain for supply chain transparency</li>
+</ul>
+
+<p>These technologies are transforming how customers discover, evaluate, and purchase products online. Early adopters gain significant competitive advantages.</p>
+
+<h3>Sustainability and Ethics</h3>
+<p>Modern consumers increasingly value sustainability and ethical business practices. Marketplace platforms that prioritize these values attract loyal, engaged customers.</p>''',
+                'category': 'Tech & Tools',
+                'tags': ['Technology', 'E-commerce', 'Strategy'],
+                'image': 'blog-post-2-27b4c1.png',
+                'is_featured': False,
+                'meta_description': 'Explore the future of e-commerce with insights into emerging trends and technologies.',
+                'meta_keywords': 'e-commerce trends, future of retail, marketplace innovation, technology'
+            },
+            {
+                'title': 'Effective Pricing Strategies for Marketplace Sellers',
+                'excerpt': 'Master the art of pricing to maximize profits while remaining competitive. Learn dynamic pricing strategies, psychological pricing tactics, and how to position your products effectively.',
+                'content': '''<h2>Strategic Pricing for Success</h2>
+<p>Pricing is both an art and a science. The right pricing strategy can significantly impact your sales volume, profit margins, and market position.</p>
+
+<h3>Pricing Models to Consider</h3>
+<ul>
+<li>Competitive pricing based on market analysis</li>
+<li>Value-based pricing reflecting product quality</li>
+<li>Dynamic pricing responding to demand</li>
+<li>Bundle pricing for increased average order value</li>
+</ul>
+
+<h3>Psychological Pricing Tactics</h3>
+<p>Understanding customer psychology helps optimize pricing decisions. Techniques like charm pricing ($9.99 vs $10), anchoring, and tiered pricing can influence purchase decisions.</p>
+
+<p>Regular price analysis and adjustment based on market conditions, competitor actions, and customer feedback ensures your pricing remains optimal.</p>''',
+                'category': 'Selling Tips',
+                'tags': ['Selling Tips', 'Strategy', 'Business'],
+                'image': 'blog-post-3-27b4c1.png',
+                'is_featured': False,
+                'meta_description': 'Learn effective pricing strategies to maximize profits and stay competitive in marketplace selling.',
+                'meta_keywords': 'pricing strategy, marketplace pricing, competitive pricing, profit optimization'
+            }
+        ]
+        
+        posts_created = 0
+        for post_data in posts_data:
+            image_file = post_data.pop('image')
+            category_name = post_data.pop('category')
+            tag_names = post_data.pop('tags')
+            
+            post, created = BlogPost.objects.get_or_create(
+                title=post_data['title'],
+                defaults={
+                    'slug': slugify(post_data['title']),
+                    'excerpt': post_data['excerpt'],
+                    'content': post_data['content'],
+                    'category': blog_categories[category_name],
+                    'author': admin_user,
+                    'is_published': True,
+                    'is_featured': post_data['is_featured'],
+                    'published_at': timezone.now(),
+                    'meta_description': post_data['meta_description'],
+                    'meta_keywords': post_data['meta_keywords']
+                }
+            )
+            
+            if created:
+                posts_created += 1
+                
+                # Add tags
+                for tag_name in tag_names:
+                    post.tags.add(blog_tags[tag_name])
+                
+                # Add featured image from frontend
+                image_path = self.copy_image(image_file, 'blog', f'{post.slug}.png')
+                if image_path:
+                    post.featured_image = image_path
+                    post.save()
+        
+        self.stdout.write(f'    [+] Created {posts_created} blog posts with real images')
+        
+        # Seed Blog Comments
+        self.stdout.write('  [*] Seeding blog comments...')
+        comments_data = [
+            {
+                'post_title': 'Unlocking the Power of Product Reviews',
+                'comments': [
+                    {
+                        'name': 'Admin',
+                        'email': 'admin@hamropasal.com',
+                        'comment': 'Great insights on product reviews! This really helps understand how customer feedback can build trust and drive business growth. The transparency aspect is particularly valuable for e-commerce success.',
+                        'user': admin_user
+                    },
+                    {
+                        'name': 'Admin',
+                        'email': 'admin@hamropasal.com',
+                        'comment': 'I completely agree with the points made in this article. Customer engagement through reviews is crucial for building a successful marketplace. The community-driven approach really makes a difference in customer loyalty and trust.',
+                        'user': admin_user
+                    },
+                    {
+                        'name': 'Admin',
+                        'email': 'admin@hamropasal.com',
+                        'comment': 'Excellent article! The social proof aspect of reviews cannot be overstated. When customers see authentic feedback from other buyers, it significantly influences their purchasing decisions and builds confidence in the brand.',
+                        'user': admin_user
+                    }
+                ]
+            }
+        ]
+        
+        comments_created = 0
+        for comment_group in comments_data:
+            try:
+                post = BlogPost.objects.get(title=comment_group['post_title'])
+                for comment_data in comment_group['comments']:
+                    comment, created = BlogComment.objects.get_or_create(
+                        post=post,
+                        comment=comment_data['comment'],
+                        defaults={
+                            'user': comment_data.get('user'),
+                            'name': comment_data['name'],
+                            'email': comment_data['email'],
+                            'is_approved': True
+                        }
+                    )
+                    if created:
+                        comments_created += 1
+            except BlogPost.DoesNotExist:
+                pass
+        
+        self.stdout.write(f'    [+] Created {comments_created} blog comments')
+        self.stdout.write(self.style.SUCCESS('  [OK] Blog data seeded successfully!'))

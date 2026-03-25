@@ -53,6 +53,7 @@ urlpatterns = [
     path('api/cms/', include('apps.cms.urls')),
     path('api/auth/', include('apps.users.urls')),
     path('api/', include('apps.orders.urls')),  # Cart and Orders
+    path('api/blog/', include('apps.blog.urls')),  # Blog
 ]
 
 # Serve media files in development

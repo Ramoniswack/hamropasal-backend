@@ -8,12 +8,17 @@ User = get_user_model()
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, min_length=8)
+    first_name = serializers.CharField(required=False, allow_blank=True)
+    last_name = serializers.CharField(required=False, allow_blank=True)
     
     class Meta:
         model = User
-        fields = ['id', 'username', 'email', 'password', 'user_type', 'phone', 'address']
+        fields = ['id', 'username', 'email', 'password', 'first_name', 'last_name', 'user_type', 'phone', 'address']
         extra_kwargs = {
-            'email': {'required': True}
+            'email': {'required': True},
+            'user_type': {'required': False},
+            'phone': {'required': False},
+            'address': {'required': False}
         }
     
     def create(self, validated_data):
@@ -21,6 +26,8 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             username=validated_data['username'],
             email=validated_data['email'],
             password=validated_data['password'],
+            first_name=validated_data.get('first_name', ''),
+            last_name=validated_data.get('last_name', ''),
             user_type=validated_data.get('user_type', 'customer'),
             phone=validated_data.get('phone', ''),
             address=validated_data.get('address', '')
