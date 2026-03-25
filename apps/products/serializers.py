@@ -4,15 +4,26 @@ from apps.categories.serializers import CategoryListSerializer
 
 
 class ProductImageSerializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField()
+    
     class Meta:
         model = ProductImage
         fields = ['id', 'image', 'is_primary']
+    
+    def get_image(self, obj):
+        if obj.image:
+            request = self.context.get('request')
+            if request:
+                return request.build_absolute_uri(obj.image.url)
+        return None
 
 
 class ProductListSerializer(serializers.ModelSerializer):
     """Lightweight serializer for product listing"""
     category = CategoryListSerializer(read_only=True)
-    primary_image = serializers.SerializerMethodField()
+    images = ProductImageSerializer(many=True, read_only=True)
+    rating_average = serializers.SerializerMethodField()
+    review_count = serializers.SerializerMethodField()
     final_price = serializers.ReadOnlyField()
     discount_percentage = serializers.ReadOnlyField()
 
@@ -21,21 +32,27 @@ class ProductListSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'name', 'slug', 'short_description', 'price', 
             'discount_price', 'final_price', 'discount_percentage',
-            'stock', 'category', 'is_featured', 'primary_image'
+            'stock', 'category', 'is_featured', 'images',
+            'rating_average', 'review_count', 'created_at'
         ]
-
-    def get_primary_image(self, obj):
-        primary = obj.images.filter(is_primary=True).first()
-        if primary:
-            return self.context['request'].build_absolute_uri(primary.image.url) if primary.image else None
-        first_image = obj.images.first()
-        return self.context['request'].build_absolute_uri(first_image.image.url) if first_image and first_image.image else None
+    
+    def get_rating_average(self, obj):
+        reviews = obj.reviews.filter(is_approved=True)
+        if reviews.exists():
+            from django.db.models import Avg
+            return reviews.aggregate(Avg('rating'))['rating__avg']
+        return 0
+    
+    def get_review_count(self, obj):
+        return obj.reviews.filter(is_approved=True).count()
 
 
 class ProductDetailSerializer(serializers.ModelSerializer):
     """Detailed serializer for single product view"""
     category = CategoryListSerializer(read_only=True)
     images = ProductImageSerializer(many=True, read_only=True)
+    rating_average = serializers.SerializerMethodField()
+    review_count = serializers.SerializerMethodField()
     final_price = serializers.ReadOnlyField()
     discount_percentage = serializers.ReadOnlyField()
     is_in_stock = serializers.ReadOnlyField()
@@ -46,9 +63,19 @@ class ProductDetailSerializer(serializers.ModelSerializer):
             'id', 'name', 'slug', 'description', 'short_description',
             'price', 'discount_price', 'final_price', 'discount_percentage',
             'stock', 'is_in_stock', 'category', 'is_featured', 'is_active',
-            'images', 'created_at', 'updated_at'
+            'images', 'rating_average', 'review_count', 'created_at', 'updated_at'
         ]
         read_only_fields = ['slug', 'created_at', 'updated_at']
+    
+    def get_rating_average(self, obj):
+        reviews = obj.reviews.filter(is_approved=True)
+        if reviews.exists():
+            from django.db.models import Avg
+            return reviews.aggregate(Avg('rating'))['rating__avg']
+        return 0
+    
+    def get_review_count(self, obj):
+        return obj.reviews.filter(is_approved=True).count()
 
 
 class ProductReviewSerializer(serializers.ModelSerializer):
