@@ -1,36 +1,110 @@
 from django.shortcuts import render
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, generics
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.views import APIView
+from rest_framework_simplejwt.views import TokenObtainPairView
+from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import get_user_model
 from .models import Wishlist
-from .serializers import UserRegistrationSerializer, UserSerializer, WishlistSerializer
+from .serializers import (
+    UserRegistrationSerializer, 
+    UserSerializer, 
+    UserProfileUpdateSerializer,
+    ChangePasswordSerializer,
+    WishlistSerializer
+)
 
 User = get_user_model()
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    """API endpoint for users"""
+class RegisterView(generics.CreateAPIView):
+    """User registration endpoint"""
     queryset = User.objects.all()
+    serializer_class = UserRegistrationSerializer
+    permission_classes = [AllowAny]
+    
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+        
+        # Generate JWT tokens
+        refresh = RefreshToken.for_user(user)
+        
+        return Response({
+            'user': UserSerializer(user).data,
+            'tokens': {
+                'refresh': str(refresh),
+                'access': str(refresh.access_token),
+            },
+            'message': 'User registered successfully'
+        }, status=status.HTTP_201_CREATED)
+
+
+class LoginView(TokenObtainPairView):
+    """User login endpoint - returns JWT tokens"""
+    pass
+
+
+class LogoutView(APIView):
+    """User logout endpoint - blacklists refresh token"""
+    permission_classes = [IsAuthenticated]
+    
+    def post(self, request):
+        try:
+            refresh_token = request.data.get('refresh')
+            if not refresh_token:
+                return Response(
+                    {'error': 'Refresh token is required'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+            
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            
+            return Response(
+                {'message': 'Logout successful'},
+                status=status.HTTP_200_OK
+            )
+        except Exception as e:
+            return Response(
+                {'error': 'Invalid token'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+
+class UserProfileView(generics.RetrieveUpdateAPIView):
+    """Get and update current user profile"""
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
     
+    def get_object(self):
+        return self.request.user
+    
     def get_serializer_class(self):
-        if self.action == 'create':
-            return UserRegistrationSerializer
+        if self.request.method == 'PUT' or self.request.method == 'PATCH':
+            return UserProfileUpdateSerializer
         return UserSerializer
+
+
+class ChangePasswordView(APIView):
+    """Change user password"""
+    permission_classes = [IsAuthenticated]
     
-    def get_permissions(self):
-        if self.action == 'create':
-            return [AllowAny()]
-        return [IsAuthenticated()]
-    
-    @action(detail=False, methods=['get'])
-    def me(self, request):
-        """Get current user profile"""
-        serializer = self.get_serializer(request.user)
-        return Response(serializer.data)
+    def post(self, request):
+        serializer = ChangePasswordSerializer(data=request.data, context={'request': request})
+        if serializer.is_valid():
+            user = request.user
+            user.set_password(serializer.validated_data['new_password'])
+            user.save()
+            
+            return Response(
+                {'message': 'Password changed successfully'},
+                status=status.HTTP_200_OK
+            )
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class WishlistViewSet(viewsets.ModelViewSet):
@@ -39,7 +113,7 @@ class WishlistViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     
     def get_queryset(self):
-        return Wishlist.objects.filter(user=self.request.user)
+        return Wishlist.objects.filter(user=self.request.user).select_related('product')
     
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
@@ -66,6 +140,13 @@ class WishlistViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_200_OK
             )
         else:
+            from apps.products.models import Product
+            if not Product.objects.filter(id=product_id, is_active=True).exists():
+                return Response(
+                    {'error': 'Product not found or inactive'},
+                    status=status.HTTP_404_NOT_FOUND
+                )
+            
             Wishlist.objects.create(user=request.user, product_id=product_id)
             return Response(
                 {'message': 'Product added to wishlist', 'in_wishlist': True},

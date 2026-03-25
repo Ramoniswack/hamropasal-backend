@@ -1,0 +1,250 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block title %}Analytics Dashboard{% endblock %}
+
+{% block content %}
+<div id="content-main">
+    <h1>📊 Analytics Dashboard</h1>
+    
+    <!-- Revenue Overview -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 20px 0;">
+        <div style="background: #4CAF50; color: white; padding: 20px; border-radius: 8px;">
+            <h3 style="margin: 0 0 10px 0;">💰 Total Revenue</h3>
+            <p style="font-size: 32px; margin: 0;">Rs. {{ total_revenue|floatformat:2 }}</p>
+            <small>From delivered orders</small>
+        </div>
+        <div style="background: #2196F3; color: white; padding: 20px; border-radius: 8px;">
+            <h3 style="margin: 0 0 10px 0;">✅ Completed Orders</h3>
+            <p style="font-size: 32px; margin: 0;">{{ total_orders }}</p>
+            <small>Successfully delivered</small>
+        </div>
+        <div style="background: #FF9800; color: white; padding: 20px; border-radius: 8px;">
+            <h3 style="margin: 0 0 10px 0;">⏳ Pending Orders</h3>
+            <p style="font-size: 32px; margin: 0;">{{ pending_orders }}</p>
+            <small>Awaiting processing</small>
+        </div>
+    </div>
+
+    <!-- Order Status Distribution -->
+    <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h2>📦 Order Status Distribution</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: #f5f5f5;">
+                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Status</th>
+                    <th style="padding: 10px; text-align: right; border-bottom: 2px solid #ddd;">Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stat in order_status_stats %}
+                <tr>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">
+                        <span style="padding: 4px 12px; border-radius: 12px; background: #e3f2fd; color: #1976d2;">
+                            {{ stat.status|title }}
+                        </span>
+                    </td>
+                    <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">{{ stat.count }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Most Sold Products -->
+    <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h2>🏆 Top 10 Most Sold Products</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: #f5f5f5;">
+                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Product</th>
+                    <th style="padding: 10px; text-align: right; border-bottom: 2px solid #ddd;">Units Sold</th>
+                    <th style="padding: 10px; text-align: right; border-bottom: 2px solid #ddd;">Current Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in most_sold_products %}
+                <tr>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">
+                        <a href="{% url 'admin:products_product_change' product.id %}">{{ product.name }}</a>
+                    </td>
+                    <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">
+                        <strong>{{ product.total_sold|default:0 }}</strong>
+                    </td>
+                    <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">
+                        {% if product.stock <= product.low_stock_threshold %}
+                            <span style="color: #f44336;">{{ product.stock }}</span>
+                        {% else %}
+                            {{ product.stock }}
+                        {% endif %}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" style="padding: 20px; text-align: center; color: #999;">No sales data available</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Most Wishlisted Products -->
+    <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h2>❤️ Top 10 Most Wishlisted Products</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: #f5f5f5;">
+                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Product</th>
+                    <th style="padding: 10px; text-align: right; border-bottom: 2px solid #ddd;">Wishlist Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in most_wishlisted %}
+                <tr>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">
+                        <a href="{% url 'admin:products_product_change' product.id %}">{{ product.name }}</a>
+                    </td>
+                    <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">
+                        <strong>{{ product.wishlist_count }}</strong>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="2" style="padding: 20px; text-align: center; color: #999;">No wishlist data available</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Most Added to Cart Products -->
+    <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h2>🛒 Top 10 Most Added to Cart Products</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: #f5f5f5;">
+                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Product</th>
+                    <th style="padding: 10px; text-align: right; border-bottom: 2px solid #ddd;">Cart Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in most_in_cart %}
+                <tr>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">
+                        <a href="{% url 'admin:products_product_change' product.id %}">{{ product.name }}</a>
+                    </td>
+                    <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">
+                        <strong>{{ product.cart_count }}</strong>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="2" style="padding: 20px; text-align: center; color: #999;">No cart data available</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Top Rated Products -->
+    <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h2>⭐ Top 10 Highest Rated Products</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: #f5f5f5;">
+                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Product</th>
+                    <th style="padding: 10px; text-align: right; border-bottom: 2px solid #ddd;">Avg Rating</th>
+                    <th style="padding: 10px; text-align: right; border-bottom: 2px solid #ddd;">Reviews</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in top_rated_products %}
+                <tr>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">
+                        <a href="{% url 'admin:products_product_change' product.id %}">{{ product.name }}</a>
+                    </td>
+                    <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">
+                        <strong style="color: #FF9800;">{{ product.avg_rating|floatformat:1 }} ⭐</strong>
+                    </td>
+                    <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">
+                        {{ product.total_reviews }}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" style="padding: 20px; text-align: center; color: #999;">No reviews available</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Recent Reviews -->
+    <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h2>💬 Recent Product Reviews</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: #f5f5f5;">
+                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Product</th>
+                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">User</th>
+                    <th style="padding: 10px; text-align: center; border-bottom: 2px solid #ddd;">Rating</th>
+                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Comment</th>
+                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for review in recent_reviews %}
+                <tr>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">
+                        <a href="{% url 'admin:products_product_change' review.product.id %}">{{ review.product.name|truncatewords:5 }}</a>
+                    </td>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">{{ review.user.username }}</td>
+                    <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">
+                        <strong style="color: #FF9800;">{{ review.rating }} ⭐</strong>
+                    </td>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">{{ review.comment|truncatewords:10 }}</td>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">{{ review.created_at|date:"M d, Y" }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" style="padding: 20px; text-align: center; color: #999;">No reviews yet</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Low Stock Alert -->
+    <div style="background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ff9800;">
+        <h2>⚠️ Low Stock Alert</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: #ffe0b2;">
+                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ff9800;">Product</th>
+                    <th style="padding: 10px; text-align: right; border-bottom: 2px solid #ff9800;">Current Stock</th>
+                    <th style="padding: 10px; text-align: right; border-bottom: 2px solid #ff9800;">Threshold</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in low_stock_products %}
+                <tr>
+                    <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">
+                        <a href="{% url 'admin:products_product_change' product.id %}">{{ product.name }}</a>
+                    </td>
+                    <td style="padding: 10px; text-align: right; border-bottom: 1px solid #ffe0b2;">
+                        <strong style="color: #f44336;">{{ product.stock }}</strong>
+                    </td>
+                    <td style="padding: 10px; text-align: right; border-bottom: 1px solid #ffe0b2;">
+                        {{ product.low_stock_threshold }}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" style="padding: 20px; text-align: center; color: #666;">All products have sufficient stock ✅</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

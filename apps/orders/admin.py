@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
 from django.utils import timezone
-from .models import Order, OrderItem, OrderStatusHistory, Cart, CartItem
+from .models import Order, OrderItem, OrderStatusHistory
 
 
 class OrderItemInline(admin.TabularInline):
@@ -35,6 +35,8 @@ class OrderAdmin(admin.ModelAdmin):
     search_fields = ('order_number', 'user__username', 'customer_name', 'customer_email', 'customer_phone')
     readonly_fields = (
         'order_number', 'user', 'subtotal', 'shipping_cost', 'tax', 'discount', 'total',
+        'customer_name', 'customer_email', 'customer_phone',
+        'shipping_address', 'shipping_city', 'shipping_state', 'shipping_zip_code', 'shipping_country',
         'created_at', 'updated_at', 'confirmed_at', 'shipped_at', 'delivered_at',
         'item_count', 'total_quantity'
     )
@@ -43,18 +45,32 @@ class OrderAdmin(admin.ModelAdmin):
     date_hierarchy = 'created_at'
     actions = ['mark_as_confirmed', 'mark_as_processing', 'mark_as_shipped', 'mark_as_delivered', 'mark_as_cancelled']
     
+    def has_add_permission(self, request):
+        """Orders can only be created through checkout, not manually in admin"""
+        return False
+    
+    def changelist_view(self, request, extra_context=None):
+        """Add custom message to order list view"""
+        extra_context = extra_context or {}
+        extra_context['title'] = 'Orders (Created through checkout only)'
+        return super().changelist_view(request, extra_context=extra_context)
+    
     fieldsets = (
         ('Order Information', {
-            'fields': ('order_number', 'user', 'status', 'payment_status')
+            'fields': ('order_number', 'user', 'status', 'payment_status'),
+            'description': '⚠️ Orders are created through the checkout process. Admin can only view and manage order status.'
         }),
-        ('Customer Information', {
-            'fields': ('customer_name', 'customer_email', 'customer_phone')
+        ('Customer Information (Read-Only)', {
+            'fields': ('customer_name', 'customer_email', 'customer_phone'),
+            'description': '🔒 Customer information cannot be modified. This data is set during checkout.'
         }),
-        ('Shipping Address', {
-            'fields': ('shipping_address', 'shipping_city', 'shipping_state', 'shipping_zip_code', 'shipping_country')
+        ('Shipping Address (Read-Only)', {
+            'fields': ('shipping_address', 'shipping_city', 'shipping_state', 'shipping_zip_code', 'shipping_country'),
+            'description': '🔒 Shipping address cannot be modified after order creation.'
         }),
-        ('Pricing', {
-            'fields': ('subtotal', 'shipping_cost', 'tax', 'discount', 'total')
+        ('Pricing (Read-Only)', {
+            'fields': ('subtotal', 'shipping_cost', 'tax', 'discount', 'total'),
+            'description': '🔒 Pricing is calculated during checkout and cannot be modified.'
         }),
         ('Additional Information', {
             'fields': ('notes', 'coupon_code'),
@@ -104,7 +120,7 @@ class OrderAdmin(admin.ModelAdmin):
     payment_status_display.admin_order_field = 'payment_status'
     
     def total_display(self, obj):
-        return format_html('<strong>${:,.2f}</strong>', obj.total)
+        return format_html('<strong>${}</strong>', f'{obj.total:,.2f}')
     total_display.short_description = 'Total'
     total_display.admin_order_field = 'total'
     
@@ -237,42 +253,6 @@ class OrderStatusHistoryAdmin(admin.ModelAdmin):
         return False
 
 
-class CartItemInline(admin.TabularInline):
-    model = CartItem
-    extra = 0
-    readonly_fields = ('product', 'quantity', 'unit_price', 'subtotal', 'created_at', 'updated_at')
-
-
-@admin.register(Cart)
-class CartAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user_display', 'item_count', 'total_quantity', 'subtotal_display', 'created_at', 'updated_at')
-    list_filter = ('created_at', 'updated_at')
-    search_fields = ('user__username', 'session_key')
-    readonly_fields = ('user', 'session_key', 'item_count', 'total_quantity', 'subtotal', 'created_at', 'updated_at')
-    inlines = [CartItemInline]
-    
-    def user_display(self, obj):
-        if obj.user:
-            return obj.user.username
-        return f"Guest ({obj.session_key[:8]}...)"
-    user_display.short_description = 'User'
-    
-    def subtotal_display(self, obj):
-        return f'${obj.subtotal:,.2f}'
-    subtotal_display.short_description = 'Subtotal'
-
-
-@admin.register(CartItem)
-class CartItemAdmin(admin.ModelAdmin):
-    list_display = ('cart', 'product', 'quantity', 'unit_price_display', 'subtotal_display', 'created_at')
-    list_filter = ('created_at', 'updated_at')
-    search_fields = ('cart__user__username', 'product__name')
-    readonly_fields = ('cart', 'product', 'unit_price', 'subtotal', 'created_at', 'updated_at')
-    
-    def unit_price_display(self, obj):
-        return f'${obj.unit_price}'
-    unit_price_display.short_description = 'Unit Price'
-    
-    def subtotal_display(self, obj):
-        return f'${obj.subtotal}'
-    subtotal_display.short_description = 'Subtotal'
+# NOTE: Cart, CartItem, and Wishlist are intentionally NOT registered in admin
+# These are private user data and should not be accessible to admin
+# Admin can see aggregate statistics (items in cart/wishlist counts) in the Product admin

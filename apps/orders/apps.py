@@ -3,4 +3,8 @@ from django.apps import AppConfig
 
 class OrdersConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'orders'
+    name = 'apps.orders'
+    verbose_name = 'Orders & Carts'
+    
+    def ready(self):
+        import apps.orders.signals  # Register signals

@@ -35,6 +35,25 @@ class UserSerializer(serializers.ModelSerializer):
         read_only_fields = ['id', 'created_at']
 
 
+class UserProfileUpdateSerializer(serializers.ModelSerializer):
+    """Serializer for updating user profile"""
+    class Meta:
+        model = User
+        fields = ['phone', 'address', 'first_name', 'last_name']
+
+
+class ChangePasswordSerializer(serializers.Serializer):
+    """Serializer for password change"""
+    old_password = serializers.CharField(required=True, write_only=True)
+    new_password = serializers.CharField(required=True, write_only=True, min_length=8)
+    
+    def validate_old_password(self, value):
+        user = self.context['request'].user
+        if not user.check_password(value):
+            raise serializers.ValidationError("Old password is incorrect")
+        return value
+
+
 class WishlistSerializer(serializers.ModelSerializer):
     product = ProductListSerializer(read_only=True)
     product_id = serializers.IntegerField(write_only=True)
@@ -47,3 +66,9 @@ class WishlistSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data['user'] = self.context['request'].user
         return super().create(validated_data)
+    
+    def validate_product_id(self, value):
+        from apps.products.models import Product
+        if not Product.objects.filter(id=value, is_active=True).exists():
+            raise serializers.ValidationError("Product not found or inactive")
+        return value

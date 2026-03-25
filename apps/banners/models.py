@@ -1,10 +1,11 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 class HeroBanner(models.Model):
     """Hero slider banners for homepage"""
     title = models.CharField(max_length=500)
-    description = models.TextField()
+    description = RichTextField(config_name='basic')
     image = models.ImageField(upload_to='banners/hero/')
     discount_percentage = models.IntegerField(default=50)
     discount_text = models.CharField(max_length=200)
@@ -28,7 +29,7 @@ class HeroBanner(models.Model):
 class MarketplaceBanner(models.Model):
     """Marketplace promotional banners"""
     title = models.CharField(max_length=300)
-    description = models.TextField()
+    description = RichTextField(config_name='basic')
     image = models.ImageField(upload_to='banners/marketplace/')
     button_text = models.CharField(max_length=50, default="Shop Now")
     button_link = models.CharField(max_length=200, default="#")
@@ -48,7 +49,7 @@ class MarketplaceBanner(models.Model):
 class PromoBanner(models.Model):
     """Single promo banner"""
     title = models.CharField(max_length=300)
-    description = models.TextField()
+    description = RichTextField(config_name='basic')
     image = models.ImageField(upload_to='banners/promo/')
     button_text = models.CharField(max_length=50, default="Shop Now")
     button_link = models.CharField(max_length=200, default="#")

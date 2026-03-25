@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,12 +25,12 @@ sys.path.insert(0, str(BASE_DIR / 'apps'))
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-cv@6fn6eht(jeot=bk^du04#gkocw4um6*&-1%67+9dyjdfg&7'
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-cv@6fn6eht(jeot=bk^du04#gkocw4um6*&-1%67+9dyjdfg&7')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1,testserver', cast=Csv())
 
 
 # Application definition
@@ -45,8 +46,13 @@ INSTALLED_APPS = [
     
     # Third-party apps
     'rest_framework',
+    'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
     'django_filters',
     'corsheaders',
+    'drf_yasg',
+    'ckeditor',
+    'ckeditor_uploader',
     
     # E-commerce apps
     'apps.core.apps.CoreConfig',  # Custom template tags
@@ -55,7 +61,8 @@ INSTALLED_APPS = [
     'apps.banners.apps.BannersConfig',
     'apps.cms.apps.CmsConfig',
     'apps.users.apps.UsersConfig',
-    'apps.orders',
+    'apps.orders.apps.OrdersConfig',
+    'apps.blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -95,11 +102,11 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hamropasal',
-        'USER': 'postgres',
-        'PASSWORD': 'ashis@123',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': config('DB_NAME', default='hamropasal'),
+        'USER': config('DB_USER', default='postgres'),
+        'PASSWORD': config('DB_PASSWORD', default='ashis@123'),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default='5432'),
     }
 }
 
@@ -139,6 +146,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -181,10 +189,14 @@ JAZZMIN_SETTINGS = {
     "hide_apps": [],
     "hide_models": [],
     "order_with_respect_to": [
+        "core",  # Analytics Dashboard first
         "products",
-        "categories", 
-        "banners",
+        "categories",
+        "orders",
+        "users",
         "cms",
+        "banners",
+        "blog",
         "auth"
     ],
     
@@ -209,9 +221,17 @@ JAZZMIN_SETTINGS = {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
+        "core.AnalyticsProxy": "fas fa-chart-line",
         "products.Product": "fas fa-box",
         "products.ProductImage": "fas fa-images",
+        "products.ProductReview": "fas fa-star",
+        "products.ProductTag": "fas fa-tags",
+        "products.StockHistory": "fas fa-history",
         "categories.Category": "fas fa-list",
+        "orders.Order": "fas fa-shopping-cart",
+        "orders.OrderItem": "fas fa-shopping-basket",
+        "users.User": "fas fa-user",
+        "users.Wishlist": "fas fa-heart",
         "banners.HeroBanner": "fas fa-image",
         "banners.MarketplaceBanner": "fas fa-ad",
         "banners.PromoBanner": "fas fa-bullhorn",
@@ -225,6 +245,9 @@ JAZZMIN_SETTINGS = {
         "cms.FAQ": "fas fa-question-circle",
         "cms.Feature": "fas fa-star",
         "cms.Vendor": "fas fa-building",
+        "blog.BlogPost": "fas fa-blog",
+        "blog.BlogCategory": "fas fa-folder",
+        "blog.BlogTag": "fas fa-tag",
     },
     
     # Default Icons
@@ -294,6 +317,32 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ],
+}
+
+# JWT Settings
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'UPDATE_LAST_LOGIN': True,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'TOKEN_TYPE_CLAIM': 'token_type',
 }
 
 # CORS Configuration (for frontend)
@@ -305,3 +354,57 @@ CORS_ALLOWED_ORIGINS = [
 # Media Files Configuration
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# CKEditor Configuration
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_ALLOW_NONIMAGE_FILES = False
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': '100%',
+        'toolbar_full': [
+            ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
+            ['Link', 'Unlink', 'Anchor'],
+            ['Image', 'Flash', 'Table', 'HorizontalRule'],
+            ['TextColor', 'BGColor'],
+            ['Smiley', 'SpecialChar'], ['Source'],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['NumberedList', 'BulletedList'],
+            ['Indent', 'Outdent'],
+            ['Maximize'],
+        ],
+        'extraPlugins': ','.join([
+            'uploadimage',
+            'image2',
+            'codesnippet',
+        ]),
+    },
+    'basic': {
+        'toolbar': 'Basic',
+        'height': 200,
+        'width': '100%',
+        'toolbar_Basic': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ],
+    },
+}
+
+
+# Email Configuration (SMTP)
+EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
+EMAIL_HOST = config('EMAIL_HOST', default='smtp.gmail.com')
+EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='Hamro Pasal <noreply@hamropasal.com>')
+ADMIN_EMAIL = config('ADMIN_EMAIL', default='admin@hamropasal.com')
+
+# Email will be printed to console if EMAIL_HOST_USER is not configured
+# Once you add your Gmail credentials to .env, emails will be sent via SMTP

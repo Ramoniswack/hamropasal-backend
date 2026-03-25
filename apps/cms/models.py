@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 class SiteSettings(models.Model):
@@ -26,7 +27,7 @@ class SiteSettings(models.Model):
     
     # Newsletter
     newsletter_title = models.CharField(max_length=200, default="Join the Supgor Club!")
-    newsletter_description = models.TextField(default="Whether you're welcoming new contacts or sharing the latest news...")
+    newsletter_description = RichTextField(default="Whether you're welcoming new contacts or sharing the latest news...", config_name='basic')
     
     # Copyright
     copyright_text = models.CharField(max_length=500, default="Copyright 2026 © Supgor WordPress Theme")
@@ -175,7 +176,7 @@ class FAQ(models.Model):
 class Feature(models.Model):
     """Site features (shipping, payment, etc.)"""
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = RichTextField(config_name='basic')
     icon_name = models.CharField(max_length=100, help_text="Icon identifier (e.g., 'fast-shipping')")
     order = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
@@ -193,7 +194,7 @@ class Feature(models.Model):
 class Vendor(models.Model):
     """Marketplace vendors"""
     name = models.CharField(max_length=200)
-    description = models.TextField()
+    description = RichTextField(config_name='basic')
     logo = models.ImageField(upload_to='vendors/', blank=True, null=True)
     rating = models.DecimalField(max_digits=3, decimal_places=2)
     review_count = models.IntegerField(default=0)
@@ -242,7 +243,7 @@ class AboutSection(models.Model):
     section_type = models.CharField(max_length=20, choices=SECTION_TYPE_CHOICES)
     label = models.CharField(max_length=100, blank=True, help_text="Small label above heading (e.g., 'OUR STORY')")
     heading = models.CharField(max_length=500)
-    content = models.TextField()
+    content = RichTextField()
     order = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -422,7 +423,7 @@ class WidgetTextSection(models.Model):
     widget = models.OneToOneField(Widget, on_delete=models.CASCADE, related_name='text_section_content')
     label = models.CharField(max_length=100, blank=True, help_text="Small label above heading")
     heading = models.CharField(max_length=500, blank=True)
-    content = models.TextField()
+    content = RichTextField()
     text_align = models.CharField(max_length=20, default='left', choices=[
         ('left', 'Left'),
         ('center', 'Center'),
@@ -489,7 +490,7 @@ class WidgetFAQItem(models.Model):
 class WidgetHTMLContent(models.Model):
     """Custom HTML content widget"""
     widget = models.OneToOneField(Widget, on_delete=models.CASCADE, related_name='html_content')
-    html_content = models.TextField(help_text="Custom HTML content")
+    html_content = RichTextField(help_text="Custom HTML content")
     css_classes = models.CharField(max_length=200, blank=True, help_text="Additional CSS classes")
 
     class Meta:

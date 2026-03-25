@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 from django.conf import settings
 from django.core.validators import MinValueValidator, MaxValueValidator
+from ckeditor.fields import RichTextField
 from apps.categories.models import Category
 
 
@@ -10,7 +11,7 @@ class Product(models.Model):
     slug = models.SlugField(unique=True, blank=True)
     sku = models.CharField(max_length=100, blank=True, help_text="Stock Keeping Unit")
     
-    description = models.TextField()
+    description = RichTextField()
     short_description = models.CharField(max_length=300, blank=True)
     
     price = models.DecimalField(max_digits=10, decimal_places=2)
