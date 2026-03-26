@@ -55,6 +55,7 @@ urlpatterns = [
     path('api/', include('apps.orders.urls')),  # Cart and Orders
     path('api/blog/', include('apps.blog.urls')),  # Blog
     path('api/', include('apps.core.urls')),  # Core settings
+    path('api/banners/', include('apps.banners.urls')),  # Banners
 ]
 
 # Serve media files in development
