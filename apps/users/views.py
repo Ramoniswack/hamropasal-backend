@@ -13,7 +13,8 @@ from .serializers import (
     UserSerializer, 
     UserProfileUpdateSerializer,
     ChangePasswordSerializer,
-    WishlistSerializer
+    WishlistSerializer,
+    BillingAddressSerializer
 )
 
 User = get_user_model()
@@ -177,3 +178,13 @@ class WishlistViewSet(viewsets.ModelViewSet):
                 {'message': 'Product added to wishlist', 'in_wishlist': True},
                 status=status.HTTP_201_CREATED
             )
+
+
+
+class BillingAddressView(generics.RetrieveUpdateAPIView):
+    """Get and update billing address"""
+    serializer_class = BillingAddressSerializer
+    permission_classes = [IsAuthenticated]
+    
+    def get_object(self):
+        return self.request.user

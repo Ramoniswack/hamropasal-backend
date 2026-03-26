@@ -49,6 +49,17 @@ class UserProfileUpdateSerializer(serializers.ModelSerializer):
         fields = ['phone', 'address', 'first_name', 'last_name']
 
 
+class BillingAddressSerializer(serializers.ModelSerializer):
+    """Serializer for billing address"""
+    class Meta:
+        model = User
+        fields = [
+            'billing_first_name', 'billing_last_name', 'billing_address',
+            'billing_apartment', 'billing_city', 'billing_state', 
+            'billing_zip_code', 'billing_country', 'billing_phone', 'billing_email'
+        ]
+
+
 class ChangePasswordSerializer(serializers.Serializer):
     """Serializer for password change"""
     old_password = serializers.CharField(required=True, write_only=True)

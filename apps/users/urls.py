@@ -7,7 +7,8 @@ from .views import (
     LogoutView,
     UserProfileView,
     ChangePasswordView,
-    WishlistViewSet
+    WishlistViewSet,
+    BillingAddressView
 )
 
 router = DefaultRouter()
@@ -23,6 +24,7 @@ urlpatterns = [
     # User profile endpoints
     path('me/', UserProfileView.as_view(), name='user-profile'),
     path('change-password/', ChangePasswordView.as_view(), name='change-password'),
+    path('billing-address/', BillingAddressView.as_view(), name='billing-address'),
     
     # Wishlist endpoints
     path('', include(router.urls)),

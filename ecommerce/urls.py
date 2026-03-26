@@ -54,6 +54,7 @@ urlpatterns = [
     path('api/auth/', include('apps.users.urls')),
     path('api/', include('apps.orders.urls')),  # Cart and Orders
     path('api/blog/', include('apps.blog.urls')),  # Blog
+    path('api/', include('apps.core.urls')),  # Core settings
 ]
 
 # Serve media files in development

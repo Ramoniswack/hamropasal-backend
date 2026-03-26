@@ -12,6 +12,19 @@ class User(AbstractUser):
     user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES, default='customer')
     phone = models.CharField(max_length=20, blank=True)
     address = models.TextField(blank=True)
+    
+    # Billing address fields
+    billing_first_name = models.CharField(max_length=100, blank=True)
+    billing_last_name = models.CharField(max_length=100, blank=True)
+    billing_address = models.TextField(blank=True)
+    billing_apartment = models.CharField(max_length=200, blank=True)
+    billing_city = models.CharField(max_length=100, blank=True)
+    billing_state = models.CharField(max_length=100, blank=True)
+    billing_zip_code = models.CharField(max_length=20, blank=True)
+    billing_country = models.CharField(max_length=100, blank=True, default='Nepal')
+    billing_phone = models.CharField(max_length=20, blank=True)
+    billing_email = models.EmailField(blank=True)
+    
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

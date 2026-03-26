@@ -10,6 +10,8 @@ class CartItemSerializer(serializers.ModelSerializer):
     product_slug = serializers.CharField(source='product.slug', read_only=True)
     product_image = serializers.SerializerMethodField()
     unit_price = serializers.DecimalField(max_digits=10, decimal_places=2, read_only=True)
+    discount_price = serializers.SerializerMethodField()
+    original_price = serializers.SerializerMethodField()
     subtotal = serializers.DecimalField(max_digits=10, decimal_places=2, read_only=True)
     stock_available = serializers.IntegerField(source='product.stock', read_only=True)
     
@@ -17,7 +19,7 @@ class CartItemSerializer(serializers.ModelSerializer):
         model = CartItem
         fields = [
             'id', 'product', 'product_name', 'product_slug', 'product_image',
-            'quantity', 'unit_price', 'subtotal', 'stock_available', 'created_at'
+            'quantity', 'unit_price', 'discount_price', 'original_price', 'subtotal', 'stock_available', 'created_at'
         ]
         read_only_fields = ['id', 'created_at']
     
@@ -26,6 +28,12 @@ class CartItemSerializer(serializers.ModelSerializer):
         if primary_image:
             return primary_image.image.url if primary_image.image else None
         return None
+    
+    def get_discount_price(self, obj):
+        return obj.product.discount_price if obj.product.discount_price else None
+    
+    def get_original_price(self, obj):
+        return obj.product.price
     
     def validate_quantity(self, value):
         if value < 1:
@@ -65,14 +73,24 @@ class CartSerializer(serializers.ModelSerializer):
 class OrderItemSerializer(serializers.ModelSerializer):
     """Serializer for order items"""
     product_slug = serializers.CharField(source='product.slug', read_only=True)
+    product_image = serializers.SerializerMethodField()
     
     class Meta:
         model = OrderItem
         fields = [
-            'id', 'product', 'product_slug', 'product_name', 'product_sku',
+            'id', 'product', 'product_slug', 'product_name', 'product_sku', 'product_image',
             'quantity', 'unit_price', 'discount_price', 'subtotal', 'created_at'
         ]
         read_only_fields = ['id', 'product_name', 'product_sku', 'unit_price', 'discount_price', 'subtotal', 'created_at']
+    
+    def get_product_image(self, obj):
+        try:
+            primary_image = obj.product.images.filter(is_primary=True).first()
+            if primary_image and primary_image.image:
+                return primary_image.image.url
+        except:
+            pass
+        return None
 
 
 class OrderStatusHistorySerializer(serializers.ModelSerializer):
@@ -122,6 +140,7 @@ class CheckoutSerializer(serializers.Serializer):
     customer_phone = serializers.CharField(max_length=20)
     notes = serializers.CharField(required=False, allow_blank=True)
     coupon_code = serializers.CharField(required=False, allow_blank=True)
+    save_billing_info = serializers.BooleanField(default=False, required=False)
     
     def validate(self, data):
         user = self.context['request'].user
@@ -152,9 +171,33 @@ class CheckoutSerializer(serializers.Serializer):
         user = self.context['request'].user
         cart = Cart.objects.get(user=user)
         
-        # Calculate totals
+        # Save billing info if requested
+        save_billing_info = validated_data.pop('save_billing_info', False)
+        if save_billing_info:
+            # Parse customer name
+            name_parts = validated_data.get('customer_name', '').split(' ', 1)
+            user.billing_first_name = name_parts[0] if len(name_parts) > 0 else ''
+            user.billing_last_name = name_parts[1] if len(name_parts) > 1 else ''
+            user.billing_address = validated_data.get('shipping_address', '')
+            user.billing_city = validated_data.get('shipping_city', '')
+            user.billing_state = validated_data.get('shipping_state', '')
+            user.billing_zip_code = validated_data.get('shipping_zip_code', '')
+            user.billing_country = validated_data.get('shipping_country', 'Nepal')
+            user.billing_phone = validated_data.get('customer_phone', '')
+            user.billing_email = validated_data.get('customer_email', '')
+            user.save()
+        
+        # Calculate totals with dynamic shipping
+        from apps.core.models import SiteSettings
+        settings = SiteSettings.load()
+        
         subtotal = cart.subtotal
-        shipping_cost = 100  # Fixed shipping cost (can be dynamic)
+        # Check if eligible for free shipping
+        if subtotal >= settings.free_shipping_threshold:
+            shipping_cost = 0
+        else:
+            shipping_cost = settings.shipping_cost
+        
         tax = 0  # No tax for now
         discount = 0  # No discount for now
         total = subtotal + shipping_cost + tax - discount
