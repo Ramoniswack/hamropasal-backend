@@ -41,8 +41,8 @@ class SiteSettings(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = 'Site Settings'
-        verbose_name_plural = 'Site Settings'
+        verbose_name = '🔗 Header - Site Settings'
+        verbose_name_plural = '🔗 Header - Site Settings'
 
     def __str__(self):
         return self.site_name
@@ -67,8 +67,8 @@ class NavigationMenu(models.Model):
     
     class Meta:
         ordering = ['order']
-        verbose_name = 'Navigation Menu'
-        verbose_name_plural = 'Navigation Menus'
+        verbose_name = '🔗 Header - Navigation Menu'
+        verbose_name_plural = '🔗 Header - Navigation Menus'
 
     def __str__(self):
         return self.title
@@ -87,8 +87,8 @@ class FooterColumn(models.Model):
     
     class Meta:
         ordering = ['order']
-        verbose_name = 'Footer Column'
-        verbose_name_plural = 'Footer Columns'
+        verbose_name = '📑 Footer - Column'
+        verbose_name_plural = '📑 Footer - Columns'
 
     def __str__(self):
         return self.title
@@ -106,8 +106,8 @@ class FooterLink(models.Model):
     
     class Meta:
         ordering = ['order']
-        verbose_name = 'Footer Link'
-        verbose_name_plural = 'Footer Links'
+        verbose_name = '📑 Footer - Link'
+        verbose_name_plural = '📑 Footer - Links'
 
     def __str__(self):
         return f"{self.column.title} - {self.title}"
@@ -321,8 +321,8 @@ class Page(models.Model):
 
     class Meta:
         ordering = ['title']
-        verbose_name = 'Page'
-        verbose_name_plural = 'Pages'
+        verbose_name = '📄 Page Builder - Page'
+        verbose_name_plural = '📄 Page Builder - Pages'
 
     def __str__(self):
         return self.title
@@ -373,8 +373,8 @@ class Widget(models.Model):
 
     class Meta:
         ordering = ['name']
-        verbose_name = 'Widget'
-        verbose_name_plural = 'Widgets'
+        verbose_name = '🧩 Page Builder - Widget'
+        verbose_name_plural = '🧩 Page Builder - Widgets'
 
     def __str__(self):
         return f"{self.name} ({self.get_widget_type_display()})"
@@ -393,8 +393,8 @@ class PageWidget(models.Model):
     class Meta:
         ordering = ['order']
         unique_together = ['page', 'widget', 'order']
-        verbose_name = 'Page Widget'
-        verbose_name_plural = 'Page Widgets'
+        verbose_name = '🧩 Page Builder - Page Widget'
+        verbose_name_plural = '🧩 Page Builder - Page Widgets'
 
     def __str__(self):
         return f"{self.page.title} - {self.widget.name} (Order: {self.order})"
@@ -411,8 +411,8 @@ class WidgetHeroBanner(models.Model):
     text_color = models.CharField(max_length=20, default='#FFFFFF')
 
     class Meta:
-        verbose_name = 'Hero Banner Content'
-        verbose_name_plural = 'Hero Banner Contents'
+        verbose_name = '🧩 Page Builder - Hero Banner Content'
+        verbose_name_plural = '🧩 Page Builder - Hero Banner Contents'
 
     def __str__(self):
         return self.title
@@ -431,8 +431,8 @@ class WidgetTextSection(models.Model):
     ])
 
     class Meta:
-        verbose_name = 'Text Section Content'
-        verbose_name_plural = 'Text Section Contents'
+        verbose_name = '🧩 Page Builder - Text Section Content'
+        verbose_name_plural = '🧩 Page Builder - Text Section Contents'
 
     def __str__(self):
         return self.heading or self.label or 'Text Section'
@@ -447,8 +447,8 @@ class WidgetStatistic(models.Model):
 
     class Meta:
         ordering = ['order']
-        verbose_name = 'Widget Statistic'
-        verbose_name_plural = 'Widget Statistics'
+        verbose_name = '🧩 Page Builder - Widget Statistic'
+        verbose_name_plural = '🧩 Page Builder - Widget Statistics'
 
     def __str__(self):
         return f"{self.number} - {self.label}"
@@ -464,8 +464,8 @@ class WidgetImage(models.Model):
 
     class Meta:
         ordering = ['order']
-        verbose_name = 'Widget Image'
-        verbose_name_plural = 'Widget Images'
+        verbose_name = '🧩 Page Builder - Widget Image'
+        verbose_name_plural = '🧩 Page Builder - Widget Images'
 
     def __str__(self):
         return self.alt_text
@@ -480,8 +480,8 @@ class WidgetFAQItem(models.Model):
 
     class Meta:
         ordering = ['order']
-        verbose_name = 'Widget FAQ Item'
-        verbose_name_plural = 'Widget FAQ Items'
+        verbose_name = '🧩 Page Builder - Widget FAQ Item'
+        verbose_name_plural = '🧩 Page Builder - Widget FAQ Items'
 
     def __str__(self):
         return self.question[:100]
@@ -494,8 +494,8 @@ class WidgetHTMLContent(models.Model):
     css_classes = models.CharField(max_length=200, blank=True, help_text="Additional CSS classes")
 
     class Meta:
-        verbose_name = 'HTML Content'
-        verbose_name_plural = 'HTML Contents'
+        verbose_name = '🧩 Page Builder - HTML Content'
+        verbose_name_plural = '🧩 Page Builder - HTML Contents'
 
     def __str__(self):
         return f"HTML Content for {self.widget.name}"

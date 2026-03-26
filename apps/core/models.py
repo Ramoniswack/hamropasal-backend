@@ -40,3 +40,12 @@ class SiteSettings(models.Model):
     def load(cls):
         obj, created = cls.objects.get_or_create(pk=1)
         return obj
+
+
+class AnalyticsProxy(models.Model):
+    """Proxy model for Analytics Dashboard in admin sidebar"""
+    class Meta:
+        managed = False
+        verbose_name = '📊 Analytics Dashboard'
+        verbose_name_plural = '📊 Analytics Dashboard'
+        app_label = 'core'
