@@ -92,7 +92,7 @@ class ProductReviewSerializer(serializers.ModelSerializer):
             'is_approved', 'helpful_count', 'can_edit',
             'created_at', 'updated_at'
         ]
-        read_only_fields = ['id', 'user', 'is_verified_purchase', 'is_approved', 'helpful_count', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'user', 'product', 'is_verified_purchase', 'is_approved', 'helpful_count', 'created_at', 'updated_at']
     
     def get_user_full_name(self, obj):
         if obj.user.first_name and obj.user.last_name:
@@ -112,7 +112,28 @@ class ProductReviewSerializer(serializers.ModelSerializer):
     
     def validate(self, data):
         request = self.context.get('request')
-        product = data.get('product') or self.instance.product
+        
+        # For updates, get product from instance
+        if self.instance:
+            product = self.instance.product
+        else:
+            # For creates, product will be set in perform_create
+            # We need to get it from the view's kwargs
+            view = self.context.get('view')
+            if view and hasattr(view, 'kwargs'):
+                product_slug = view.kwargs.get('product_slug')
+                if product_slug:
+                    from .models import Product
+                    try:
+                        product = Product.objects.get(slug=product_slug)
+                    except Product.DoesNotExist:
+                        raise serializers.ValidationError("Product not found")
+                else:
+                    # Can't validate without product
+                    return data
+            else:
+                # Can't validate without product
+                return data
         
         # Check if user has already reviewed this product (only for create)
         if not self.instance:
