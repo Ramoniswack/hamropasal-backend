@@ -49,3 +49,29 @@ class AnalyticsProxy(models.Model):
         verbose_name = '📊 Analytics Dashboard'
         verbose_name_plural = '📊 Analytics Dashboard'
         app_label = 'core'
+
+
+
+class NewsletterSubscriber(models.Model):
+    """Newsletter subscription management"""
+    email = models.EmailField(unique=True)
+    name = models.CharField(max_length=200, blank=True)
+    is_active = models.BooleanField(default=True)
+    unsubscribe_token = models.CharField(max_length=64, unique=True, blank=True)
+    subscribed_at = models.DateTimeField(auto_now_add=True)
+    unsubscribed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Newsletter Subscriber'
+        verbose_name_plural = 'Newsletter Subscribers'
+        ordering = ['-subscribed_at']
+
+    def __str__(self):
+        status = "Active" if self.is_active else "Unsubscribed"
+        return f"{self.email} ({status})"
+
+    def save(self, *args, **kwargs):
+        if not self.unsubscribe_token:
+            import uuid
+            self.unsubscribe_token = uuid.uuid4().hex
+        super().save(*args, **kwargs)

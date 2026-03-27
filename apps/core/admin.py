@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.urls import path
 from django.db import models
 from django.db.models import Sum, Count, Avg, Q, F
-from .models import SiteSettings, AnalyticsProxy
+from .models import SiteSettings, AnalyticsProxy, NewsletterSubscriber
 
 
 @admin.register(SiteSettings)
@@ -120,3 +120,25 @@ class AnalyticsProxyAdmin(admin.ModelAdmin):
         }
         
         return render(request, 'admin/analytics_dashboard.html', context)
+
+
+
+@admin.register(NewsletterSubscriber)
+class NewsletterSubscriberAdmin(admin.ModelAdmin):
+    list_display = ['email', 'name', 'is_active', 'subscribed_at']
+    list_filter = ['is_active', 'subscribed_at']
+    search_fields = ['email', 'name']
+    readonly_fields = ['subscribed_at', 'unsubscribed_at', 'unsubscribe_token']
+    date_hierarchy = 'subscribed_at'
+    actions = ['activate_subscribers', 'deactivate_subscribers']
+    
+    def activate_subscribers(self, request, queryset):
+        queryset.update(is_active=True, unsubscribed_at=None)
+        self.message_user(request, f"{queryset.count()} subscribers activated.")
+    activate_subscribers.short_description = "Activate selected subscribers"
+    
+    def deactivate_subscribers(self, request, queryset):
+        from django.utils import timezone
+        queryset.update(is_active=False, unsubscribed_at=timezone.now())
+        self.message_user(request, f"{queryset.count()} subscribers deactivated.")
+    deactivate_subscribers.short_description = "Deactivate selected subscribers"

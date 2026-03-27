@@ -332,7 +332,8 @@ class Widget(models.Model):
     """Reusable content widgets that can be added to pages"""
     WIDGET_TYPE_CHOICES = [
         # Hero/Banner Widgets
-        ('hero_banner', 'Hero Banner'),
+        ('dynamic_hero', '🎯 Dynamic Hero Banner (Full Control)'),
+        ('hero_banner', 'Hero Banner (Simple)'),
         ('image_banner', 'Image Banner'),
         
         # Text Content Widgets
@@ -356,7 +357,8 @@ class Widget(models.Model):
         ('store_locations', 'Store Locations'),
         
         # Product Widgets
-        ('featured_products', 'Featured Products'),
+        ('product_section', '🛍️ Product Section (Manual Selection)'),
+        ('featured_products', 'Featured Products (Auto)'),
         ('product_categories', 'Product Categories'),
         ('product_slider', 'Product Slider'),
         
@@ -499,3 +501,51 @@ class WidgetHTMLContent(models.Model):
 
     def __str__(self):
         return f"HTML Content for {self.widget.name}"
+
+
+class WidgetProductSection(models.Model):
+    """Product section widget - allows manual product selection"""
+    widget = models.OneToOneField(Widget, on_delete=models.CASCADE, related_name='product_section_content')
+    section_title = models.CharField(max_length=200, help_text="Section heading (e.g., 'Featured Products', 'Best Sellers')")
+    products = models.ManyToManyField('products.Product', related_name='widget_sections', blank=True, help_text="Select up to 8 products")
+    
+    class Meta:
+        verbose_name = '🧩 Page Builder - Product Section Content'
+        verbose_name_plural = '🧩 Page Builder - Product Section Contents'
+    
+    def __str__(self):
+        return self.section_title
+
+
+class WidgetDynamicHero(models.Model):
+    """Dynamic hero banner with full customization"""
+    widget = models.OneToOneField(Widget, on_delete=models.CASCADE, related_name='dynamic_hero_content')
+    title = models.CharField(max_length=200, help_text="Main heading")
+    description = RichTextField(blank=True, help_text="Description text (supports HTML)")
+    background_image = models.ImageField(upload_to='widgets/hero/', blank=True, null=True, help_text="Hero background image (optional)")
+    
+    # Discount badge
+    show_discount_badge = models.BooleanField(default=False, help_text="Show discount circle badge")
+    discount_percentage = models.IntegerField(default=0, help_text="Discount percentage (e.g., 64)")
+    discount_text = RichTextField(blank=True, help_text="Text next to discount badge")
+    
+    # Button
+    show_button = models.BooleanField(default=True, help_text="Show call-to-action button")
+    button_text = models.CharField(max_length=50, default='Shop Now', help_text="Button text")
+    button_link = models.CharField(max_length=200, default='/shop', help_text="Button URL")
+    
+    # Price section
+    show_price = models.BooleanField(default=False, help_text="Show price section")
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0, help_text="Price to display")
+    price_text = models.CharField(max_length=100, blank=True, help_text="Text below price (e.g., 'Starting from')")
+    
+    # Styling
+    text_color = models.CharField(max_length=20, default='#064C50', help_text="Text color (hex code)")
+    overlay_opacity = models.IntegerField(default=0, help_text="Background overlay opacity (0-100)")
+    
+    class Meta:
+        verbose_name = '🧩 Page Builder - Dynamic Hero Content'
+        verbose_name_plural = '🧩 Page Builder - Dynamic Hero Contents'
+    
+    def __str__(self):
+        return self.title

@@ -4,7 +4,7 @@ from django.db.models import Avg, Count
 from .models import (
     Product, ProductImage, ProductTag, ProductTagAssignment,
     NutritionalFact, ProductFeature, RelatedProduct,
-    ProductReview, StockHistory
+    ProductReview, StockHistory, RecentlyViewed
 )
 
 
@@ -273,3 +273,19 @@ class RelatedProductAdmin(admin.ModelAdmin):
     search_fields = ('product__name', 'related_product__name')
     list_editable = ('order',)
     autocomplete_fields = ['product', 'related_product']
+
+
+
+@admin.register(RecentlyViewed)
+class RecentlyViewedAdmin(admin.ModelAdmin):
+    list_display = ['product', 'user', 'session_key_short', 'viewed_at']
+    list_filter = ['viewed_at']
+    search_fields = ['product__name', 'user__username', 'user__email', 'session_key']
+    readonly_fields = ['viewed_at']
+    date_hierarchy = 'viewed_at'
+    
+    def session_key_short(self, obj):
+        if obj.session_key:
+            return f"{obj.session_key[:8]}..."
+        return "-"
+    session_key_short.short_description = 'Session'

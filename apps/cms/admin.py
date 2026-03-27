@@ -6,7 +6,8 @@ from .models import (
     AboutHero, AboutSection, AboutStatistic, AboutImage,
     ContactSubmission,
     Page, Widget, PageWidget, WidgetHeroBanner, WidgetTextSection,
-    WidgetStatistic, WidgetImage, WidgetFAQItem, WidgetHTMLContent
+    WidgetStatistic, WidgetImage, WidgetFAQItem, WidgetHTMLContent,
+    WidgetProductSection, WidgetDynamicHero
 )
 
 
@@ -653,3 +654,72 @@ class ContactSubmissionAdmin(admin.ModelAdmin):
     
     def has_add_permission(self, request):
         return False
+
+
+
+@admin.register(WidgetProductSection)
+class WidgetProductSectionAdmin(admin.ModelAdmin):
+    list_display = ['widget', 'section_title', 'product_count']
+    search_fields = ['section_title', 'widget__name']
+    filter_horizontal = ['products']
+    autocomplete_fields = ['widget']
+    
+    fieldsets = (
+        ('🛍️ Product Section', {
+            'fields': ('widget', 'section_title'),
+            'description': '💡 Create a product section with manual product selection. Products will display in a 4-column grid.'
+        }),
+        ('📦 Products', {
+            'fields': ('products',),
+            'description': '👉 Select up to 8 products to display in this section'
+        }),
+    )
+    
+    def product_count(self, obj):
+        count = obj.products.count()
+        return format_html('<strong style="color: #4CAF50;">{}</strong> products', count)
+    product_count.short_description = '📦 Products'
+
+
+@admin.register(WidgetDynamicHero)
+class WidgetDynamicHeroAdmin(admin.ModelAdmin):
+    list_display = ['widget', 'title', 'show_discount_badge', 'show_button', 'show_price', 'background_preview']
+    search_fields = ['title', 'widget__name']
+    list_filter = ['show_discount_badge', 'show_button', 'show_price']
+    readonly_fields = ['background_preview']
+    autocomplete_fields = ['widget']
+    
+    fieldsets = (
+        ('🎯 Hero Content', {
+            'fields': ('widget', 'title', 'description', 'background_image', 'background_preview'),
+            'description': '💡 Create a fully customizable hero banner like the homepage hero'
+        }),
+        ('🏷️ Discount Badge (Optional)', {
+            'fields': ('show_discount_badge', 'discount_percentage', 'discount_text'),
+            'classes': ('collapse',),
+            'description': '👉 Show a circular discount badge with percentage'
+        }),
+        ('🔘 Call-to-Action Button', {
+            'fields': ('show_button', 'button_text', 'button_link'),
+            'description': '👉 Add a button to drive user action'
+        }),
+        ('💰 Price Section (Optional)', {
+            'fields': ('show_price', 'price', 'price_text'),
+            'classes': ('collapse',),
+            'description': '👉 Display a price with custom text'
+        }),
+        ('🎨 Styling', {
+            'fields': ('text_color', 'overlay_opacity'),
+            'classes': ('collapse',),
+            'description': '👉 Customize colors and overlay'
+        }),
+    )
+    
+    def background_preview(self, obj):
+        if obj.background_image:
+            return format_html(
+                '<img src="{}" style="max-height: 200px; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />',
+                obj.background_image.url
+            )
+        return "❌ No image"
+    background_preview.short_description = '🖼️ Background Preview'

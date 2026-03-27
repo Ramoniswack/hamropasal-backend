@@ -22,6 +22,13 @@ class ProductDetailView(generics.RetrieveAPIView):
     lookup_field = 'slug'
 
 
+class ProductDetailByIdView(generics.RetrieveAPIView):
+    """Retrieve a single product by ID"""
+    queryset = Product.objects.filter(is_active=True).select_related('category').prefetch_related('images')
+    serializer_class = ProductDetailSerializer
+    lookup_field = 'id'
+
+
 class FeaturedProductListView(generics.ListAPIView):
     """List featured products"""
     queryset = Product.objects.filter(is_active=True, is_featured=True).select_related('category').prefetch_related('images')

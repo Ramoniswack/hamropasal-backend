@@ -297,3 +297,25 @@ class StockHistory(models.Model):
 
     def __str__(self):
         return f"{self.product.name} - {self.change_type} ({self.quantity_change:+d})"
+
+
+class RecentlyViewed(models.Model):
+    """Track recently viewed products for users and guests"""
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True, related_name='recently_viewed')
+    session_key = models.CharField(max_length=40, null=True, blank=True, help_text="For guest users")
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='viewed_by')
+    viewed_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Recently Viewed'
+        verbose_name_plural = 'Recently Viewed'
+        ordering = ['-viewed_at']
+        indexes = [
+            models.Index(fields=['user', '-viewed_at']),
+            models.Index(fields=['session_key', '-viewed_at']),
+        ]
+
+    def __str__(self):
+        if self.user:
+            return f"{self.user.username} viewed {self.product.name}"
+        return f"Guest ({self.session_key[:8]}) viewed {self.product.name}"

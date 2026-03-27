@@ -174,10 +174,79 @@ class WidgetDetailSerializer(serializers.ModelSerializer):
 
 class PageWidgetSerializer(serializers.ModelSerializer):
     widget = WidgetDetailSerializer(read_only=True)
+    config = serializers.SerializerMethodField()
     
     class Meta:
         model = PageWidget
         fields = ['id', 'widget', 'order', 'is_active', 'config']
+    
+    def get_config(self, obj):
+        """Include widget-specific content in config"""
+        config = obj.config or {}
+        widget = obj.widget
+        
+        try:
+            # Dynamic Hero Banner
+            if widget.widget_type == 'dynamic_hero' and hasattr(widget, 'dynamic_hero_content'):
+                content = widget.dynamic_hero_content
+                config.update({
+                    'title': content.title,
+                    'description': content.description,
+                    'background_image': content.background_image.url if content.background_image else None,
+                    'show_discount_badge': content.show_discount_badge,
+                    'discount_percentage': content.discount_percentage,
+                    'discount_text': content.discount_text,
+                    'show_button': content.show_button,
+                    'button_text': content.button_text,
+                    'button_link': content.button_link,
+                    'show_price': content.show_price,
+                    'price': str(content.price),
+                    'price_text': content.price_text,
+                    'text_color': content.text_color,
+                    'overlay_opacity': content.overlay_opacity,
+                })
+            
+            # Product Section
+            elif widget.widget_type == 'product_section' and hasattr(widget, 'product_section_content'):
+                content = widget.product_section_content
+                config.update({
+                    'section_title': content.section_title,
+                    'product_ids': list(content.products.values_list('id', flat=True)),
+                })
+            
+            # Hero Banner (Simple)
+            elif widget.widget_type == 'hero_banner' and hasattr(widget, 'hero_banner_content'):
+                content = widget.hero_banner_content
+                config.update({
+                    'title': content.title,
+                    'subtitle': content.subtitle,
+                    'background_image': content.background_image.url if content.background_image else None,
+                    'overlay_opacity': content.overlay_opacity,
+                    'text_color': content.text_color,
+                })
+            
+            # Text Section
+            elif widget.widget_type == 'text_section' and hasattr(widget, 'text_section_content'):
+                content = widget.text_section_content
+                config.update({
+                    'label': content.label,
+                    'heading': content.heading,
+                    'content': content.content,
+                    'text_align': content.text_align,
+                })
+            
+            # HTML Content
+            elif widget.widget_type == 'html_content' and hasattr(widget, 'html_content'):
+                content = widget.html_content
+                config.update({
+                    'html_content': content.html_content,
+                    'css_classes': content.css_classes,
+                })
+                
+        except Exception as e:
+            print(f"Error loading widget content: {e}")
+        
+        return config
 
 
 class PageSerializer(serializers.ModelSerializer):
