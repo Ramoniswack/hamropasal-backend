@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import (
-    SiteSettings, NavigationMenu, FooterColumn, FooterLink,
+    SiteSettings, NavigationMenu, MegaMenuSettings, MegaMenuCategory, FooterColumn, FooterLink,
     Store, Testimonial, FAQ, Feature, Vendor,
     AboutHero, AboutSection, AboutStatistic, AboutImage,
     ContactSubmission,
@@ -30,6 +30,22 @@ class NavigationMenuSerializer(serializers.ModelSerializer):
     
     def get_final_url(self, obj):
         return obj.get_url()
+
+
+class MegaMenuSettingsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MegaMenuSettings
+        fields = ['description_text', 'sale_badge_text', 'sale_badge_label', 'show_sale_badge']
+
+
+class MegaMenuCategorySerializer(serializers.ModelSerializer):
+    category_name = serializers.CharField(source='category.name', read_only=True)
+    category_slug = serializers.CharField(source='category.slug', read_only=True)
+    category_image = serializers.ImageField(source='category.image', read_only=True)
+    
+    class Meta:
+        model = MegaMenuCategory
+        fields = ['id', 'category_name', 'category_slug', 'category_image', 'order']
 
 
 class FooterLinkSerializer(serializers.ModelSerializer):

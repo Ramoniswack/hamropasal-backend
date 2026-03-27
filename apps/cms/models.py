@@ -78,6 +78,59 @@ class NavigationMenu(models.Model):
         return self.custom_path if self.custom_path else self.url
 
 
+class MegaMenuSettings(models.Model):
+    """Settings for the categories mega menu"""
+    description_text = models.TextField(
+        default="Suspendisse potenti. Nam pharetra lorem eu varius commodo. Etiam a ornare ligula.",
+        help_text="Text displayed at the bottom of the categories mega menu"
+    )
+    sale_badge_text = models.CharField(max_length=50, default="SALE", help_text="Text for the sale badge")
+    sale_badge_label = models.CharField(max_length=100, default="Best Seller", help_text="Label before the sale badge")
+    show_sale_badge = models.BooleanField(default=True, help_text="Show/hide the sale badge in header")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = '🔗 Header - Mega Menu Settings'
+        verbose_name_plural = '🔗 Header - Mega Menu Settings'
+
+    def __str__(self):
+        return "Mega Menu Settings"
+
+    def save(self, *args, **kwargs):
+        # Ensure only one instance exists
+        if not self.pk and MegaMenuSettings.objects.exists():
+            raise ValueError('There can only be one MegaMenuSettings instance')
+        return super().save(*args, **kwargs)
+
+
+class MegaMenuCategory(models.Model):
+    """Categories to display in the mega menu (max 9)"""
+    category = models.ForeignKey('categories.Category', on_delete=models.CASCADE, related_name='megamenu_items')
+    order = models.IntegerField(default=0, help_text="Display order (1-9)")
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['order']
+        verbose_name = '🔗 Header - Mega Menu Category'
+        verbose_name_plural = '🔗 Header - Mega Menu Categories'
+
+    def __str__(self):
+        return f"{self.order}. {self.category.name}"
+
+    def clean(self):
+        from django.core.exceptions import ValidationError
+        # Check if we already have 9 active categories (excluding self)
+        active_count = MegaMenuCategory.objects.filter(is_active=True).exclude(pk=self.pk).count()
+        if self.is_active and active_count >= 9:
+            raise ValidationError('You can only have a maximum of 9 active categories in the mega menu.')
+        
+        # Ensure order is between 1 and 9
+        if self.order < 1 or self.order > 9:
+            raise ValidationError('Order must be between 1 and 9.')
+
+
 class FooterColumn(models.Model):
     """Footer columns with links"""
     title = models.CharField(max_length=200)

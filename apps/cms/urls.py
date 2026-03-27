@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import (
-    SiteSettingsViewSet, NavigationMenuViewSet, FooterColumnViewSet,
+    SiteSettingsViewSet, NavigationMenuViewSet, MegaMenuSettingsViewSet, MegaMenuCategoryViewSet, FooterColumnViewSet,
     StoreViewSet, TestimonialViewSet, FAQViewSet, FeatureViewSet,
     VendorViewSet, AboutHeroViewSet, AboutSectionViewSet,
     AboutImageViewSet, ContactSubmissionViewSet,
@@ -11,6 +11,8 @@ from .views import (
 router = DefaultRouter()
 router.register(r'site-settings', SiteSettingsViewSet, basename='site-settings')
 router.register(r'navigation', NavigationMenuViewSet, basename='navigation')
+router.register(r'megamenu-settings', MegaMenuSettingsViewSet, basename='megamenu-settings')
+router.register(r'megamenu-categories', MegaMenuCategoryViewSet, basename='megamenu-categories')
 router.register(r'footer', FooterColumnViewSet, basename='footer')
 router.register(r'stores', StoreViewSet, basename='stores')
 router.register(r'testimonials', TestimonialViewSet, basename='testimonials')

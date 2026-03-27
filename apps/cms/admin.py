@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
 from .models import (
-    SiteSettings, NavigationMenu, FooterColumn, FooterLink,
+    SiteSettings, NavigationMenu, MegaMenuSettings, MegaMenuCategory, FooterColumn, FooterLink,
     Store, Testimonial, FAQ, Feature, Vendor,
     AboutHero, AboutSection, AboutStatistic, AboutImage,
     ContactSubmission,
@@ -104,6 +104,76 @@ class NavigationMenuAdmin(admin.ModelAdmin):
             'fields': ('order', 'is_active', 'created_at')
         }),
     )
+    
+    def status_display(self, obj):
+        if obj.is_active:
+            return format_html('<span style="color: green;">✅ Active</span>')
+        return format_html('<span style="color: red;">❌ Inactive</span>')
+    status_display.short_description = 'Status'
+
+
+@admin.register(MegaMenuSettings)
+class MegaMenuSettingsAdmin(admin.ModelAdmin):
+    list_display = ('description_preview', 'sale_badge_text', 'sale_badge_label', 'show_sale_badge', 'updated_at')
+    readonly_fields = ('created_at', 'updated_at')
+    
+    fieldsets = (
+        ('📝 Mega Menu Description', {
+            'fields': ('description_text',),
+            'description': '💡 Text displayed at the bottom of the categories mega menu'
+        }),
+        ('🏷️ Sale Badge Settings', {
+            'fields': ('sale_badge_label', 'sale_badge_text', 'show_sale_badge'),
+            'description': '💡 Configure the "Best Seller / SALE" badge in the header'
+        }),
+        ('🕐 Timestamps', {
+            'fields': ('created_at', 'updated_at'),
+            'classes': ('collapse',)
+        }),
+    )
+
+    def has_add_permission(self, request):
+        return not MegaMenuSettings.objects.exists()
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+    
+    def description_preview(self, obj):
+        return obj.description_text[:50] + '...' if len(obj.description_text) > 50 else obj.description_text
+    description_preview.short_description = 'Description'
+
+
+@admin.register(MegaMenuCategory)
+class MegaMenuCategoryAdmin(admin.ModelAdmin):
+    list_display = ('order', 'category_name', 'category_image_preview', 'is_active', 'status_display', 'created_at')
+    list_display_links = ('category_name',)  # Make category_name the clickable link
+    list_filter = ('is_active', 'created_at')
+    search_fields = ('category__name',)
+    list_editable = ('order', 'is_active')
+    readonly_fields = ('created_at', 'category_image_preview')
+    list_per_page = 9
+    
+    fieldsets = (
+        ('🏷️ Category Selection', {
+            'fields': ('category', 'category_image_preview'),
+            'description': '💡 Select a category to display in the mega menu (max 9 categories)'
+        }),
+        ('⚙️ Settings', {
+            'fields': ('order', 'is_active', 'created_at'),
+            'description': '💡 Order determines the position (1-9) in the mega menu'
+        }),
+    )
+    
+    def category_name(self, obj):
+        return obj.category.name
+    category_name.short_description = 'Category'
+    category_name.admin_order_field = 'category__name'
+    
+    def category_image_preview(self, obj):
+        if obj.category.image:
+            return format_html('<img src="{}" style="max-height: 60px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" />', obj.category.image.url)
+        return "❌ No image"
+    category_image_preview.short_description = '🖼️ Category Image'
     
     def status_display(self, obj):
         if obj.is_active:

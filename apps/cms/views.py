@@ -4,13 +4,13 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from .models import (
-    SiteSettings, NavigationMenu, FooterColumn, Store,
+    SiteSettings, NavigationMenu, MegaMenuSettings, MegaMenuCategory, FooterColumn, Store,
     Testimonial, FAQ, Feature, Vendor,
     AboutHero, AboutSection, AboutImage, ContactSubmission,
     Page, Widget
 )
 from .serializers import (
-    SiteSettingsSerializer, NavigationMenuSerializer, FooterColumnSerializer,
+    SiteSettingsSerializer, NavigationMenuSerializer, MegaMenuSettingsSerializer, MegaMenuCategorySerializer, FooterColumnSerializer,
     StoreSerializer, TestimonialSerializer, FAQSerializer, FeatureSerializer,
     VendorSerializer, AboutHeroSerializer, AboutSectionSerializer,
     AboutImageSerializer, ContactSubmissionSerializer
@@ -37,6 +37,29 @@ class NavigationMenuViewSet(viewsets.ReadOnlyModelViewSet):
     """API endpoint for navigation menu"""
     queryset = NavigationMenu.objects.filter(is_active=True, parent=None).order_by('order')
     serializer_class = NavigationMenuSerializer
+    permission_classes = [AllowAny]
+
+
+class MegaMenuSettingsViewSet(viewsets.ReadOnlyModelViewSet):
+    """API endpoint for mega menu settings"""
+    queryset = MegaMenuSettings.objects.all()
+    serializer_class = MegaMenuSettingsSerializer
+    permission_classes = [AllowAny]
+    
+    @action(detail=False, methods=['get'])
+    def current(self, request):
+        """Get current mega menu settings"""
+        settings = MegaMenuSettings.objects.first()
+        if settings:
+            serializer = self.get_serializer(settings)
+            return Response(serializer.data)
+        return Response({'error': 'Mega menu settings not found'}, status=status.HTTP_404_NOT_FOUND)
+
+
+class MegaMenuCategoryViewSet(viewsets.ReadOnlyModelViewSet):
+    """API endpoint for mega menu categories"""
+    queryset = MegaMenuCategory.objects.filter(is_active=True).order_by('order')[:9]
+    serializer_class = MegaMenuCategorySerializer
     permission_classes = [AllowAny]
 
 
