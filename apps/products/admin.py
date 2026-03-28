@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 from django.db.models import Avg, Count
 from .models import (
     Product, ProductImage, ProductTag, ProductTagAssignment,
@@ -139,7 +140,7 @@ class ProductAdmin(admin.ModelAdmin):
         avg = obj.average_rating
         count = obj.review_count
         if count > 0:
-            return format_html('<span title="{} reviews">⭐ {}</span>', count, avg)
+            return mark_safe(f'<i class="fas fa-star" style="color: #f39c12;"></i> {avg} ({count} reviews)')
         return '-'
     rating_display.short_description = 'Rating'
     
@@ -214,8 +215,9 @@ class ProductReviewAdmin(admin.ModelAdmin):
     )
     
     def rating_display(self, obj):
-        stars = '⭐' * obj.rating
-        return format_html('<span title="{}/5">{}</span>', obj.rating, stars)
+        stars_html = ''.join(['<i class="fas fa-star" style="color: #f39c12;"></i>' for _ in range(obj.rating)])
+        empty_stars = ''.join(['<i class="far fa-star" style="color: #ddd;"></i>' for _ in range(5 - obj.rating)])
+        return mark_safe(f'<span title="{obj.rating}/5">{stars_html}{empty_stars}</span>')
     rating_display.short_description = 'Rating'
     rating_display.admin_order_field = 'rating'
     

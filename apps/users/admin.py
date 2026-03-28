@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 from .models import User
 
 
@@ -31,7 +32,7 @@ class UserAdmin(BaseUserAdmin):
             return (
                 ('Customer Account (Read-Only)', {
                     'fields': ('username',),
-                    'description': '🔒 Customer information is read-only. Customers manage their own data and passwords.'
+                    'description': 'Customer information is read-only. Customers manage their own data and passwords.'
                 }),
                 ('Personal Information (Read-Only)', {
                     'fields': ('first_name', 'last_name', 'email', 'phone', 'address'),

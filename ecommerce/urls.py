@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from apps.core.views import analytics_dashboard, analytics_api
 
 # Swagger/OpenAPI schema
 schema_view = get_schema_view(
@@ -37,6 +38,10 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+    # Admin Analytics Dashboard
+    path('admin/analyticsDashboard/', analytics_dashboard, name='admin-analytics-dashboard'),
+    path('admin/analytics-api/', analytics_api, name='admin-analytics-api'),
+    
     path('admin/', admin.site.urls),
     
     # CKEditor

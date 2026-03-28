@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 from django.utils import timezone
 from .models import BlogCategory, BlogTag, BlogPost, BlogComment
 
@@ -83,8 +84,8 @@ class BlogPostAdmin(admin.ModelAdmin):
     
     def status_display(self, obj):
         if obj.is_published:
-            return format_html('<span style="color: green; font-weight: bold;">✓ Published</span>')
-        return format_html('<span style="color: orange;">○ Draft</span>')
+            return mark_safe('<span style="color: green; font-weight: bold;"><i class="fas fa-check-circle"></i> Published</span>')
+        return mark_safe('<span style="color: orange;"><i class="far fa-circle"></i> Draft</span>')
     status_display.short_description = 'Status'
     status_display.admin_order_field = 'is_published'
     

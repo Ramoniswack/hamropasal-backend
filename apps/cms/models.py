@@ -385,7 +385,7 @@ class Widget(models.Model):
     """Reusable content widgets that can be added to pages"""
     WIDGET_TYPE_CHOICES = [
         # Hero/Banner Widgets
-        ('dynamic_hero', '🎯 Dynamic Hero Banner (Full Control)'),
+        ('dynamic_hero', 'Dynamic Hero Banner (Full Control)'),
         ('hero_banner', 'Hero Banner (Simple)'),
         ('image_banner', 'Image Banner'),
         
@@ -410,7 +410,7 @@ class Widget(models.Model):
         ('store_locations', 'Store Locations'),
         
         # Product Widgets
-        ('product_section', '🛍️ Product Section (Manual Selection)'),
+        ('product_section', 'Product Section (Manual Selection)'),
         ('featured_products', 'Featured Products (Auto)'),
         ('product_categories', 'Product Categories'),
         ('product_slider', 'Product Slider'),

@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 from .models import (
     SiteSettings, NavigationMenu, MegaMenuSettings, MegaMenuCategory, FooterColumn, FooterLink,
     Store, Testimonial, FAQ, Feature, Vendor,
@@ -21,41 +22,41 @@ class SiteSettingsAdmin(admin.ModelAdmin):
     readonly_fields = ('logo_preview', 'footer_logo_preview', 'created_at', 'updated_at')
     
     fieldsets = (
-        ('🏢 Basic Information', {
+        ('Basic Information', {
             'fields': ('site_name',),
-            'description': '⚙️ Main site configuration'
+            'description': 'Main site configuration'
         }),
-        ('🖼️ Logos', {
+        ('Logos', {
             'fields': ('site_logo', 'logo_preview', 'site_logo_footer', 'footer_logo_preview'),
             'description': 'Upload logos for header and footer'
         }),
-        ('📢 Top Banner (Header)', {
+        ('Top Banner (Header)', {
             'fields': ('top_banner_text', 'top_banner_bg_color', 'show_top_banner'),
             'description': 'Configure the promotional banner at the top of the site'
         }),
-        ('📞 Contact Information', {
+        ('Contact Information', {
             'fields': ('phone_number', 'phone_description', 'email', 'address'),
             'description': 'Contact details displayed in header and footer'
         }),
-        ('📱 App Download Links', {
+        ('App Download Links', {
             'fields': ('app_download_title', 'app_download_subtitle', 'app_store_link', 'google_play_link'),
             'classes': ('collapse',),
             'description': 'Mobile app download section'
         }),
-        ('📧 Newsletter Section (Footer)', {
+        ('Newsletter Section (Footer)', {
             'fields': ('newsletter_title', 'newsletter_description'),
             'description': 'Newsletter signup section in footer'
         }),
-        ('©️ Copyright (Footer)', {
+        ('Copyright (Footer)', {
             'fields': ('copyright_text',),
             'description': 'Copyright text displayed at bottom of footer'
         }),
-        ('🌐 Social Media Links', {
+        ('Social Media Links', {
             'fields': ('facebook_url', 'twitter_url', 'instagram_url'),
             'classes': ('collapse',),
             'description': 'Social media profile links'
         }),
-        ('🕐 Timestamps', {
+        ('Timestamps', {
             'fields': ('created_at', 'updated_at'),
             'classes': ('collapse',)
         }),
@@ -70,19 +71,19 @@ class SiteSettingsAdmin(admin.ModelAdmin):
     def logo_preview(self, obj):
         if obj.site_logo:
             return format_html('<img src="{}" style="max-height: 60px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" />', obj.site_logo.url)
-        return "❌ No logo"
-    logo_preview.short_description = '🖼️ Header Logo Preview'
+        return mark_safe('<i class="fas fa-times-circle" style="color: red;"></i> No logo')
+    logo_preview.short_description = mark_safe('<i class="fas fa-image"></i> Header Logo Preview')
     
     def footer_logo_preview(self, obj):
         if obj.site_logo_footer:
             return format_html('<img src="{}" style="max-height: 60px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" />', obj.site_logo_footer.url)
-        return "❌ No logo"
-    footer_logo_preview.short_description = '🖼️ Footer Logo Preview'
+        return mark_safe('<i class="fas fa-times-circle" style="color: red;"></i> No logo')
+    footer_logo_preview.short_description = mark_safe('<i class="fas fa-image"></i> Footer Logo Preview')
     
     def show_top_banner_status(self, obj):
         if obj.show_top_banner:
-            return format_html('<span style="color: green;">✅ Visible</span>')
-        return format_html('<span style="color: red;">❌ Hidden</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Visible</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Hidden</span>')
     show_top_banner_status.short_description = 'Top Banner'
 
 
@@ -96,19 +97,19 @@ class NavigationMenuAdmin(admin.ModelAdmin):
     list_per_page = 25
     
     fieldsets = (
-        ('🔗 Menu Item Details', {
+        ('Menu Item Details', {
             'fields': ('title', 'url', 'custom_path', 'open_in_new_tab', 'parent'),
-            'description': '💡 Configure navigation menu item. Use URL like "/about", "/shop", "/contact" or page URLs from Page Builder'
+            'description': 'Configure navigation menu item. Use URL like "/about", "/shop", "/contact" or page URLs from Page Builder'
         }),
-        ('⚙️ Settings', {
+        ('Settings', {
             'fields': ('order', 'is_active', 'created_at')
         }),
     )
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -118,15 +119,15 @@ class MegaMenuSettingsAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', 'updated_at')
     
     fieldsets = (
-        ('📝 Mega Menu Description', {
+        ('Mega Menu Description', {
             'fields': ('description_text',),
-            'description': '💡 Text displayed at the bottom of the categories mega menu'
+            'description': 'Text displayed at the bottom of the categories mega menu'
         }),
-        ('🏷️ Sale Badge Settings', {
+        ('Sale Badge Settings', {
             'fields': ('sale_badge_label', 'sale_badge_text', 'show_sale_badge'),
-            'description': '💡 Configure the "Best Seller / SALE" badge in the header'
+            'description': 'Configure the "Best Seller / SALE" badge in the header'
         }),
-        ('🕐 Timestamps', {
+        ('Timestamps', {
             'fields': ('created_at', 'updated_at'),
             'classes': ('collapse',)
         }),
@@ -154,13 +155,13 @@ class MegaMenuCategoryAdmin(admin.ModelAdmin):
     list_per_page = 9
     
     fieldsets = (
-        ('🏷️ Category Selection', {
+        ('Category Selection', {
             'fields': ('category', 'category_image_preview'),
-            'description': '💡 Select a category to display in the mega menu (max 9 categories)'
+            'description': 'Select a category to display in the mega menu (max 9 categories)'
         }),
-        ('⚙️ Settings', {
+        ('Settings', {
             'fields': ('order', 'is_active', 'created_at'),
-            'description': '💡 Order determines the position (1-9) in the mega menu'
+            'description': 'Order determines the position (1-9) in the mega menu'
         }),
     )
     
@@ -172,13 +173,13 @@ class MegaMenuCategoryAdmin(admin.ModelAdmin):
     def category_image_preview(self, obj):
         if obj.category.image:
             return format_html('<img src="{}" style="max-height: 60px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" />', obj.category.image.url)
-        return "❌ No image"
-    category_image_preview.short_description = '🖼️ Category Image'
+        return mark_safe('<i class="fas fa-times-circle" style="color: red;"></i> No image')
+    category_image_preview.short_description = mark_safe('<i class="fas fa-image"></i> Category Image')
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -199,24 +200,24 @@ class FooterColumnAdmin(admin.ModelAdmin):
     list_per_page = 25
     
     fieldsets = (
-        ('📑 Column Information', {
+        ('Column Information', {
             'fields': ('title',),
-            'description': '💡 Footer column that will contain multiple links'
+            'description': 'Footer column that will contain multiple links'
         }),
-        ('⚙️ Settings', {
+        ('Settings', {
             'fields': ('order', 'is_active', 'link_count', 'created_at')
         }),
     )
     
     def link_count(self, obj):
         count = obj.links.count()
-        return format_html('<strong style="color: #2196F3;">{}</strong> links', count)
-    link_count.short_description = '🔗 Links'
+        return format_html('<i class="fas fa-link"></i> <strong style="color: #2196F3;">{}</strong> links', count)
+    link_count.short_description = mark_safe('<i class="fas fa-link"></i> Links')
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -230,8 +231,8 @@ class FooterLinkAdmin(admin.ModelAdmin):
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -257,41 +258,41 @@ class PageAdmin(admin.ModelAdmin):
     inlines = [PageWidgetInline]
     
     fieldsets = (
-        ('📄 Page Information', {
+        ('Page Information', {
             'fields': ('title', 'slug', 'meta_description'),
-            'description': '💡 Create custom pages using widgets. After creating, add this page to Navigation Menu or Footer Links.'
+            'description': 'Create custom pages using widgets. After creating, add this page to Navigation Menu or Footer Links.'
         }),
-        ('🔗 Page URL', {
+        ('Page URL', {
             'fields': ('page_url_display',),
-            'description': '👉 Copy this URL and add it to Navigation Menu or Footer Links'
+            'description': 'Copy this URL and add it to Navigation Menu or Footer Links'
         }),
-        ('⚙️ Status', {
+        ('Status', {
             'fields': ('is_active', 'widget_count', 'created_at', 'updated_at')
         }),
     )
     
     def widget_count(self, obj):
         count = obj.page_widgets.filter(is_active=True).count()
-        return format_html('<strong style="color: #4CAF50;">{}</strong> widgets', count)
-    widget_count.short_description = '🧩 Active Widgets'
+        return format_html('<i class="fas fa-puzzle-piece"></i> <strong style="color: #4CAF50;">{}</strong> widgets', count)
+    widget_count.short_description = mark_safe('<i class="fas fa-puzzle-piece"></i> Active Widgets')
     
     def page_url_display(self, obj):
         if obj.slug:
             url = f'/page/{obj.slug}/'
             return format_html(
                 '<div style="background: #e3f2fd; padding: 10px; border-radius: 4px; border-left: 4px solid #2196F3;">'
-                '<strong style="color: #1976d2;">🔗 {}</strong><br>'
+                '<strong style="color: #1976d2;"><i class="fas fa-link"></i> {}</strong><br>'
                 '<small style="color: #666;">Add this URL to Navigation Menu or Footer Links</small>'
                 '</div>',
                 url
             )
         return "Save page first to get URL"
-    page_url_display.short_description = '🔗 Page URL'
+    page_url_display.short_description = mark_safe('<i class="fas fa-link"></i> Page URL')
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -322,11 +323,11 @@ class WidgetAdmin(admin.ModelAdmin):
     readonly_fields = ['created_at', 'updated_at', 'usage_count']
     
     fieldsets = (
-        ('🧩 Widget Information', {
+        ('Widget Information', {
             'fields': ('name', 'widget_type'),
-            'description': '💡 Widgets are reusable content blocks that can be added to pages'
+            'description': 'Widgets are reusable content blocks that can be added to pages'
         }),
-        ('⚙️ Status', {
+        ('Status', {
             'fields': ('is_active', 'usage_count', 'created_at', 'updated_at')
         }),
     )
@@ -344,39 +345,41 @@ class WidgetAdmin(admin.ModelAdmin):
     
     def usage_count(self, obj):
         count = obj.widget_pages.count()
-        return format_html('<strong style="color: #FF9800;">{}</strong> pages', count)
-    usage_count.short_description = '📄 Used in'
+        return format_html('<i class="fas fa-file-alt"></i> <strong style="color: #FF9800;">{}</strong> pages', count)
+    usage_count.short_description = mark_safe('<i class="fas fa-file-alt"></i> Used in')
     
     def widget_type_display(self, obj):
         icons = {
-            'hero_banner': '🎯',
-            'image_banner': '🖼️',
-            'text_section': '📝',
-            'text_with_label': '🏷️',
-            'text_with_stats': '📊',
-            'single_image': '🖼️',
-            'two_column_images': '🖼️🖼️',
-            'image_gallery': '🎨',
-            'features_grid': '✨',
-            'testimonials_slider': '💬',
-            'vendors_showcase': '🏪',
-            'faq_accordion': '❓',
-            'contact_form': '📧',
-            'store_locations': '📍',
-            'featured_products': '⭐',
-            'product_categories': '📦',
-            'product_slider': '🎠',
-            'html_content': '💻',
-            'spacer': '➖',
+            'dynamic_hero': '<i class="fas fa-bullseye"></i>',
+            'hero_banner': '<i class="fas fa-bullseye"></i>',
+            'image_banner': '<i class="fas fa-image"></i>',
+            'text_section': '<i class="fas fa-align-left"></i>',
+            'text_with_label': '<i class="fas fa-tag"></i>',
+            'text_with_stats': '<i class="fas fa-chart-bar"></i>',
+            'single_image': '<i class="fas fa-image"></i>',
+            'two_column_images': '<i class="fas fa-images"></i>',
+            'image_gallery': '<i class="fas fa-th"></i>',
+            'features_grid': '<i class="fas fa-th-large"></i>',
+            'testimonials_slider': '<i class="fas fa-comments"></i>',
+            'vendors_showcase': '<i class="fas fa-store"></i>',
+            'faq_accordion': '<i class="fas fa-question-circle"></i>',
+            'contact_form': '<i class="fas fa-envelope"></i>',
+            'store_locations': '<i class="fas fa-map-marker-alt"></i>',
+            'product_section': '<i class="fas fa-shopping-bag"></i>',
+            'featured_products': '<i class="fas fa-star"></i>',
+            'product_categories': '<i class="fas fa-boxes"></i>',
+            'product_slider': '<i class="fas fa-sliders-h"></i>',
+            'html_content': '<i class="fas fa-code"></i>',
+            'spacer': '<i class="fas fa-minus"></i>',
         }
-        icon = icons.get(obj.widget_type, '🧩')
-        return format_html('{} {}', icon, obj.get_widget_type_display())
+        icon = icons.get(obj.widget_type, '<i class="fas fa-puzzle-piece"></i>')
+        return mark_safe(f'{icon} {obj.get_widget_type_display()}')
     widget_type_display.short_description = 'Widget Type'
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -390,8 +393,8 @@ class WidgetHeroBannerAdmin(admin.ModelAdmin):
     def background_preview(self, obj):
         if obj.background_image:
             return format_html('<img src="{}" style="max-height: 100px; border-radius: 4px;" />', obj.background_image.url)
-        return "❌ No image"
-    background_preview.short_description = '🖼️ Preview'
+        return mark_safe('<i class="fas fa-times-circle" style="color: red;"></i> No image')
+    background_preview.short_description = mark_safe('<i class="fas fa-image"></i> Preview')
 
 
 @admin.register(WidgetTextSection)
@@ -423,8 +426,8 @@ class PageWidgetAdmin(admin.ModelAdmin):
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -443,21 +446,21 @@ class StoreAdmin(admin.ModelAdmin):
     list_per_page = 25
     
     fieldsets = (
-        ('📍 Location', {
+        ('Location', {
             'fields': ('country', 'city', 'address')
         }),
-        ('📞 Contact', {
+        ('Contact', {
             'fields': ('phone', 'email')
         }),
-        ('⚙️ Settings', {
+        ('Settings', {
             'fields': ('order', 'is_active', 'created_at')
         }),
     )
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -471,27 +474,27 @@ class TestimonialAdmin(admin.ModelAdmin):
     list_per_page = 25
     
     fieldsets = (
-        ('👤 Author Information', {
+        ('Author Information', {
             'fields': ('author_name', 'author_role')
         }),
-        ('💬 Testimonial', {
+        ('Testimonial', {
             'fields': ('text', 'rating')
         }),
-        ('⚙️ Settings', {
+        ('Settings', {
             'fields': ('order', 'is_active', 'created_at')
         }),
     )
     
     def rating_display(self, obj):
-        stars = '⭐' * obj.rating
-        return format_html('<span style="color: gold;">{}</span>', stars)
+        stars = '<i class="fas fa-star" style="color: gold;"></i>' * obj.rating
+        return format_html('<span>{}</span>', stars)
     rating_display.short_description = 'Rating'
     rating_display.admin_order_field = 'rating'
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -505,10 +508,10 @@ class FAQAdmin(admin.ModelAdmin):
     list_per_page = 25
     
     fieldsets = (
-        ('❓ FAQ Content', {
+        ('FAQ Content', {
             'fields': ('question', 'answer')
         }),
-        ('⚙️ Settings', {
+        ('Settings', {
             'fields': ('order', 'is_active', 'created_at')
         }),
     )
@@ -519,8 +522,8 @@ class FAQAdmin(admin.ModelAdmin):
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -534,18 +537,18 @@ class FeatureAdmin(admin.ModelAdmin):
     list_per_page = 25
     
     fieldsets = (
-        ('✨ Feature Information', {
+        ('Feature Information', {
             'fields': ('title', 'description', 'icon_name')
         }),
-        ('⚙️ Settings', {
+        ('Settings', {
             'fields': ('order', 'is_active', 'created_at')
         }),
     )
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -559,16 +562,16 @@ class VendorAdmin(admin.ModelAdmin):
     list_per_page = 25
     
     fieldsets = (
-        ('🏪 Vendor Information', {
+        ('Vendor Information', {
             'fields': ('name', 'description')
         }),
-        ('🖼️ Logo', {
+        ('Logo', {
             'fields': ('logo', 'logo_preview')
         }),
-        ('⭐ Reviews', {
+        ('Reviews', {
             'fields': ('rating', 'review_count', 'review_text')
         }),
-        ('⚙️ Settings', {
+        ('Settings', {
             'fields': ('is_active', 'created_at')
         }),
     )
@@ -576,19 +579,19 @@ class VendorAdmin(admin.ModelAdmin):
     def logo_preview(self, obj):
         if obj.logo:
             return format_html('<img src="{}" style="max-height: 80px; max-width: 80px; border-radius: 4px;" />', obj.logo.url)
-        return "❌ No logo"
-    logo_preview.short_description = '🖼️ Logo Preview'
+        return mark_safe('<i class="fas fa-times-circle" style="color: red;"></i> No logo')
+    logo_preview.short_description = mark_safe('<i class="fas fa-image"></i> Logo Preview')
     
     def rating_display(self, obj):
-        stars = '⭐' * int(obj.rating)
-        return format_html('<span style="color: gold;">{}</span> {}', stars, obj.rating)
+        stars = '<i class="fas fa-star" style="color: gold;"></i>' * int(obj.rating)
+        return mark_safe(f'<span>{stars} {obj.rating}</span>')
     rating_display.short_description = 'Rating'
     rating_display.admin_order_field = 'rating'
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -602,10 +605,10 @@ class AboutHeroAdmin(admin.ModelAdmin):
     list_editable = ['is_active']
     readonly_fields = ['background_preview', 'created_at']
     fieldsets = (
-        ('🎯 Content', {
+        ('Content', {
             'fields': ('title', 'subtitle', 'background_image', 'background_preview')
         }),
-        ('⚙️ Status', {
+        ('Status', {
             'fields': ('is_active', 'created_at')
         }),
     )
@@ -613,8 +616,8 @@ class AboutHeroAdmin(admin.ModelAdmin):
     def background_preview(self, obj):
         if obj.background_image:
             return format_html('<img src="{}" style="max-height: 200px; border-radius: 4px;" />', obj.background_image.url)
-        return "❌ No image"
-    background_preview.short_description = '🖼️ Background Preview'
+        return mark_safe('<i class="fas fa-times-circle" style="color: red;"></i> No image')
+    background_preview.short_description = mark_safe('<i class="fas fa-image"></i> Background Preview')
     
     def has_add_permission(self, request):
         return not AboutHero.objects.exists()
@@ -624,8 +627,8 @@ class AboutHeroAdmin(admin.ModelAdmin):
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -644,13 +647,13 @@ class AboutSectionAdmin(admin.ModelAdmin):
     readonly_fields = ['created_at']
     inlines = [AboutStatisticInline]
     fieldsets = (
-        ('📄 Section Type', {
+        ('Section Type', {
             'fields': ('section_type',)
         }),
-        ('📝 Content', {
+        ('Content', {
             'fields': ('label', 'heading', 'content')
         }),
-        ('⚙️ Display', {
+        ('Display', {
             'fields': ('order', 'is_active', 'created_at')
         }),
     )
@@ -661,8 +664,8 @@ class AboutSectionAdmin(admin.ModelAdmin):
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -677,13 +680,13 @@ class AboutImageAdmin(admin.ModelAdmin):
     def image_preview(self, obj):
         if obj.image:
             return format_html('<img src="{}" style="max-height: 100px; border-radius: 4px;" />', obj.image.url)
-        return "❌ No image"
-    image_preview.short_description = '🖼️ Preview'
+        return mark_safe('<i class="fas fa-times-circle" style="color: red;"></i> No image')
+    image_preview.short_description = mark_safe('<i class="fas fa-image"></i> Preview')
     
     def status_display(self, obj):
         if obj.is_active:
-            return format_html('<span style="color: green;">✅ Active</span>')
-        return format_html('<span style="color: red;">❌ Inactive</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Active</span>')
+        return mark_safe('<span style="color: red;"><i class="fas fa-times-circle"></i> Inactive</span>')
     status_display.short_description = 'Status'
 
 
@@ -701,13 +704,13 @@ class ContactSubmissionAdmin(admin.ModelAdmin):
     list_per_page = 50
     
     fieldsets = (
-        ('👤 Contact Information', {
+        ('Contact Information', {
             'fields': ('name', 'email')
         }),
-        ('📧 Message', {
+        ('Message', {
             'fields': ('subject', 'message')
         }),
-        ('⚙️ Status', {
+        ('Status', {
             'fields': ('is_read', 'created_at')
         }),
     )
@@ -718,8 +721,8 @@ class ContactSubmissionAdmin(admin.ModelAdmin):
     
     def read_status(self, obj):
         if obj.is_read:
-            return format_html('<span style="color: green;">✅ Read</span>')
-        return format_html('<span style="color: orange;">📬 New</span>')
+            return mark_safe('<span style="color: green;"><i class="fas fa-check-circle"></i> Read</span>')
+        return mark_safe('<span style="color: orange;"><i class="fas fa-envelope"></i> New</span>')
     read_status.short_description = 'Status'
     
     def has_add_permission(self, request):
@@ -735,20 +738,20 @@ class WidgetProductSectionAdmin(admin.ModelAdmin):
     autocomplete_fields = ['widget']
     
     fieldsets = (
-        ('🛍️ Product Section', {
+        ('Product Section', {
             'fields': ('widget', 'section_title'),
-            'description': '💡 Create a product section with manual product selection. Products will display in a 4-column grid.'
+            'description': 'Create a product section with manual product selection. Products will display in a 4-column grid.'
         }),
-        ('📦 Products', {
+        ('Products', {
             'fields': ('products',),
-            'description': '👉 Select up to 8 products to display in this section'
+            'description': 'Select up to 8 products to display in this section'
         }),
     )
     
     def product_count(self, obj):
         count = obj.products.count()
-        return format_html('<strong style="color: #4CAF50;">{}</strong> products', count)
-    product_count.short_description = '📦 Products'
+        return format_html('<i class="fas fa-box"></i> <strong style="color: #4CAF50;">{}</strong> products', count)
+    product_count.short_description = mark_safe('<i class="fas fa-boxes"></i> Products')
 
 
 @admin.register(WidgetDynamicHero)
@@ -760,28 +763,28 @@ class WidgetDynamicHeroAdmin(admin.ModelAdmin):
     autocomplete_fields = ['widget']
     
     fieldsets = (
-        ('🎯 Hero Content', {
+        ('Hero Content', {
             'fields': ('widget', 'title', 'description', 'background_image', 'background_preview'),
-            'description': '💡 Create a fully customizable hero banner like the homepage hero'
+            'description': 'Create a fully customizable hero banner like the homepage hero'
         }),
-        ('🏷️ Discount Badge (Optional)', {
+        ('Discount Badge (Optional)', {
             'fields': ('show_discount_badge', 'discount_percentage', 'discount_text'),
             'classes': ('collapse',),
-            'description': '👉 Show a circular discount badge with percentage'
+            'description': 'Show a circular discount badge with percentage'
         }),
-        ('🔘 Call-to-Action Button', {
+        ('Call-to-Action Button', {
             'fields': ('show_button', 'button_text', 'button_link'),
-            'description': '👉 Add a button to drive user action'
+            'description': 'Add a button to drive user action'
         }),
-        ('💰 Price Section (Optional)', {
+        ('Price Section (Optional)', {
             'fields': ('show_price', 'price', 'price_text'),
             'classes': ('collapse',),
-            'description': '👉 Display a price with custom text'
+            'description': 'Display a price with custom text'
         }),
-        ('🎨 Styling', {
+        ('Styling', {
             'fields': ('text_color', 'overlay_opacity'),
             'classes': ('collapse',),
-            'description': '👉 Customize colors and overlay'
+            'description': 'Customize colors and overlay'
         }),
     )
     
@@ -791,5 +794,5 @@ class WidgetDynamicHeroAdmin(admin.ModelAdmin):
                 '<img src="{}" style="max-height: 200px; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />',
                 obj.background_image.url
             )
-        return "❌ No image"
-    background_preview.short_description = '🖼️ Background Preview'
+        return mark_safe('<i class="fas fa-times-circle" style="color: red;"></i> No image')
+    background_preview.short_description = mark_safe('<i class="fas fa-image"></i> Background Preview')

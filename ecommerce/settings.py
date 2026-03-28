@@ -174,6 +174,7 @@ JAZZMIN_SETTINGS = {
     # Top Menu
     "topmenu_links": [
         {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Analytics Dashboard", "url": "/admin/analyticsDashboard/", "icon": "fas fa-chart-line", "permissions": ["auth.view_user"]},
         {"name": "View Site", "url": "/", "new_window": True},
         {"model": "auth.User"},
     ],
