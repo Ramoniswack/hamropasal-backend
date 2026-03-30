@@ -1,0 +1,6826 @@
+[
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 1,
+  "fields": {
+    "user": 9,
+    "jti": "d58d188cb3f64bfa86912111ef602a23",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NDk2NjkwMSwiaWF0IjoxNzc0MzYyMTAxLCJqdGkiOiJkNThkMTg4Y2IzZjY0YmZhODY5MTIxMTFlZjYwMmEyMyIsInVzZXJfaWQiOiI5In0.iU2EjeRQtM7WnhZZ9wOtu7TxOhse1KcKbHXz1XLmck4",
+    "created_at": "2026-03-24T14:21:41.747Z",
+    "expires_at": "2026-03-31T14:21:41Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 2,
+  "fields": {
+    "user": 9,
+    "jti": "15c8f5d996ff43fcbb4d81cdb34ca177",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NDk2NjkwMSwiaWF0IjoxNzc0MzYyMTAxLCJqdGkiOiIxNWM4ZjVkOTk2ZmY0M2ZjYmI0ZDgxY2RiMzRjYTE3NyIsInVzZXJfaWQiOiI5In0.YsaoAMHxHDyeKPkQhEb_keaBOb1G0IK_u5RukTXEelU",
+    "created_at": "2026-03-24T14:21:41.797Z",
+    "expires_at": "2026-03-31T14:21:41Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 3,
+  "fields": {
+    "user": 9,
+    "jti": "060d35863db5423b80b71e94294585ea",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NDk2NjkyNywiaWF0IjoxNzc0MzYyMTI3LCJqdGkiOiIwNjBkMzU4NjNkYjU0MjNiODBiNzFlOTQyOTQ1ODVlYSIsInVzZXJfaWQiOiI5In0.Mh4kJYWYhx182eW33Xn_8-y6Il41izXM3gd3tX73Fpk",
+    "created_at": "2026-03-24T14:22:07.272Z",
+    "expires_at": "2026-03-31T14:22:07Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 4,
+  "fields": {
+    "user": 9,
+    "jti": "9cd7bac536b04ffdb004bdf833540f08",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NDk2NjkyNywiaWF0IjoxNzc0MzYyMTI3LCJqdGkiOiI5Y2Q3YmFjNTM2YjA0ZmZkYjAwNGJkZjgzMzU0MGYwOCIsInVzZXJfaWQiOiI5In0.cgRs4X5L5Fu8WD04m89XVgy5bexVOei17KQco0taGaE",
+    "created_at": "2026-03-24T14:22:07.311Z",
+    "expires_at": "2026-03-31T14:22:07Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 5,
+  "fields": {
+    "user": 10,
+    "jti": "f4e7e3ee539b46519be8c505620e2901",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1MTcxNSwiaWF0IjoxNzc0NDQ2OTE1LCJqdGkiOiJmNGU3ZTNlZTUzOWI0NjUxOWJlOGM1MDU2MjBlMjkwMSIsInVzZXJfaWQiOiIxMCJ9.C8aZx4-Nv3qvcKHbu5wJIizmiVi30dtLj4ghDIcXfjg",
+    "created_at": "2026-03-25T13:55:15.934Z",
+    "expires_at": "2026-04-01T13:55:15Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 6,
+  "fields": {
+    "user": 11,
+    "jti": "00254fbf4dde4b39abeb7a5bcf5ef239",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1MjAyNCwiaWF0IjoxNzc0NDQ3MjI0LCJqdGkiOiIwMDI1NGZiZjRkZGU0YjM5YWJlYjdhNWJjZjVlZjIzOSIsInVzZXJfaWQiOiIxMSJ9.fLVV6qzTTgD0kZGuNZ9zEaNJOnSl_lfFqVt9gaJjSnk",
+    "created_at": "2026-03-25T14:00:24.581Z",
+    "expires_at": "2026-04-01T14:00:24Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 7,
+  "fields": {
+    "user": 12,
+    "jti": "e8ccab08ee89490d98e7eec21865fdaf",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1MjE2NSwiaWF0IjoxNzc0NDQ3MzY1LCJqdGkiOiJlOGNjYWIwOGVlODk0OTBkOThlN2VlYzIxODY1ZmRhZiIsInVzZXJfaWQiOiIxMiJ9.8NslDwbIVNJC5HGh4l5jDIo0gzSq9gX3whHeCHnAKd0",
+    "created_at": "2026-03-25T14:02:45.073Z",
+    "expires_at": "2026-04-01T14:02:45Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 8,
+  "fields": {
+    "user": 12,
+    "jti": "8992b937ef894beaa8891fcafb115202",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1MzIxOSwiaWF0IjoxNzc0NDQ4NDE5LCJqdGkiOiI4OTkyYjkzN2VmODk0YmVhYTg4OTFmY2FmYjExNTIwMiIsInVzZXJfaWQiOiIxMiJ9.s0CUp6ZmlxrLjEa5xGQnS2-Sb4ao86t48pEnzhpLNVg",
+    "created_at": "2026-03-25T14:20:19.237Z",
+    "expires_at": "2026-04-01T14:20:19Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 9,
+  "fields": {
+    "user": 13,
+    "jti": "267cd8c51fc54392a8b9782916bcd48a",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1MzI3MywiaWF0IjoxNzc0NDQ4NDczLCJqdGkiOiIyNjdjZDhjNTFmYzU0MzkyYThiOTc4MjkxNmJjZDQ4YSIsInVzZXJfaWQiOiIxMyJ9.jvMIcFuGkgVbPBSkCISIlNOYo7JsisSaLw-zRwOJdks",
+    "created_at": "2026-03-25T14:21:13.296Z",
+    "expires_at": "2026-04-01T14:21:13Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 10,
+  "fields": {
+    "user": 11,
+    "jti": "11af44a4e4b942bd82b932b7854bd7e3",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1MzU1MCwiaWF0IjoxNzc0NDQ4NzUwLCJqdGkiOiIxMWFmNDRhNGU0Yjk0MmJkODJiOTMyYjc4NTRiZDdlMyIsInVzZXJfaWQiOiIxMSJ9.NUB7JpJfhjbhgw5_6utTXT5HewziZJ7qqxhZUEWrHmA",
+    "created_at": "2026-03-25T14:25:50.852Z",
+    "expires_at": "2026-04-01T14:25:50Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 11,
+  "fields": {
+    "user": 14,
+    "jti": "afa6cc33e36b479c8fde49e836b40511",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1NDEyNCwiaWF0IjoxNzc0NDQ5MzI0LCJqdGkiOiJhZmE2Y2MzM2UzNmI0NzljOGZkZTQ5ZTgzNmI0MDUxMSIsInVzZXJfaWQiOiIxNCJ9.0U9Osn8t5vF_pje8YcgOEq44mYG1s_GQFRQFuKqL6Gg",
+    "created_at": "2026-03-25T14:35:24.926Z",
+    "expires_at": "2026-04-01T14:35:24Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 12,
+  "fields": {
+    "user": 14,
+    "jti": "0437d3cedae44123b1558bc88da05251",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1NDE2NywiaWF0IjoxNzc0NDQ5MzY3LCJqdGkiOiIwNDM3ZDNjZWRhZTQ0MTIzYjE1NThiYzg4ZGEwNTI1MSIsInVzZXJfaWQiOiIxNCJ9.50cpsYY84Z8lRUr1Z1Y8YZDK-SIgDEnxdhbvy3lqoUE",
+    "created_at": "2026-03-25T14:36:07.324Z",
+    "expires_at": "2026-04-01T14:36:07Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 13,
+  "fields": {
+    "user": 11,
+    "jti": "28e3ad022d9c40b5ae37d8e64fcd71e6",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1NTAwOCwiaWF0IjoxNzc0NDUwMjA4LCJqdGkiOiIyOGUzYWQwMjJkOWM0MGI1YWUzN2Q4ZTY0ZmNkNzFlNiIsInVzZXJfaWQiOiIxMSJ9.axLAXpHppuntDR3GRjgWMaGyFsHuuzqbPIwVIxOX-rw",
+    "created_at": "2026-03-25T14:50:08.930Z",
+    "expires_at": "2026-04-01T14:50:08Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 14,
+  "fields": {
+    "user": 14,
+    "jti": "62e224a42b2941ba8a72abd1afdd2613",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1NTA1NiwiaWF0IjoxNzc0NDUwMjU2LCJqdGkiOiI2MmUyMjRhNDJiMjk0MWJhOGE3MmFiZDFhZmRkMjYxMyIsInVzZXJfaWQiOiIxNCJ9.xiL5YWGhlmfvOyEFyGYhVAUkbaQjQUY0s6C4PbOzSO8",
+    "created_at": "2026-03-25T14:50:56.985Z",
+    "expires_at": "2026-04-01T14:50:56Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 15,
+  "fields": {
+    "user": 14,
+    "jti": "28e91629d69c41e18b5f10d8659f373f",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1OTU3MywiaWF0IjoxNzc0NDU0NzczLCJqdGkiOiIyOGU5MTYyOWQ2OWM0MWUxOGI1ZjEwZDg2NTlmMzczZiIsInVzZXJfaWQiOiIxNCJ9.Uu6kBfgAawiYCNbs500eFvjVhzrnJ11LlkEnLzN5Cmo",
+    "created_at": "2026-03-25T16:06:13.164Z",
+    "expires_at": "2026-04-01T16:06:13Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 16,
+  "fields": {
+    "user": 14,
+    "jti": "d932aa8d76b343cdba37e8326f187987",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1OTU3MywiaWF0IjoxNzc0NDU0NzczLCJqdGkiOiJkOTMyYWE4ZDc2YjM0M2NkYmEzN2U4MzI2ZjE4Nzk4NyIsInVzZXJfaWQiOiIxNCJ9.eclWpsYNzp94wdMtVBmXPoya7o7oTTYD4nCLi0cC1js",
+    "created_at": "2026-03-25T16:06:13.159Z",
+    "expires_at": "2026-04-01T16:06:13Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 17,
+  "fields": {
+    "user": 14,
+    "jti": "7bb425c05e1543b1aa7a87f0a5cf65eb",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1OTU3MywiaWF0IjoxNzc0NDU0NzczLCJqdGkiOiI3YmI0MjVjMDVlMTU0M2IxYWE3YTg3ZjBhNWNmNjVlYiIsInVzZXJfaWQiOiIxNCJ9.5NCA5HLUEKxihq3xWG3Zk3f1-CNhwLJOwKU7TREcd-w",
+    "created_at": "2026-03-25T16:06:13.153Z",
+    "expires_at": "2026-04-01T16:06:13Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 18,
+  "fields": {
+    "user": 14,
+    "jti": "28e740f47b6141fc9cc85d808e478cfc",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1OTU3MywiaWF0IjoxNzc0NDU0NzczLCJqdGkiOiIyOGU3NDBmNDdiNjE0MWZjOWNjODVkODA4ZTQ3OGNmYyIsInVzZXJfaWQiOiIxNCJ9.XWE7Iw0axLNundjSqCSxmV7FbA_2r-Yw6TOUT3jEUaI",
+    "created_at": "2026-03-25T16:06:13.151Z",
+    "expires_at": "2026-04-01T16:06:13Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 19,
+  "fields": {
+    "user": 14,
+    "jti": "dfb99d0f385d4f36801eaf19c9b4d47d",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1OTU3MywiaWF0IjoxNzc0NDU0NzczLCJqdGkiOiJkZmI5OWQwZjM4NWQ0ZjM2ODAxZWFmMTljOWI0ZDQ3ZCIsInVzZXJfaWQiOiIxNCJ9.5nNbUH1LwC1osXhXWuQqB8kso66OxBDDmuzs7wZ6Dpc",
+    "created_at": "2026-03-25T16:06:13.148Z",
+    "expires_at": "2026-04-01T16:06:13Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 20,
+  "fields": {
+    "user": 14,
+    "jti": "73e864ff89924f4ea4302d9777d1816f",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1OTU3MywiaWF0IjoxNzc0NDU0NzczLCJqdGkiOiI3M2U4NjRmZjg5OTI0ZjRlYTQzMDJkOTc3N2QxODE2ZiIsInVzZXJfaWQiOiIxNCJ9.IbCqBdWccqTJO1LebdUTb5CrvuBKyjxYjr743s3NaG4",
+    "created_at": "2026-03-25T16:06:13.157Z",
+    "expires_at": "2026-04-01T16:06:13Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 21,
+  "fields": {
+    "user": 14,
+    "jti": "dc5b6e3764e340b69f47f358d4ead213",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA1OTU5MiwiaWF0IjoxNzc0NDU0NzkyLCJqdGkiOiJkYzViNmUzNzY0ZTM0MGI2OWY0N2YzNThkNGVhZDIxMyIsInVzZXJfaWQiOiIxNCJ9.CdfYy4oyYgBH3RPzdw2h9ChFZBaZiWy3U2AWG5i4gw0",
+    "created_at": "2026-03-25T16:06:32.894Z",
+    "expires_at": "2026-04-01T16:06:32Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 22,
+  "fields": {
+    "user": 14,
+    "jti": "79d2ce774a78435eaaa23eac4a654a23",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA2MzE5NSwiaWF0IjoxNzc0NDU4Mzk1LCJqdGkiOiI3OWQyY2U3NzRhNzg0MzVlYWFhMjNlYWM0YTY1NGEyMyIsInVzZXJfaWQiOiIxNCJ9.-EGrPWMPIBUKIpAkJdhOmYu85C-awKwa75F456wDELk",
+    "created_at": "2026-03-25T17:06:35.951Z",
+    "expires_at": "2026-04-01T17:06:35Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 23,
+  "fields": {
+    "user": 14,
+    "jti": "fb905994debb4b4c841790af1cc4ccba",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA2MzE5NSwiaWF0IjoxNzc0NDU4Mzk1LCJqdGkiOiJmYjkwNTk5NGRlYmI0YjRjODQxNzkwYWYxY2M0Y2NiYSIsInVzZXJfaWQiOiIxNCJ9.RM-_lcphNeBrXONCQCsQ4r1Bl0bzO-Lc5G1SkRqQvvo",
+    "created_at": "2026-03-25T17:06:35.955Z",
+    "expires_at": "2026-04-01T17:06:35Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 24,
+  "fields": {
+    "user": 14,
+    "jti": "603b9350f19d4c23b9ae178c650bdc64",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA2MzE5NSwiaWF0IjoxNzc0NDU4Mzk1LCJqdGkiOiI2MDNiOTM1MGYxOWQ0YzIzYjlhZTE3OGM2NTBiZGM2NCIsInVzZXJfaWQiOiIxNCJ9.tx0EdIGSJtm5g8mOmeiAhTXEuzT0c0hU14Dk1UWXU20",
+    "created_at": "2026-03-25T17:06:35.947Z",
+    "expires_at": "2026-04-01T17:06:35Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 25,
+  "fields": {
+    "user": 14,
+    "jti": "99abc85df53b4e3fbec7c9ce3493a1cf",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTA2MzIwMSwiaWF0IjoxNzc0NDU4NDAxLCJqdGkiOiI5OWFiYzg1ZGY1M2I0ZTNmYmVjN2M5Y2UzNDkzYTFjZiIsInVzZXJfaWQiOiIxNCJ9.38CpeslHT_iaty4yVXQaMLkTr1CggwXsXNTeH1k1I7k",
+    "created_at": "2026-03-25T17:06:41.669Z",
+    "expires_at": "2026-04-01T17:06:41Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 26,
+  "fields": {
+    "user": 14,
+    "jti": "a8459ab2fc994fe6afee01c31fea304a",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTEwODE2NywiaWF0IjoxNzc0NTAzMzY3LCJqdGkiOiJhODQ1OWFiMmZjOTk0ZmU2YWZlZTAxYzMxZmVhMzA0YSIsInVzZXJfaWQiOiIxNCJ9.j7KnYtj_TDu7KW3sb2AHl49Zbta8rrPOHOnQzcGOXWg",
+    "created_at": "2026-03-26T05:36:07.189Z",
+    "expires_at": "2026-04-02T05:36:07Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 27,
+  "fields": {
+    "user": 14,
+    "jti": "7ca47fe9a6054b4a8d0471f5dc05e5ac",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTEwODE2NywiaWF0IjoxNzc0NTAzMzY3LCJqdGkiOiI3Y2E0N2ZlOWE2MDU0YjRhOGQwNDcxZjVkYzA1ZTVhYyIsInVzZXJfaWQiOiIxNCJ9._87N88Xh09gpMQkZsIn96j_LW9hPK0fyhTvjJHJpOAE",
+    "created_at": "2026-03-26T05:36:07.194Z",
+    "expires_at": "2026-04-02T05:36:07Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 28,
+  "fields": {
+    "user": 14,
+    "jti": "27c9ad54be9e45b48f7777832cf3668d",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTEwODE2NywiaWF0IjoxNzc0NTAzMzY3LCJqdGkiOiIyN2M5YWQ1NGJlOWU0NWI0OGY3Nzc3ODMyY2YzNjY4ZCIsInVzZXJfaWQiOiIxNCJ9.jXc-95KWnXS734xoP9481MKQxYVN4D9AzsQ3MPT6SRc",
+    "created_at": "2026-03-26T05:36:07.192Z",
+    "expires_at": "2026-04-02T05:36:07Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 29,
+  "fields": {
+    "user": 14,
+    "jti": "1c8aa4aaf2104013a0cbebdfe893f246",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTExMzczNCwiaWF0IjoxNzc0NTA4OTM0LCJqdGkiOiIxYzhhYTRhYWYyMTA0MDEzYTBjYmViZGZlODkzZjI0NiIsInVzZXJfaWQiOiIxNCJ9.HYFEhrm5zhMHedfbNwOO2VoQPy5bati7ofr0BLQpiZo",
+    "created_at": "2026-03-26T07:08:54.176Z",
+    "expires_at": "2026-04-02T07:08:54Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 30,
+  "fields": {
+    "user": 14,
+    "jti": "009bdf85d87242e192d67a0963f976e5",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTExNzIyNSwiaWF0IjoxNzc0NTEyNDI1LCJqdGkiOiIwMDliZGY4NWQ4NzI0MmUxOTJkNjdhMDk2M2Y5NzZlNSIsInVzZXJfaWQiOiIxNCJ9.C2fnnGVtnsYu6TXfyh5C4sM4WA4k0WLW1rbj9xMP36M",
+    "created_at": "2026-03-26T08:07:05.775Z",
+    "expires_at": "2026-04-02T08:07:05Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 31,
+  "fields": {
+    "user": 14,
+    "jti": "f5d4cc9eebc340818c1b11f503ac0be3",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTIxMTExMSwiaWF0IjoxNzc0NjA2MzExLCJqdGkiOiJmNWQ0Y2M5ZWViYzM0MDgxOGMxYjExZjUwM2FjMGJlMyIsInVzZXJfaWQiOiIxNCJ9.kqvYU4w2GucsDp72Eu76G_3nEAqUEZXNYqm3ylG_MtM",
+    "created_at": "2026-03-27T10:11:51.427Z",
+    "expires_at": "2026-04-03T10:11:51Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 32,
+  "fields": {
+    "user": 14,
+    "jti": "e260c03ff55d4cd28ceddeca1888d63f",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTIxNTA2NSwiaWF0IjoxNzc0NjEwMjY1LCJqdGkiOiJlMjYwYzAzZmY1NWQ0Y2QyOGNlZGRlY2ExODg4ZDYzZiIsInVzZXJfaWQiOiIxNCJ9.9iPFMMhApFGOPBwa4q8avXoa-QvePa4pLU0ugRE7JCA",
+    "created_at": "2026-03-27T11:17:45.258Z",
+    "expires_at": "2026-04-03T11:17:45Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 33,
+  "fields": {
+    "user": 14,
+    "jti": "b761f5643fd8451dadebebed8e4fab5d",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTIyMDYwNSwiaWF0IjoxNzc0NjE1ODA1LCJqdGkiOiJiNzYxZjU2NDNmZDg0NTFkYWRlYmViZWQ4ZTRmYWI1ZCIsInVzZXJfaWQiOiIxNCJ9.2EOdXzBBwQ46NB6AatB_cd_X1ar25Ga8IWH03nATP6w",
+    "created_at": "2026-03-27T12:50:05.492Z",
+    "expires_at": "2026-04-03T12:50:05Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 34,
+  "fields": {
+    "user": 14,
+    "jti": "96ce9865496a4c4d9cf0d83fdd5d4525",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTIzMTczNiwiaWF0IjoxNzc0NjI2OTM2LCJqdGkiOiI5NmNlOTg2NTQ5NmE0YzRkOWNmMGQ4M2ZkZDVkNDUyNSIsInVzZXJfaWQiOiIxNCJ9.ApIeE1MEux2mIFn7Yn9NOtqD0SG4rRxHyV1KQt7UgQg",
+    "created_at": "2026-03-27T15:55:36.333Z",
+    "expires_at": "2026-04-03T15:55:36Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 35,
+  "fields": {
+    "user": 14,
+    "jti": "001dbfcfb94548048cce2ffd58b5ad37",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTIzNDczOSwiaWF0IjoxNzc0NjI5OTM5LCJqdGkiOiIwMDFkYmZjZmI5NDU0ODA0OGNjZTJmZmQ1OGI1YWQzNyIsInVzZXJfaWQiOiIxNCJ9.tDbx2xIrv6LQSTNGtdfzQ7YuFmRAW5kgaaCGVRQm0GU",
+    "created_at": "2026-03-27T16:45:39.559Z",
+    "expires_at": "2026-04-03T16:45:39Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 36,
+  "fields": {
+    "user": 14,
+    "jti": "cabcc2282c5447ed973558fa48e965a4",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTMwNDA3OSwiaWF0IjoxNzc0Njk5Mjc5LCJqdGkiOiJjYWJjYzIyODJjNTQ0N2VkOTczNTU4ZmE0OGU5NjVhNCIsInVzZXJfaWQiOiIxNCJ9.nj4xstQvF3ESmqlfrSlboqGrWU9ZUbhZwhWBDTTIVCE",
+    "created_at": "2026-03-28T12:01:19.964Z",
+    "expires_at": "2026-04-04T12:01:19Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 1,
+  "fields": {
+    "token": 1,
+    "blacklisted_at": "2026-03-24T14:21:41.804Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 2,
+  "fields": {
+    "token": 3,
+    "blacklisted_at": "2026-03-24T14:22:07.322Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 3,
+  "fields": {
+    "token": 7,
+    "blacklisted_at": "2026-03-25T14:20:19.302Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 4,
+  "fields": {
+    "token": 9,
+    "blacklisted_at": "2026-03-25T14:22:19.939Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 5,
+  "fields": {
+    "token": 11,
+    "blacklisted_at": "2026-03-25T14:35:29.104Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 6,
+  "fields": {
+    "token": 12,
+    "blacklisted_at": "2026-03-25T14:50:40.529Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 8,
+  "fields": {
+    "token": 14,
+    "blacklisted_at": "2026-03-25T16:06:13.296Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 11,
+  "fields": {
+    "token": 21,
+    "blacklisted_at": "2026-03-25T17:06:36.094Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 13,
+  "fields": {
+    "token": 25,
+    "blacklisted_at": "2026-03-26T05:36:08.256Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 16,
+  "fields": {
+    "token": 29,
+    "blacklisted_at": "2026-03-26T08:07:00.040Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 17,
+  "fields": {
+    "token": 34,
+    "blacklisted_at": "2026-03-27T15:59:52.878Z"
+  }
+},
+{
+  "model": "core.sitesettings",
+  "pk": 1,
+  "fields": {
+    "shipping_cost": "100.00",
+    "free_shipping_threshold": "5000.00",
+    "tax_rate": "0.00",
+    "currency_symbol": "NPR",
+    "updated_at": "2026-03-26T07:10:18.779Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 1,
+  "fields": {
+    "name": "Bakery",
+    "slug": "bakery",
+    "image": "categories/bakery.png",
+    "parent": null,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.509Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 2,
+  "fields": {
+    "name": "Beverages",
+    "slug": "beverages",
+    "image": "categories/beverages.png",
+    "parent": null,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.527Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 3,
+  "fields": {
+    "name": "Dairy & Eggs",
+    "slug": "dairy-eggs",
+    "image": "categories/dairy-eggs.png",
+    "parent": null,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.543Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 4,
+  "fields": {
+    "name": "Deli",
+    "slug": "deli",
+    "image": "categories/deli.png",
+    "parent": null,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.560Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 5,
+  "fields": {
+    "name": "Frozen Foods",
+    "slug": "frozen-foods",
+    "image": "categories/frozen-foods.png",
+    "parent": null,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.579Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 6,
+  "fields": {
+    "name": "Fruits & Vegetables",
+    "slug": "fruits-vegetables",
+    "image": "categories/fruits-vegetables.png",
+    "parent": null,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.598Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 7,
+  "fields": {
+    "name": "Healthcare",
+    "slug": "healthcare",
+    "image": "categories/healthcare.png",
+    "parent": null,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.616Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 8,
+  "fields": {
+    "name": "Meat & Seafood",
+    "slug": "meat-seafood",
+    "image": "categories/meat-seafood.png",
+    "parent": null,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.633Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 9,
+  "fields": {
+    "name": "Snacks",
+    "slug": "snacks",
+    "image": "categories/snacks.png",
+    "parent": null,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.648Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "name": "Artisan Sourdough Bread Loaf",
+    "slug": "artisan-sourdough-bread-loaf",
+    "sku": "",
+    "description": "High quality Artisan Sourdough Bread Loaf. Fresh artisan sourdough bread. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Fresh artisan sourdough bread",
+    "price": "7.80",
+    "discount_price": "4.99",
+    "stock": 28,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 1,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.670Z",
+    "updated_at": "2026-03-23T13:28:53.670Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "name": "Fresh Croissants Pack of 6",
+    "slug": "fresh-croissants-pack-of-6",
+    "sku": "",
+    "description": "High quality Fresh Croissants Pack of 6. Buttery fresh croissants. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Buttery fresh croissants",
+    "price": "12.25",
+    "discount_price": "6.99",
+    "stock": 15,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 1,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.719Z",
+    "updated_at": "2026-03-23T13:28:53.719Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 3,
+  "fields": {
+    "name": "Whole Grain Dinner Rolls",
+    "slug": "whole-grain-dinner-rolls",
+    "sku": "",
+    "description": "High quality Whole Grain Dinner Rolls. Healthy whole grain rolls. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Healthy whole grain rolls",
+    "price": "7.25",
+    "discount_price": "3.49",
+    "stock": 42,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 1,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.764Z",
+    "updated_at": "2026-03-23T13:28:53.764Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "name": "Chocolate Chip Muffins 4-Pack",
+    "slug": "chocolate-chip-muffins-4-pack",
+    "sku": "",
+    "description": "High quality Chocolate Chip Muffins 4-Pack. Delicious chocolate chip muffins. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Delicious chocolate chip muffins",
+    "price": "10.15",
+    "discount_price": "5.99",
+    "stock": 33,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 1,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.803Z",
+    "updated_at": "2026-03-23T13:28:53.803Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "name": "Cinnamon Swirl Coffee Cake",
+    "slug": "cinnamon-swirl-coffee-cake",
+    "sku": "",
+    "description": "High quality Cinnamon Swirl Coffee Cake. Sweet cinnamon coffee cake. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Sweet cinnamon coffee cake",
+    "price": "14.50",
+    "discount_price": "8.99",
+    "stock": 12,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 1,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.851Z",
+    "updated_at": "2026-03-23T13:28:53.851Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 6,
+  "fields": {
+    "name": "Honey Wheat Sandwich Bread",
+    "slug": "honey-wheat-sandwich-bread",
+    "sku": "",
+    "description": "High quality Honey Wheat Sandwich Bread. Soft honey wheat bread. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Soft honey wheat bread",
+    "price": "9.99",
+    "discount_price": "5.49",
+    "stock": 18,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 1,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.892Z",
+    "updated_at": "2026-03-23T13:28:53.892Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 7,
+  "fields": {
+    "name": "Fresh Orange Juice 1L",
+    "slug": "fresh-orange-juice-1l",
+    "sku": "",
+    "description": "High quality Fresh Orange Juice 1L. 100% fresh orange juice. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "100% fresh orange juice",
+    "price": "5.32",
+    "discount_price": "3.99",
+    "stock": 45,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 2,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.914Z",
+    "updated_at": "2026-03-23T13:28:53.915Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 8,
+  "fields": {
+    "name": "Premium Coffee Beans 500g",
+    "slug": "premium-coffee-beans-500g",
+    "sku": "",
+    "description": "High quality Premium Coffee Beans 500g. Premium arabica coffee beans. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Premium arabica coffee beans",
+    "price": "18.56",
+    "discount_price": "12.99",
+    "stock": 22,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 2,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.936Z",
+    "updated_at": "2026-03-23T13:28:53.936Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 9,
+  "fields": {
+    "name": "Sparkling Water 6-Pack",
+    "slug": "sparkling-water-6-pack",
+    "sku": "",
+    "description": "High quality Sparkling Water 6-Pack. Refreshing sparkling water. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Refreshing sparkling water",
+    "price": "5.61",
+    "discount_price": "4.49",
+    "stock": 38,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 2,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.959Z",
+    "updated_at": "2026-03-23T13:28:53.959Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 10,
+  "fields": {
+    "name": "Green Tea Variety Pack",
+    "slug": "green-tea-variety-pack",
+    "sku": "",
+    "description": "High quality Green Tea Variety Pack. Assorted green tea flavors. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Assorted green tea flavors",
+    "price": "13.83",
+    "discount_price": "8.99",
+    "stock": 16,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 2,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.980Z",
+    "updated_at": "2026-03-23T13:28:53.980Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 11,
+  "fields": {
+    "name": "Energy Drink 4-Pack",
+    "slug": "energy-drink-4-pack",
+    "sku": "",
+    "description": "High quality Energy Drink 4-Pack. Boost your energy. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Boost your energy",
+    "price": "11.10",
+    "discount_price": "7.99",
+    "stock": 31,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 2,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.002Z",
+    "updated_at": "2026-03-23T13:28:54.002Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 12,
+  "fields": {
+    "name": "Coconut Water 12-Pack",
+    "slug": "coconut-water-12-pack",
+    "sku": "",
+    "description": "High quality Coconut Water 12-Pack. Natural coconut water. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Natural coconut water",
+    "price": "26.65",
+    "discount_price": "15.99",
+    "stock": 24,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 2,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.026Z",
+    "updated_at": "2026-03-23T13:28:54.026Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 13,
+  "fields": {
+    "name": "Organic Banana Bunch",
+    "slug": "organic-banana-bunch",
+    "sku": "",
+    "description": "High quality Organic Banana Bunch. Fresh organic bananas. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Fresh organic bananas",
+    "price": "3.52",
+    "discount_price": "2.99",
+    "stock": 67,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 6,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.047Z",
+    "updated_at": "2026-03-23T13:28:54.047Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 14,
+  "fields": {
+    "name": "Fresh Strawberries 500g",
+    "slug": "fresh-strawberries-500g",
+    "sku": "",
+    "description": "High quality Fresh Strawberries 500g. Sweet fresh strawberries. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Sweet fresh strawberries",
+    "price": "7.68",
+    "discount_price": "5.99",
+    "stock": 43,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 6,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.068Z",
+    "updated_at": "2026-03-23T13:28:54.068Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 15,
+  "fields": {
+    "name": "Mixed Salad Greens 300g",
+    "slug": "mixed-salad-greens-300g",
+    "sku": "",
+    "description": "High quality Mixed Salad Greens 300g. Fresh mixed salad greens. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Fresh mixed salad greens",
+    "price": "4.26",
+    "discount_price": "3.49",
+    "stock": 52,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 6,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.089Z",
+    "updated_at": "2026-03-23T13:28:54.089Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 16,
+  "fields": {
+    "name": "Organic Carrots 1kg",
+    "slug": "organic-carrots-1kg",
+    "sku": "",
+    "description": "High quality Organic Carrots 1kg. Organic fresh carrots. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Organic fresh carrots",
+    "price": "3.32",
+    "discount_price": "2.49",
+    "stock": 38,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 6,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.110Z",
+    "updated_at": "2026-03-23T13:28:54.110Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 17,
+  "fields": {
+    "name": "Fresh Avocados 4-Pack",
+    "slug": "fresh-avocados-4-pack",
+    "sku": "",
+    "description": "High quality Fresh Avocados 4-Pack. Ripe fresh avocados. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Ripe fresh avocados",
+    "price": "9.99",
+    "discount_price": "6.99",
+    "stock": 29,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 6,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.133Z",
+    "updated_at": "2026-03-23T13:28:54.133Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 18,
+  "fields": {
+    "name": "Bell Peppers Mix 3-Pack",
+    "slug": "bell-peppers-mix-3-pack",
+    "sku": "BELE270AE",
+    "description": "High quality Bell Peppers Mix 3-Pack. Colorful bell peppers. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Colorful bell peppers",
+    "price": "6.24",
+    "discount_price": "4.99",
+    "stock": 29,
+    "low_stock_threshold": 10,
+    "units_sold": 6,
+    "revenue_generated": "29.94",
+    "category": 6,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.153Z",
+    "updated_at": "2026-03-24T09:01:06.584Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 19,
+  "fields": {
+    "name": "Fresh Salmon Fillet 500g",
+    "slug": "fresh-salmon-fillet-500g",
+    "sku": "FRE8023B1",
+    "description": "High quality Fresh Salmon Fillet 500g. Premium salmon fillet. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Premium salmon fillet",
+    "price": "29.22",
+    "discount_price": "18.99",
+    "stock": 11,
+    "low_stock_threshold": 10,
+    "units_sold": 3,
+    "revenue_generated": "56.97",
+    "category": 8,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.173Z",
+    "updated_at": "2026-03-24T09:01:06.580Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 20,
+  "fields": {
+    "name": "Premium Beef Steak 400g",
+    "slug": "premium-beef-steak-400g",
+    "sku": "",
+    "description": "High quality Premium Beef Steak 400g. Premium quality beef steak. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Premium quality beef steak",
+    "price": "34.71",
+    "discount_price": "24.99",
+    "stock": 8,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 8,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.200Z",
+    "updated_at": "2026-03-23T13:28:54.200Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 21,
+  "fields": {
+    "name": "Chicken Breast 1kg",
+    "slug": "chicken-breast-1kg",
+    "sku": "CHI548C35",
+    "description": "High quality Chicken Breast 1kg. Fresh chicken breast. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Fresh chicken breast",
+    "price": "19.10",
+    "discount_price": "12.99",
+    "stock": 19,
+    "low_stock_threshold": 10,
+    "units_sold": 3,
+    "revenue_generated": "38.97",
+    "category": 8,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.223Z",
+    "updated_at": "2026-03-24T09:01:06.561Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 22,
+  "fields": {
+    "name": "Fresh Shrimp 300g",
+    "slug": "fresh-shrimp-300g",
+    "sku": "FRE2C5A38",
+    "description": "High quality Fresh Shrimp 300g. Fresh premium shrimp. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Fresh premium shrimp",
+    "price": "26.65",
+    "discount_price": "15.99",
+    "stock": 2,
+    "low_stock_threshold": 10,
+    "units_sold": 9,
+    "revenue_generated": "143.91",
+    "category": 8,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.244Z",
+    "updated_at": "2026-03-24T09:01:06.558Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 23,
+  "fields": {
+    "name": "Ground Turkey 500g",
+    "slug": "ground-turkey-500g",
+    "sku": "",
+    "description": "High quality Ground Turkey 500g. Lean ground turkey. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Lean ground turkey",
+    "price": "11.99",
+    "discount_price": "8.99",
+    "stock": 19,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 8,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.265Z",
+    "updated_at": "2026-03-23T13:28:54.265Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 24,
+  "fields": {
+    "name": "Fresh Cod Fillet 400g",
+    "slug": "fresh-cod-fillet-400g",
+    "sku": "FRE9A241B",
+    "description": "High quality Fresh Cod Fillet 400g. Fresh cod fillet. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Fresh cod fillet",
+    "price": "24.27",
+    "discount_price": "16.99",
+    "stock": 10,
+    "low_stock_threshold": 10,
+    "units_sold": 6,
+    "revenue_generated": "101.94",
+    "category": 8,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.285Z",
+    "updated_at": "2026-03-24T09:01:06.542Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 25,
+  "fields": {
+    "name": "Organic Whole Milk 1 Gallon",
+    "slug": "organic-whole-milk-1-gallon",
+    "sku": "ORG83332A",
+    "description": "High quality Organic Whole Milk 1 Gallon. Fresh organic milk. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Fresh organic milk",
+    "price": "6.50",
+    "discount_price": "4.99",
+    "stock": 32,
+    "low_stock_threshold": 10,
+    "units_sold": 3,
+    "revenue_generated": "14.97",
+    "category": 3,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.305Z",
+    "updated_at": "2026-03-24T09:01:06.536Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 26,
+  "fields": {
+    "name": "Free Range Eggs Dozen",
+    "slug": "free-range-eggs-dozen",
+    "sku": "",
+    "description": "High quality Free Range Eggs Dozen. Farm fresh eggs. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Farm fresh eggs",
+    "price": "7.20",
+    "discount_price": "5.49",
+    "stock": 42,
+    "low_stock_threshold": 10,
+    "units_sold": 0,
+    "revenue_generated": "0.00",
+    "category": 3,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.324Z",
+    "updated_at": "2026-03-23T13:28:54.324Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 27,
+  "fields": {
+    "name": "Greek Yogurt 32oz",
+    "slug": "greek-yogurt-32oz",
+    "sku": "GRED38091",
+    "description": "High quality Greek Yogurt 32oz. Creamy Greek yogurt. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Creamy Greek yogurt",
+    "price": "9.50",
+    "discount_price": "6.99",
+    "stock": 25,
+    "low_stock_threshold": 10,
+    "units_sold": 3,
+    "revenue_generated": "20.97",
+    "category": 3,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.342Z",
+    "updated_at": "2026-03-24T09:01:06.520Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 28,
+  "fields": {
+    "name": "Cheddar Cheese Block 16oz",
+    "slug": "cheddar-cheese-block-16oz",
+    "sku": "CHED29310",
+    "description": "High quality Cheddar Cheese Block 16oz. Sharp cheddar cheese. Perfect for your daily needs. Fresh and carefully selected products.",
+    "short_description": "Sharp cheddar cheese",
+    "price": "10.99",
+    "discount_price": "7.49",
+    "stock": 13,
+    "low_stock_threshold": 10,
+    "units_sold": 6,
+    "revenue_generated": "44.94",
+    "category": 3,
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.360Z",
+    "updated_at": "2026-03-24T09:01:06.514Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 1,
+  "fields": {
+    "product": 1,
+    "image": "products/artisan-sourdough-bread-loaf-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:53.690Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 2,
+  "fields": {
+    "product": 1,
+    "image": "products/artisan-sourdough-bread-loaf-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.703Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 3,
+  "fields": {
+    "product": 1,
+    "image": "products/artisan-sourdough-bread-loaf-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.716Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 4,
+  "fields": {
+    "product": 2,
+    "image": "products/fresh-croissants-pack-of-6-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:53.735Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 5,
+  "fields": {
+    "product": 2,
+    "image": "products/fresh-croissants-pack-of-6-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.748Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 6,
+  "fields": {
+    "product": 2,
+    "image": "products/fresh-croissants-pack-of-6-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.761Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 7,
+  "fields": {
+    "product": 3,
+    "image": "products/whole-grain-dinner-rolls-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:53.778Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 8,
+  "fields": {
+    "product": 3,
+    "image": "products/whole-grain-dinner-rolls-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.788Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 9,
+  "fields": {
+    "product": 3,
+    "image": "products/whole-grain-dinner-rolls-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.799Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 10,
+  "fields": {
+    "product": 4,
+    "image": "products/chocolate-chip-muffins-4-pack-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:53.821Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 11,
+  "fields": {
+    "product": 4,
+    "image": "products/chocolate-chip-muffins-4-pack-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.836Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 12,
+  "fields": {
+    "product": 4,
+    "image": "products/chocolate-chip-muffins-4-pack-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.848Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 13,
+  "fields": {
+    "product": 5,
+    "image": "products/cinnamon-swirl-coffee-cake-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:53.870Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 14,
+  "fields": {
+    "product": 5,
+    "image": "products/cinnamon-swirl-coffee-cake-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.883Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 15,
+  "fields": {
+    "product": 5,
+    "image": "products/cinnamon-swirl-coffee-cake-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.889Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 16,
+  "fields": {
+    "product": 6,
+    "image": "products/honey-wheat-sandwich-bread-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:53.901Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 17,
+  "fields": {
+    "product": 6,
+    "image": "products/honey-wheat-sandwich-bread-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.907Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 18,
+  "fields": {
+    "product": 6,
+    "image": "products/honey-wheat-sandwich-bread-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.912Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 19,
+  "fields": {
+    "product": 7,
+    "image": "products/fresh-orange-juice-1l-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:53.923Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 20,
+  "fields": {
+    "product": 7,
+    "image": "products/fresh-orange-juice-1l-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.928Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 21,
+  "fields": {
+    "product": 7,
+    "image": "products/fresh-orange-juice-1l-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.933Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 22,
+  "fields": {
+    "product": 8,
+    "image": "products/premium-coffee-beans-500g-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:53.943Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 23,
+  "fields": {
+    "product": 8,
+    "image": "products/premium-coffee-beans-500g-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.949Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 24,
+  "fields": {
+    "product": 8,
+    "image": "products/premium-coffee-beans-500g-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.955Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 25,
+  "fields": {
+    "product": 9,
+    "image": "products/sparkling-water-6-pack-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:53.967Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 26,
+  "fields": {
+    "product": 9,
+    "image": "products/sparkling-water-6-pack-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.973Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 27,
+  "fields": {
+    "product": 9,
+    "image": "products/sparkling-water-6-pack-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.977Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 28,
+  "fields": {
+    "product": 10,
+    "image": "products/green-tea-variety-pack-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:53.988Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 29,
+  "fields": {
+    "product": 10,
+    "image": "products/green-tea-variety-pack-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.992Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 30,
+  "fields": {
+    "product": 10,
+    "image": "products/green-tea-variety-pack-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:53.999Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 31,
+  "fields": {
+    "product": 11,
+    "image": "products/energy-drink-4-pack-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.012Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 32,
+  "fields": {
+    "product": 11,
+    "image": "products/energy-drink-4-pack-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.018Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 33,
+  "fields": {
+    "product": 11,
+    "image": "products/energy-drink-4-pack-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.023Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 34,
+  "fields": {
+    "product": 12,
+    "image": "products/coconut-water-12-pack-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.033Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 35,
+  "fields": {
+    "product": 12,
+    "image": "products/coconut-water-12-pack-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.039Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 36,
+  "fields": {
+    "product": 12,
+    "image": "products/coconut-water-12-pack-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.043Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 37,
+  "fields": {
+    "product": 13,
+    "image": "products/organic-banana-bunch-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.056Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 38,
+  "fields": {
+    "product": 13,
+    "image": "products/organic-banana-bunch-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.060Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 39,
+  "fields": {
+    "product": 13,
+    "image": "products/organic-banana-bunch-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.066Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 40,
+  "fields": {
+    "product": 14,
+    "image": "products/fresh-strawberries-500g-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.075Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 41,
+  "fields": {
+    "product": 14,
+    "image": "products/fresh-strawberries-500g-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.080Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 42,
+  "fields": {
+    "product": 14,
+    "image": "products/fresh-strawberries-500g-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.087Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 43,
+  "fields": {
+    "product": 15,
+    "image": "products/mixed-salad-greens-300g-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.097Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 44,
+  "fields": {
+    "product": 15,
+    "image": "products/mixed-salad-greens-300g-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.102Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 45,
+  "fields": {
+    "product": 15,
+    "image": "products/mixed-salad-greens-300g-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.107Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 46,
+  "fields": {
+    "product": 16,
+    "image": "products/organic-carrots-1kg-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.118Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 47,
+  "fields": {
+    "product": 16,
+    "image": "products/organic-carrots-1kg-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.123Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 48,
+  "fields": {
+    "product": 16,
+    "image": "products/organic-carrots-1kg-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.129Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 49,
+  "fields": {
+    "product": 17,
+    "image": "products/fresh-avocados-4-pack-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.139Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 50,
+  "fields": {
+    "product": 17,
+    "image": "products/fresh-avocados-4-pack-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.144Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 51,
+  "fields": {
+    "product": 17,
+    "image": "products/fresh-avocados-4-pack-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.150Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 52,
+  "fields": {
+    "product": 18,
+    "image": "products/bell-peppers-mix-3-pack-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.160Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 53,
+  "fields": {
+    "product": 18,
+    "image": "products/bell-peppers-mix-3-pack-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.166Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 54,
+  "fields": {
+    "product": 18,
+    "image": "products/bell-peppers-mix-3-pack-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.171Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 55,
+  "fields": {
+    "product": 19,
+    "image": "products/fresh-salmon-fillet-500g-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.182Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 56,
+  "fields": {
+    "product": 19,
+    "image": "products/fresh-salmon-fillet-500g-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.188Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 57,
+  "fields": {
+    "product": 19,
+    "image": "products/fresh-salmon-fillet-500g-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.196Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 58,
+  "fields": {
+    "product": 20,
+    "image": "products/premium-beef-steak-400g-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.209Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 59,
+  "fields": {
+    "product": 20,
+    "image": "products/premium-beef-steak-400g-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.215Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 60,
+  "fields": {
+    "product": 20,
+    "image": "products/premium-beef-steak-400g-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.219Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 61,
+  "fields": {
+    "product": 21,
+    "image": "products/chicken-breast-1kg-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.231Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 62,
+  "fields": {
+    "product": 21,
+    "image": "products/chicken-breast-1kg-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.236Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 63,
+  "fields": {
+    "product": 21,
+    "image": "products/chicken-breast-1kg-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.241Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 64,
+  "fields": {
+    "product": 22,
+    "image": "products/fresh-shrimp-300g-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.251Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 65,
+  "fields": {
+    "product": 22,
+    "image": "products/fresh-shrimp-300g-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.256Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 66,
+  "fields": {
+    "product": 22,
+    "image": "products/fresh-shrimp-300g-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.260Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 67,
+  "fields": {
+    "product": 23,
+    "image": "products/ground-turkey-500g-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.272Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 68,
+  "fields": {
+    "product": 23,
+    "image": "products/ground-turkey-500g-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.277Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 69,
+  "fields": {
+    "product": 23,
+    "image": "products/ground-turkey-500g-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.282Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 70,
+  "fields": {
+    "product": 24,
+    "image": "products/fresh-cod-fillet-400g-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.292Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 71,
+  "fields": {
+    "product": 24,
+    "image": "products/fresh-cod-fillet-400g-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.298Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 72,
+  "fields": {
+    "product": 24,
+    "image": "products/fresh-cod-fillet-400g-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.303Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 73,
+  "fields": {
+    "product": 25,
+    "image": "products/organic-whole-milk-1-gallon-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.312Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 74,
+  "fields": {
+    "product": 25,
+    "image": "products/organic-whole-milk-1-gallon-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.317Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 75,
+  "fields": {
+    "product": 25,
+    "image": "products/organic-whole-milk-1-gallon-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.321Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 76,
+  "fields": {
+    "product": 26,
+    "image": "products/free-range-eggs-dozen-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.331Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 77,
+  "fields": {
+    "product": 26,
+    "image": "products/free-range-eggs-dozen-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.336Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 78,
+  "fields": {
+    "product": 26,
+    "image": "products/free-range-eggs-dozen-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.340Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 79,
+  "fields": {
+    "product": 27,
+    "image": "products/greek-yogurt-32oz-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.349Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 80,
+  "fields": {
+    "product": 27,
+    "image": "products/greek-yogurt-32oz-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.353Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 81,
+  "fields": {
+    "product": 27,
+    "image": "products/greek-yogurt-32oz-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.358Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 82,
+  "fields": {
+    "product": 28,
+    "image": "products/cheddar-cheese-block-16oz-1.webp",
+    "is_primary": true,
+    "created_at": "2026-03-23T13:28:54.366Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 83,
+  "fields": {
+    "product": 28,
+    "image": "products/cheddar-cheese-block-16oz-2.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.370Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 84,
+  "fields": {
+    "product": 28,
+    "image": "products/cheddar-cheese-block-16oz-3.png",
+    "is_primary": false,
+    "created_at": "2026-03-23T13:28:54.373Z"
+  }
+},
+{
+  "model": "products.productreview",
+  "pk": 1,
+  "fields": {
+    "product": 28,
+    "user": 5,
+    "rating": 5,
+    "title": "",
+    "comment": "Great product! Very satisfied with my purchase.",
+    "is_verified_purchase": true,
+    "is_approved": true,
+    "helpful_count": 0,
+    "created_at": "2026-03-24T08:57:40.646Z",
+    "updated_at": "2026-03-24T08:57:40.646Z"
+  }
+},
+{
+  "model": "products.productreview",
+  "pk": 2,
+  "fields": {
+    "product": 28,
+    "user": 9,
+    "rating": 5,
+    "title": "Great product!",
+    "comment": "This product is amazing. Highly recommended!",
+    "is_verified_purchase": true,
+    "is_approved": true,
+    "helpful_count": 0,
+    "created_at": "2026-03-24T14:21:42.168Z",
+    "updated_at": "2026-03-24T14:21:42.168Z"
+  }
+},
+{
+  "model": "products.productreview",
+  "pk": 3,
+  "fields": {
+    "product": 28,
+    "user": 14,
+    "rating": 4,
+    "title": "babal!",
+    "comment": "thikai xa hai kta ho",
+    "is_verified_purchase": true,
+    "is_approved": true,
+    "helpful_count": 0,
+    "created_at": "2026-03-27T11:47:38.635Z",
+    "updated_at": "2026-03-27T11:47:38.635Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 1,
+  "fields": {
+    "product": 28,
+    "change_type": "sale",
+    "quantity_change": -2,
+    "stock_before": 19,
+    "stock_after": 17,
+    "notes": "Sold via order #ORD-C21FB490",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:57:40.568Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 2,
+  "fields": {
+    "product": 27,
+    "change_type": "sale",
+    "quantity_change": -1,
+    "stock_before": 28,
+    "stock_after": 27,
+    "notes": "Sold via order #ORD-C21FB490",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:57:40.576Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 3,
+  "fields": {
+    "product": 25,
+    "change_type": "sale",
+    "quantity_change": -1,
+    "stock_before": 35,
+    "stock_after": 34,
+    "notes": "Sold via order #ORD-3D287018",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:57:40.591Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 4,
+  "fields": {
+    "product": 24,
+    "change_type": "sale",
+    "quantity_change": -2,
+    "stock_before": 16,
+    "stock_after": 14,
+    "notes": "Sold via order #ORD-3D287018",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:57:40.595Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 5,
+  "fields": {
+    "product": 22,
+    "change_type": "sale",
+    "quantity_change": -3,
+    "stock_before": 11,
+    "stock_after": 8,
+    "notes": "Sold via order #ORD-A440D7D5",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:57:40.610Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 6,
+  "fields": {
+    "product": 21,
+    "change_type": "sale",
+    "quantity_change": -1,
+    "stock_before": 22,
+    "stock_after": 21,
+    "notes": "Sold via order #ORD-A440D7D5",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:57:40.614Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 7,
+  "fields": {
+    "product": 19,
+    "change_type": "sale",
+    "quantity_change": -1,
+    "stock_before": 14,
+    "stock_after": 13,
+    "notes": "Sold via order #ORD-1828EC2F",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:57:40.629Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 8,
+  "fields": {
+    "product": 18,
+    "change_type": "sale",
+    "quantity_change": -2,
+    "stock_before": 35,
+    "stock_after": 33,
+    "notes": "Sold via order #ORD-1828EC2F",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:57:40.632Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 9,
+  "fields": {
+    "product": 28,
+    "change_type": "sale",
+    "quantity_change": -2,
+    "stock_before": 17,
+    "stock_after": 15,
+    "notes": "Sold via order #ORD-57180806",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:58:34.361Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 10,
+  "fields": {
+    "product": 27,
+    "change_type": "sale",
+    "quantity_change": -1,
+    "stock_before": 27,
+    "stock_after": 26,
+    "notes": "Sold via order #ORD-57180806",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:58:34.366Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 11,
+  "fields": {
+    "product": 25,
+    "change_type": "sale",
+    "quantity_change": -1,
+    "stock_before": 34,
+    "stock_after": 33,
+    "notes": "Sold via order #ORD-AB466A8D",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:58:34.384Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 12,
+  "fields": {
+    "product": 24,
+    "change_type": "sale",
+    "quantity_change": -2,
+    "stock_before": 14,
+    "stock_after": 12,
+    "notes": "Sold via order #ORD-AB466A8D",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:58:34.388Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 13,
+  "fields": {
+    "product": 22,
+    "change_type": "sale",
+    "quantity_change": -3,
+    "stock_before": 8,
+    "stock_after": 5,
+    "notes": "Sold via order #ORD-DACED007",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:58:34.405Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 14,
+  "fields": {
+    "product": 21,
+    "change_type": "sale",
+    "quantity_change": -1,
+    "stock_before": 21,
+    "stock_after": 20,
+    "notes": "Sold via order #ORD-DACED007",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:58:34.410Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 15,
+  "fields": {
+    "product": 19,
+    "change_type": "sale",
+    "quantity_change": -1,
+    "stock_before": 13,
+    "stock_after": 12,
+    "notes": "Sold via order #ORD-B0004109",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:58:34.426Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 16,
+  "fields": {
+    "product": 18,
+    "change_type": "sale",
+    "quantity_change": -2,
+    "stock_before": 33,
+    "stock_after": 31,
+    "notes": "Sold via order #ORD-B0004109",
+    "created_by": 1,
+    "created_at": "2026-03-24T08:58:34.430Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 17,
+  "fields": {
+    "product": 28,
+    "change_type": "sale",
+    "quantity_change": -2,
+    "stock_before": 15,
+    "stock_after": 13,
+    "notes": "Sold via order #ORD-68AC7B4D",
+    "created_by": 1,
+    "created_at": "2026-03-24T09:01:06.515Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 18,
+  "fields": {
+    "product": 27,
+    "change_type": "sale",
+    "quantity_change": -1,
+    "stock_before": 26,
+    "stock_after": 25,
+    "notes": "Sold via order #ORD-68AC7B4D",
+    "created_by": 1,
+    "created_at": "2026-03-24T09:01:06.522Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 19,
+  "fields": {
+    "product": 25,
+    "change_type": "sale",
+    "quantity_change": -1,
+    "stock_before": 33,
+    "stock_after": 32,
+    "notes": "Sold via order #ORD-E4B7B836",
+    "created_by": 1,
+    "created_at": "2026-03-24T09:01:06.538Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 20,
+  "fields": {
+    "product": 24,
+    "change_type": "sale",
+    "quantity_change": -2,
+    "stock_before": 12,
+    "stock_after": 10,
+    "notes": "Sold via order #ORD-E4B7B836",
+    "created_by": 1,
+    "created_at": "2026-03-24T09:01:06.543Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 21,
+  "fields": {
+    "product": 22,
+    "change_type": "sale",
+    "quantity_change": -3,
+    "stock_before": 5,
+    "stock_after": 2,
+    "notes": "Sold via order #ORD-3B111A7C",
+    "created_by": 1,
+    "created_at": "2026-03-24T09:01:06.560Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 22,
+  "fields": {
+    "product": 21,
+    "change_type": "sale",
+    "quantity_change": -1,
+    "stock_before": 20,
+    "stock_after": 19,
+    "notes": "Sold via order #ORD-3B111A7C",
+    "created_by": 1,
+    "created_at": "2026-03-24T09:01:06.562Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 23,
+  "fields": {
+    "product": 19,
+    "change_type": "sale",
+    "quantity_change": -1,
+    "stock_before": 12,
+    "stock_after": 11,
+    "notes": "Sold via order #ORD-35E50DCA",
+    "created_by": 1,
+    "created_at": "2026-03-24T09:01:06.581Z"
+  }
+},
+{
+  "model": "products.stockhistory",
+  "pk": 24,
+  "fields": {
+    "product": 18,
+    "change_type": "sale",
+    "quantity_change": -2,
+    "stock_before": 31,
+    "stock_after": 29,
+    "notes": "Sold via order #ORD-35E50DCA",
+    "created_by": 1,
+    "created_at": "2026-03-24T09:01:06.585Z"
+  }
+},
+{
+  "model": "banners.herobanner",
+  "pk": 7,
+  "fields": {
+    "title": "Curated marketplace collections built for quality everyday living.",
+    "description": "<p>Carefully curated products from trusted sellers, designed to deliver quality, value, and a seamless shopping experience for everyday needs.</p>",
+    "image": "banners/hero/hero-background.png",
+    "discount_percentage": 50,
+    "discount_text": "<p>Special discount for a limited number,<br>hurry and don't miss out.</p>",
+    "price": "24.99",
+    "price_text": "With prices<br>starting from",
+    "button_text": "Shop Now",
+    "button_link": "/shop",
+    "order": 1,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:42.931Z"
+  }
+},
+{
+  "model": "banners.herobanner",
+  "pk": 8,
+  "fields": {
+    "title": "Smart marketplace essentials created for modern daily needs",
+    "description": "<p>Discover quality products from verified sellers, offering exceptional value and convenience for your everyday lifestyle.</p>",
+    "image": "banners/hero/slider-01-b.webp",
+    "discount_percentage": 40,
+    "discount_text": "<p>Limited time offer!<br>Shop now and save big.</p>",
+    "price": "19.99",
+    "price_text": "Starting at<br>just",
+    "button_text": "Shop Now",
+    "button_link": "/shop",
+    "order": 2,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:42.939Z"
+  }
+},
+{
+  "model": "banners.marketplacebanner",
+  "pk": 10,
+  "fields": {
+    "title": "Smart Marketplace Products<br>for Quality-Conscious Buyers",
+    "description": "<p>Shop smart with our carefully selected marketplace products. Find quality items that offer great value, durability, and practical functionality for your everyday needs.</p>",
+    "image": "banners/marketplace/banner1card.webp",
+    "button_text": "Shop Now",
+    "button_link": "/shop",
+    "order": 1,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:42.967Z"
+  }
+},
+{
+  "model": "banners.marketplacebanner",
+  "pk": 11,
+  "fields": {
+    "title": "Premium Curated Goods<br>for Modern Daily Living",
+    "description": "<p>Discover premium marketplace products curated for modern living. Browse trusted sellers offering quality goods that enhance your daily routine and lifestyle.</p>",
+    "image": "banners/marketplace/banner2card.webp",
+    "button_text": "Shop Now",
+    "button_link": "/shop",
+    "order": 2,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:42.969Z"
+  }
+},
+{
+  "model": "banners.marketplacebanner",
+  "pk": 12,
+  "fields": {
+    "title": "Trusted Marketplace Items<br>for Essential Daily Needs",
+    "description": "<p>Find reliable marketplace solutions for your daily essentials. Shop with confidence knowing every product is selected for quality, value, and customer satisfaction.</p>",
+    "image": "banners/marketplace/banner3card.webp",
+    "button_text": "Shop Now",
+    "button_link": "/shop",
+    "order": 3,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:42.970Z"
+  }
+},
+{
+  "model": "banners.promobanner",
+  "pk": 4,
+  "fields": {
+    "title": "Find Reliable Products<br>In One Marketplace",
+    "description": "<p>Quality marketplace essentials for everyday use</p>",
+    "image": "banners/promo/promobanner.webp",
+    "button_text": "Shop Now",
+    "button_link": "/shop",
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:42.980Z"
+  }
+},
+{
+  "model": "banners.scrollingbanner",
+  "pk": 6,
+  "fields": {
+    "text": "$50 OFF YOUR FIRST ORDER",
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:42.989Z"
+  }
+},
+{
+  "model": "banners.scrollingbanner",
+  "pk": 7,
+  "fields": {
+    "text": "FREE SHIPPING ON ORDERS OVER $100",
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:42.991Z"
+  }
+},
+{
+  "model": "cms.sitesettings",
+  "pk": 1,
+  "fields": {
+    "site_name": "Hamro Pasal",
+    "site_logo": "site/site-logo.png",
+    "site_logo_footer": "site/site-logo-footer.png",
+    "top_banner_text": "FREE delivery & 40% Discount for next 3 orders! Place your 1st Order!",
+    "top_banner_bg_color": "#9ACD32",
+    "show_top_banner": true,
+    "phone_number": "+977 9899999999",
+    "phone_description": "Contact us by calling the Helpline 24/7",
+    "email": "hamropasal@gmail.com",
+    "address": "gatthaghar, bhaktapur",
+    "app_download_title": "Download our app",
+    "app_download_subtitle": "Download App Get -10% Discount",
+    "app_store_link": "",
+    "google_play_link": "",
+    "newsletter_title": "Join HamroPasal!",
+    "newsletter_description": "<p>Whether you are welcoming new contacts or sharing the latest news, you can make your business look good in just a few clicks.</p>",
+    "copyright_text": "Copyright 2026 Hamro Pasal. All right reserved. Powered by HamroPasal.",
+    "facebook_url": "",
+    "twitter_url": "",
+    "instagram_url": "",
+    "created_at": "2026-03-23T13:28:53.356Z",
+    "updated_at": "2026-03-26T10:08:19.961Z"
+  }
+},
+{
+  "model": "cms.navigationmenu",
+  "pk": 1,
+  "fields": {
+    "title": "Home",
+    "url": "/",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 1,
+    "is_active": true,
+    "parent": null,
+    "created_at": "2026-03-23T13:28:53.402Z"
+  }
+},
+{
+  "model": "cms.navigationmenu",
+  "pk": 2,
+  "fields": {
+    "title": "Shop",
+    "url": "/shop",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 2,
+    "is_active": true,
+    "parent": null,
+    "created_at": "2026-03-23T13:28:53.405Z"
+  }
+},
+{
+  "model": "cms.navigationmenu",
+  "pk": 3,
+  "fields": {
+    "title": "Beverages",
+    "url": "/shop?category=Beverages",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 4,
+    "is_active": true,
+    "parent": null,
+    "created_at": "2026-03-23T13:28:53.406Z"
+  }
+},
+{
+  "model": "cms.navigationmenu",
+  "pk": 4,
+  "fields": {
+    "title": "Bakery",
+    "url": "/shop?category=Bakery",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 3,
+    "is_active": true,
+    "parent": null,
+    "created_at": "2026-03-23T13:28:53.409Z"
+  }
+},
+{
+  "model": "cms.navigationmenu",
+  "pk": 5,
+  "fields": {
+    "title": "Categories",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 5,
+    "is_active": true,
+    "parent": null,
+    "created_at": "2026-03-23T13:28:53.409Z"
+  }
+},
+{
+  "model": "cms.navigationmenu",
+  "pk": 6,
+  "fields": {
+    "title": "Blog",
+    "url": "/blog",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 6,
+    "is_active": true,
+    "parent": null,
+    "created_at": "2026-03-23T13:28:53.412Z"
+  }
+},
+{
+  "model": "cms.navigationmenu",
+  "pk": 7,
+  "fields": {
+    "title": "Contact",
+    "url": "/contact",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 7,
+    "is_active": true,
+    "parent": null,
+    "created_at": "2026-03-23T13:28:53.413Z"
+  }
+},
+{
+  "model": "cms.navigationmenu",
+  "pk": 8,
+  "fields": {
+    "title": "Our Story",
+    "url": "/page/our-story/",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 4,
+    "is_active": true,
+    "parent": null,
+    "created_at": "2026-03-27T09:15:40.591Z"
+  }
+},
+{
+  "model": "cms.megamenusettings",
+  "pk": 1,
+  "fields": {
+    "description_text": "Suspendisse potenti. Nam pharetra lorem eu varius commodo. Etiam a ornare ligula.",
+    "sale_badge_text": "SALE",
+    "sale_badge_label": "Best Seller",
+    "show_sale_badge": true,
+    "created_at": "2026-03-27T10:34:04.683Z",
+    "updated_at": "2026-03-27T10:34:04.683Z"
+  }
+},
+{
+  "model": "cms.footercolumn",
+  "pk": 1,
+  "fields": {
+    "title": "Get to Know Us",
+    "order": 1,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.419Z"
+  }
+},
+{
+  "model": "cms.footercolumn",
+  "pk": 2,
+  "fields": {
+    "title": "Let Us Help You",
+    "order": 2,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.445Z"
+  }
+},
+{
+  "model": "cms.footercolumn",
+  "pk": 3,
+  "fields": {
+    "title": "Make Money with Us",
+    "order": 3,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.471Z"
+  }
+},
+{
+  "model": "cms.footercolumn",
+  "pk": 4,
+  "fields": {
+    "title": "For Buyers",
+    "order": 4,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.490Z"
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 1,
+  "fields": {
+    "column": 1,
+    "title": "Careers for Supgor",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 2,
+  "fields": {
+    "column": 1,
+    "title": "About Supgor",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 3,
+  "fields": {
+    "column": 1,
+    "title": "Inverstor Relations",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 4,
+  "fields": {
+    "column": 1,
+    "title": "Supgor Devices",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 5,
+  "fields": {
+    "column": 1,
+    "title": "Customer reviews",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 6,
+  "fields": {
+    "column": 1,
+    "title": "Social Responsibility",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 6,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 7,
+  "fields": {
+    "column": 1,
+    "title": "Store Locations",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 7,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 8,
+  "fields": {
+    "column": 2,
+    "title": "Your Orders",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 9,
+  "fields": {
+    "column": 2,
+    "title": "Returns & Replacements",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 10,
+  "fields": {
+    "column": 2,
+    "title": "Shipping Rates & Policies",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 11,
+  "fields": {
+    "column": 2,
+    "title": "Refund and Returns Policy",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 12,
+  "fields": {
+    "column": 2,
+    "title": "Privacy Policy",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 13,
+  "fields": {
+    "column": 2,
+    "title": "Terms and Conditions",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 6,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 14,
+  "fields": {
+    "column": 2,
+    "title": "Cookie Settings",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 7,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 15,
+  "fields": {
+    "column": 2,
+    "title": "Help Center",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 8,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 16,
+  "fields": {
+    "column": 3,
+    "title": "Sell on Supgor",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 17,
+  "fields": {
+    "column": 3,
+    "title": "Sell Your Services on Supgor",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 18,
+  "fields": {
+    "column": 3,
+    "title": "Sell on Supgor Business",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 19,
+  "fields": {
+    "column": 3,
+    "title": "Sell Your Apps on Supgor",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 20,
+  "fields": {
+    "column": 3,
+    "title": "Become an Affilate",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 21,
+  "fields": {
+    "column": 3,
+    "title": "Advertise Your Products",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 6,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 22,
+  "fields": {
+    "column": 3,
+    "title": "Sell-Publish with Us",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 7,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 23,
+  "fields": {
+    "column": 3,
+    "title": "Become an Supgor Vendor",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 8,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 24,
+  "fields": {
+    "column": 4,
+    "title": "FAQ",
+    "url": "/faq",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 25,
+  "fields": {
+    "column": 4,
+    "title": "Track Order",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 26,
+  "fields": {
+    "column": 4,
+    "title": "Contact",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.footerlink",
+  "pk": 27,
+  "fields": {
+    "column": 4,
+    "title": "About Us",
+    "url": "#",
+    "custom_path": "",
+    "open_in_new_tab": false,
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "cms.store",
+  "pk": 1,
+  "fields": {
+    "country": "Nepal",
+    "city": "ktm",
+    "address": "baneswor-32",
+    "phone": "+977 9899999999",
+    "email": "hamropasal@gmail.com",
+    "order": 2,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.502Z"
+  }
+},
+{
+  "model": "cms.store",
+  "pk": 2,
+  "fields": {
+    "country": "Nepal",
+    "city": "Bhaktapur",
+    "address": "Gatthaghar-23",
+    "phone": "+977 9899999990",
+    "email": "hamropasal2@gmail.com",
+    "order": 1,
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:53.504Z"
+  }
+},
+{
+  "model": "cms.testimonial",
+  "pk": 7,
+  "fields": {
+    "author_name": "Viktoria Blomqvist",
+    "author_role": "Founder Blonwe Store",
+    "rating": 5,
+    "text": "Outstanding marketplace experience! The quality of products exceeded my expectations. Fast shipping and excellent customer service made my shopping journey smooth and enjoyable.",
+    "order": 1,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:43.003Z"
+  }
+},
+{
+  "model": "cms.testimonial",
+  "pk": 8,
+  "fields": {
+    "author_name": "Marcus Anderson",
+    "author_role": "Business Owner",
+    "rating": 5,
+    "text": "Amazing selection of products at competitive prices. The user interface is intuitive and makes finding what I need incredibly easy. Customer support team is responsive and helpful.",
+    "order": 2,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:43.008Z"
+  }
+},
+{
+  "model": "cms.testimonial",
+  "pk": 9,
+  "fields": {
+    "author_name": "Sarah Mitchell",
+    "author_role": "Marketing Director",
+    "rating": 5,
+    "text": "Best marketplace platform I've used in years. Product descriptions are accurate, delivery is prompt, and the return policy is fair. The variety of sellers ensures I always find what I'm looking for.",
+    "order": 3,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:43.012Z"
+  }
+},
+{
+  "model": "cms.testimonial",
+  "pk": 10,
+  "fields": {
+    "author_name": "David Chen",
+    "author_role": "Tech Entrepreneur",
+    "rating": 5,
+    "text": "Exceptional quality and service! Every purchase has been exactly as described. The checkout process is seamless, and I appreciate the secure payment options.",
+    "order": 4,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:43.013Z"
+  }
+},
+{
+  "model": "cms.faq",
+  "pk": 8,
+  "fields": {
+    "question": "How does our marketplace connect buyers with trusted sellers?",
+    "answer": "<p>Our marketplace carefully vets all sellers through a rigorous verification process. We ensure that each seller meets our quality standards and has a proven track record of customer satisfaction. This creates a trusted environment where buyers can shop with confidence.</p>",
+    "order": 1,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:43.040Z"
+  }
+},
+{
+  "model": "cms.faq",
+  "pk": 9,
+  "fields": {
+    "question": "What makes our marketplace products reliable and high quality?",
+    "answer": "<p>We implement strict quality control measures including seller verification, customer reviews, and product inspections. Every item listed on our platform must meet our quality standards before being made available to customers.</p>",
+    "order": 2,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:43.068Z"
+  }
+},
+{
+  "model": "cms.faq",
+  "pk": 10,
+  "fields": {
+    "question": "How are products selected before being listed on the marketplace?",
+    "answer": "<p>Products undergo a thorough vetting process that includes quality checks, seller verification, compliance with marketplace standards, and review of product descriptions and images to ensure accuracy.</p>",
+    "order": 3,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:43.070Z"
+  }
+},
+{
+  "model": "cms.faq",
+  "pk": 11,
+  "fields": {
+    "question": "Can I trust sellers and reviews on this marketplace platform?",
+    "answer": "<p>Yes! We verify all sellers and implement a robust review system to ensure authenticity. Our team monitors reviews for suspicious activity and removes fake reviews to maintain trustworthiness.</p>",
+    "order": 4,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:43.071Z"
+  }
+},
+{
+  "model": "cms.faq",
+  "pk": 12,
+  "fields": {
+    "question": "What payment methods are supported across marketplace vendors?",
+    "answer": "<p>We support multiple secure payment methods including credit cards, debit cards, PayPal, and other trusted payment gateways. All transactions are encrypted and processed securely.</p>",
+    "order": 5,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:43.071Z"
+  }
+},
+{
+  "model": "cms.faq",
+  "pk": 13,
+  "fields": {
+    "question": "How does shipping and delivery work with multiple sellers?",
+    "answer": "<p>Each seller manages their own shipping, but we provide tracking and support to ensure smooth delivery. You'll receive tracking information for each order and can monitor delivery status in your account.</p>",
+    "order": 6,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:43.073Z"
+  }
+},
+{
+  "model": "cms.faq",
+  "pk": 14,
+  "fields": {
+    "question": "What is the return and refund policy for marketplace orders?",
+    "answer": "<p>We offer a flexible return policy. Items can be returned within 30 days for a full refund, subject to seller terms. Our customer support team is available to assist with any return or refund requests.</p>",
+    "order": 7,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:43.074Z"
+  }
+},
+{
+  "model": "cms.feature",
+  "pk": 9,
+  "fields": {
+    "title": "Fast Shipping",
+    "description": "<p>Receive your order anywhere in the world</p>",
+    "icon_name": "fast-shipping",
+    "order": 1,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:42.995Z"
+  }
+},
+{
+  "model": "cms.feature",
+  "pk": 10,
+  "fields": {
+    "title": "Return Policy",
+    "description": "<p>Talk to our experts by chat or e-mail</p>",
+    "icon_name": "return-policy",
+    "order": 2,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:42.998Z"
+  }
+},
+{
+  "model": "cms.feature",
+  "pk": 11,
+  "fields": {
+    "title": "Payment Security",
+    "description": "<p>Don't worry, all orders are processed securely</p>",
+    "icon_name": "payment-security",
+    "order": 3,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:42.999Z"
+  }
+},
+{
+  "model": "cms.feature",
+  "pk": 12,
+  "fields": {
+    "title": "Free Shipping",
+    "description": "<p>Collect points and enjoy a host of benefits!</p>",
+    "icon_name": "free-shipping",
+    "order": 4,
+    "is_active": true,
+    "created_at": "2026-03-26T09:53:43.001Z"
+  }
+},
+{
+  "model": "cms.vendor",
+  "pk": 1,
+  "fields": {
+    "name": "Blonwe",
+    "description": "Premium marketplace vendor offering quality products with fast shipping and excellent customer service for everyday needs.",
+    "logo": "vendors/blonwe-logo.png",
+    "rating": "4.17",
+    "review_count": 12000,
+    "review_text": "Verified Reviews",
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.517Z"
+  }
+},
+{
+  "model": "cms.vendor",
+  "pk": 2,
+  "fields": {
+    "name": "Grogin",
+    "description": "Trusted grocery marketplace specializing in organic foods, beverages, and healthy lifestyle products with competitive pricing.",
+    "logo": "vendors/grogin-logo.png",
+    "rating": "3.33",
+    "review_count": 15000,
+    "review_text": "Customer Reviews",
+    "is_active": true,
+    "created_at": "2026-03-23T13:28:54.525Z"
+  }
+},
+{
+  "model": "cms.page",
+  "pk": 1,
+  "fields": {
+    "title": "Our Story",
+    "slug": "our-story",
+    "meta_description": "Learn about our journey and what makes us special",
+    "is_active": true,
+    "created_at": "2026-03-27T09:15:01.443Z",
+    "updated_at": "2026-03-27T09:15:01.443Z"
+  }
+},
+{
+  "model": "cms.widget",
+  "pk": 1,
+  "fields": {
+    "name": "Our Story Hero",
+    "widget_type": "hero_banner",
+    "is_active": true,
+    "created_at": "2026-03-27T09:15:01.470Z",
+    "updated_at": "2026-03-27T09:15:01.470Z"
+  }
+},
+{
+  "model": "cms.widget",
+  "pk": 2,
+  "fields": {
+    "name": "Story Introduction",
+    "widget_type": "text_section",
+    "is_active": true,
+    "created_at": "2026-03-27T09:15:40.476Z",
+    "updated_at": "2026-03-27T09:15:40.476Z"
+  }
+},
+{
+  "model": "cms.widget",
+  "pk": 3,
+  "fields": {
+    "name": "Our Achievements",
+    "widget_type": "text_with_stats",
+    "is_active": true,
+    "created_at": "2026-03-27T09:15:40.516Z",
+    "updated_at": "2026-03-27T09:15:40.516Z"
+  }
+},
+{
+  "model": "cms.widget",
+  "pk": 4,
+  "fields": {
+    "name": "Our Values",
+    "widget_type": "text_section",
+    "is_active": true,
+    "created_at": "2026-03-27T09:15:40.545Z",
+    "updated_at": "2026-03-27T09:15:40.545Z"
+  }
+},
+{
+  "model": "cms.widget",
+  "pk": 5,
+  "fields": {
+    "name": "Story FAQs",
+    "widget_type": "faq_accordion",
+    "is_active": true,
+    "created_at": "2026-03-27T09:15:40.551Z",
+    "updated_at": "2026-03-27T09:15:40.552Z"
+  }
+},
+{
+  "model": "cms.widget",
+  "pk": 6,
+  "fields": {
+    "name": "Story CTA",
+    "widget_type": "html_content",
+    "is_active": true,
+    "created_at": "2026-03-27T09:15:40.573Z",
+    "updated_at": "2026-03-27T09:15:40.573Z"
+  }
+},
+{
+  "model": "cms.widget",
+  "pk": 7,
+  "fields": {
+    "name": "Our Story Dynamic Hero",
+    "widget_type": "dynamic_hero",
+    "is_active": true,
+    "created_at": "2026-03-27T09:49:23.799Z",
+    "updated_at": "2026-03-27T09:49:23.799Z"
+  }
+},
+{
+  "model": "cms.widget",
+  "pk": 8,
+  "fields": {
+    "name": "Our Signature Products",
+    "widget_type": "product_section",
+    "is_active": true,
+    "created_at": "2026-03-27T09:49:23.827Z",
+    "updated_at": "2026-03-27T10:09:50.052Z"
+  }
+},
+{
+  "model": "cms.widget",
+  "pk": 9,
+  "fields": {
+    "name": "Customer Favorites",
+    "widget_type": "product_section",
+    "is_active": true,
+    "created_at": "2026-03-27T09:49:23.866Z",
+    "updated_at": "2026-03-27T09:49:23.866Z"
+  }
+},
+{
+  "model": "cms.widget",
+  "pk": 11,
+  "fields": {
+    "name": "Shop Hero Banner",
+    "widget_type": "dynamic_hero",
+    "is_active": true,
+    "created_at": "2026-03-28T12:34:50.868Z",
+    "updated_at": "2026-03-28T12:34:50.868Z"
+  }
+},
+{
+  "model": "cms.pagewidget",
+  "pk": 15,
+  "fields": {
+    "page": 1,
+    "widget": 7,
+    "order": 1,
+    "is_active": true,
+    "config": {}
+  }
+},
+{
+  "model": "cms.pagewidget",
+  "pk": 16,
+  "fields": {
+    "page": 1,
+    "widget": 2,
+    "order": 2,
+    "is_active": true,
+    "config": {}
+  }
+},
+{
+  "model": "cms.pagewidget",
+  "pk": 17,
+  "fields": {
+    "page": 1,
+    "widget": 8,
+    "order": 3,
+    "is_active": true,
+    "config": {
+      "product_ids": [
+        28,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21
+      ],
+      "section_title": "Our Signature Products"
+    }
+  }
+},
+{
+  "model": "cms.pagewidget",
+  "pk": 18,
+  "fields": {
+    "page": 1,
+    "widget": 3,
+    "order": 4,
+    "is_active": true,
+    "config": {}
+  }
+},
+{
+  "model": "cms.pagewidget",
+  "pk": 19,
+  "fields": {
+    "page": 1,
+    "widget": 4,
+    "order": 5,
+    "is_active": true,
+    "config": {}
+  }
+},
+{
+  "model": "cms.pagewidget",
+  "pk": 20,
+  "fields": {
+    "page": 1,
+    "widget": 9,
+    "order": 6,
+    "is_active": true,
+    "config": {
+      "product_ids": [
+        28,
+        27,
+        26,
+        25
+      ],
+      "section_title": "Customer Favorites"
+    }
+  }
+},
+{
+  "model": "cms.pagewidget",
+  "pk": 21,
+  "fields": {
+    "page": 1,
+    "widget": 5,
+    "order": 7,
+    "is_active": true,
+    "config": {}
+  }
+},
+{
+  "model": "cms.pagewidget",
+  "pk": 22,
+  "fields": {
+    "page": 1,
+    "widget": 6,
+    "order": 8,
+    "is_active": true,
+    "config": {}
+  }
+},
+{
+  "model": "cms.widgetherobanner",
+  "pk": 1,
+  "fields": {
+    "widget": 1,
+    "title": "Our Journey to Excellence",
+    "subtitle": "Building a marketplace that connects quality products with conscious consumers",
+    "background_image": "",
+    "overlay_opacity": 40,
+    "text_color": "#FFFFFF"
+  }
+},
+{
+  "model": "cms.widgettextsection",
+  "pk": 1,
+  "fields": {
+    "widget": 2,
+    "label": "",
+    "heading": "Welcome to Our Marketplace",
+    "content": "<p>Founded in 2020, we started with a simple mission: to create a platform where quality meets convenience. \n                Our marketplace brings together the best vendors and products, carefully curated to ensure you get nothing but the best.</p>\n                <p>We believe in transparency, quality, and exceptional customer service. Every product on our platform goes through \n                rigorous quality checks, and every vendor is vetted to ensure they meet our high standards.</p>",
+    "text_align": "left"
+  }
+},
+{
+  "model": "cms.widgettextsection",
+  "pk": 2,
+  "fields": {
+    "widget": 4,
+    "label": "",
+    "heading": "What We Stand For",
+    "content": "<h3>Quality First</h3>\n                <p>We never compromise on quality. Every product is carefully selected and tested.</p>\n                \n                <h3>Customer Satisfaction</h3>\n                <p>Your happiness is our success. We go above and beyond to ensure you're satisfied.</p>\n                \n                <h3>Sustainability</h3>\n                <p>We're committed to sustainable practices and eco-friendly products.</p>\n                \n                <h3>Community</h3>\n                <p>We believe in building a community of conscious consumers and ethical vendors.</p>",
+    "text_align": "left"
+  }
+},
+{
+  "model": "cms.widgetstatistic",
+  "pk": 1,
+  "fields": {
+    "widget": 3,
+    "number": "50,000+",
+    "label": "Happy Customers",
+    "order": 1
+  }
+},
+{
+  "model": "cms.widgetstatistic",
+  "pk": 2,
+  "fields": {
+    "widget": 3,
+    "number": "500+",
+    "label": "Trusted Vendors",
+    "order": 2
+  }
+},
+{
+  "model": "cms.widgetstatistic",
+  "pk": 3,
+  "fields": {
+    "widget": 3,
+    "number": "10,000+",
+    "label": "Products Available",
+    "order": 3
+  }
+},
+{
+  "model": "cms.widgetstatistic",
+  "pk": 4,
+  "fields": {
+    "widget": 3,
+    "number": "99%",
+    "label": "Customer Satisfaction",
+    "order": 4
+  }
+},
+{
+  "model": "cms.widgetfaqitem",
+  "pk": 1,
+  "fields": {
+    "widget": 5,
+    "question": "How do you select your vendors?",
+    "answer": "<p>We have a rigorous vetting process that includes quality checks, background verification, and customer feedback analysis. Only vendors who meet our high standards are approved.</p>",
+    "order": 1
+  }
+},
+{
+  "model": "cms.widgetfaqitem",
+  "pk": 2,
+  "fields": {
+    "widget": 5,
+    "question": "What makes your marketplace different?",
+    "answer": "<p>We focus on quality over quantity. Every product is curated, every vendor is vetted, and every customer interaction is personalized. We're not just a marketplace; we're a community.</p>",
+    "order": 2
+  }
+},
+{
+  "model": "cms.widgetfaqitem",
+  "pk": 3,
+  "fields": {
+    "widget": 5,
+    "question": "Do you offer international shipping?",
+    "answer": "<p>Yes! We ship to most countries worldwide. Shipping costs and delivery times vary by location. Check our shipping page for more details.</p>",
+    "order": 3
+  }
+},
+{
+  "model": "cms.widgethtmlcontent",
+  "pk": 1,
+  "fields": {
+    "widget": 6,
+    "html_content": "\n                <div style=\"background: linear-gradient(135deg, #064C50 0%, #0a6b70 100%); padding: 60px 20px; text-align: center; border-radius: 12px; margin: 40px 0;\">\n                    <h2 style=\"color: white; font-size: 36px; margin-bottom: 20px;\">Ready to Start Shopping?</h2>\n                    <p style=\"color: rgba(255,255,255,0.9); font-size: 18px; margin-bottom: 30px;\">Join thousands of happy customers who trust us for their shopping needs.</p>\n                    <a href=\"/shop\" style=\"display: inline-block; background: white; color: #064C50; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;\">Browse Products</a>\n                </div>\n                ",
+    "css_classes": "cta-section"
+  }
+},
+{
+  "model": "cms.widgetproductsection",
+  "pk": 1,
+  "fields": {
+    "widget": 8,
+    "section_title": "Our Signature Products",
+    "products": [
+      28,
+      27,
+      25,
+      23
+    ]
+  }
+},
+{
+  "model": "cms.widgetproductsection",
+  "pk": 2,
+  "fields": {
+    "widget": 9,
+    "section_title": "Customer Favorites",
+    "products": [
+      28,
+      27,
+      26,
+      25
+    ]
+  }
+},
+{
+  "model": "cms.widgetdynamichero",
+  "pk": 1,
+  "fields": {
+    "widget": 7,
+    "title": "Our Journey to Excellence",
+    "description": "<p>Building a marketplace that connects quality products with conscious consumers since 2020</p>",
+    "background_image": "",
+    "show_discount_badge": false,
+    "discount_percentage": 0,
+    "discount_text": "",
+    "show_button": true,
+    "button_text": "Explore Our Products",
+    "button_link": "/shop",
+    "show_price": false,
+    "price": "0.00",
+    "price_text": "",
+    "text_color": "#FFFFFF",
+    "overlay_opacity": 40
+  }
+},
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$ShKRgYqXSGLOkMRIEjfLKl$LfF4kw6hFzSALIgKE1jStjA45FmrMymEdywcG5AQUYE=",
+    "last_login": "2026-03-26T09:10:53.065Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@hamropasal.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-03-23T13:28:39.304Z",
+    "user_type": "customer",
+    "phone": "",
+    "address": "",
+    "billing_first_name": "",
+    "billing_last_name": "",
+    "billing_address": "",
+    "billing_apartment": "",
+    "billing_city": "",
+    "billing_state": "",
+    "billing_zip_code": "",
+    "billing_country": "Nepal",
+    "billing_phone": "",
+    "billing_email": "",
+    "created_at": "2026-03-23T13:28:39.738Z",
+    "updated_at": "2026-03-23T13:28:39.738Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$jFc8VbkwoXnx9MEPlG2qaG$IGhVklUP2jGArG8QJtqjEuC27ZrSFqTuUrY4cJeu2tk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "john_doe",
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-24T08:38:55.030Z",
+    "user_type": "customer",
+    "phone": "+1234567890",
+    "address": "",
+    "billing_first_name": "",
+    "billing_last_name": "",
+    "billing_address": "",
+    "billing_apartment": "",
+    "billing_city": "",
+    "billing_state": "",
+    "billing_zip_code": "",
+    "billing_country": "Nepal",
+    "billing_phone": "",
+    "billing_email": "",
+    "created_at": "2026-03-24T08:38:55.030Z",
+    "updated_at": "2026-03-24T08:38:55.419Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$qs3q6atOc3g24uMo0ytbUP$PxLkE/w/CtxNZQSpph1eH0ilBEl178KBN9bCM3pQiHA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "jane_smith",
+    "first_name": "Jane",
+    "last_name": "Smith",
+    "email": "jane@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-24T08:38:55.458Z",
+    "user_type": "customer",
+    "phone": "+1234567891",
+    "address": "",
+    "billing_first_name": "",
+    "billing_last_name": "",
+    "billing_address": "",
+    "billing_apartment": "",
+    "billing_city": "",
+    "billing_state": "",
+    "billing_zip_code": "",
+    "billing_country": "Nepal",
+    "billing_phone": "",
+    "billing_email": "",
+    "created_at": "2026-03-24T08:38:55.458Z",
+    "updated_at": "2026-03-24T08:38:55.836Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$Mrk2Kbm8wWtqyeLm4J0VSZ$G9GOINm0O6oKfppsmOU8QYlVwGYhzRINDInybS+2RgY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "bob_wilson",
+    "first_name": "Bob",
+    "last_name": "Wilson",
+    "email": "bob@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-24T08:38:55.840Z",
+    "user_type": "customer",
+    "phone": "+1234567892",
+    "address": "",
+    "billing_first_name": "",
+    "billing_last_name": "",
+    "billing_address": "",
+    "billing_apartment": "",
+    "billing_city": "",
+    "billing_state": "",
+    "billing_zip_code": "",
+    "billing_country": "Nepal",
+    "billing_phone": "",
+    "billing_email": "",
+    "created_at": "2026-03-24T08:38:55.841Z",
+    "updated_at": "2026-03-24T08:38:56.199Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$52m7pSY0qmm5j6I12SmqzV$7FTjivlSDe2nyYPJ5Cew9CESlNkGhnfGbEwtlEgVvHg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "sonik",
+    "first_name": "Sonik",
+    "last_name": "Kumar",
+    "email": "sonik@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-24T08:57:38.936Z",
+    "user_type": "customer",
+    "phone": "",
+    "address": "",
+    "billing_first_name": "",
+    "billing_last_name": "",
+    "billing_address": "",
+    "billing_apartment": "",
+    "billing_city": "",
+    "billing_state": "",
+    "billing_zip_code": "",
+    "billing_country": "Nepal",
+    "billing_phone": "",
+    "billing_email": "",
+    "created_at": "2026-03-24T08:57:38.937Z",
+    "updated_at": "2026-03-24T08:57:39.308Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$0FA96zhXIzmyzxXEmGAnbX$RRLT6IzXO9tyHN/2ZsmRVJU16DvJH+/3PRBZkfJlZcY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "bishal",
+    "first_name": "Bishal",
+    "last_name": "Sharma",
+    "email": "bishal@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-24T08:57:39.323Z",
+    "user_type": "customer",
+    "phone": "",
+    "address": "",
+    "billing_first_name": "",
+    "billing_last_name": "",
+    "billing_address": "",
+    "billing_apartment": "",
+    "billing_city": "",
+    "billing_state": "",
+    "billing_zip_code": "",
+    "billing_country": "Nepal",
+    "billing_phone": "",
+    "billing_email": "",
+    "created_at": "2026-03-24T08:57:39.324Z",
+    "updated_at": "2026-03-24T08:57:39.680Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$KICVoGXTOTBWsRWIvX3Qd8$ssjWCbZQz5RObS3GZvi9iV2pWnRjiQjFXHSnzQMY1Wk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "rachana",
+    "first_name": "Rachana",
+    "last_name": "Patel",
+    "email": "rachana@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-24T08:57:39.684Z",
+    "user_type": "customer",
+    "phone": "",
+    "address": "",
+    "billing_first_name": "",
+    "billing_last_name": "",
+    "billing_address": "",
+    "billing_apartment": "",
+    "billing_city": "",
+    "billing_state": "",
+    "billing_zip_code": "",
+    "billing_country": "Nepal",
+    "billing_phone": "",
+    "billing_email": "",
+    "created_at": "2026-03-24T08:57:39.685Z",
+    "updated_at": "2026-03-24T08:57:40.027Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$RFSEMS8DLWoQ7Sc1InYQPJ$5WSc6WTACStOiGJ9gIgsdRKHsPlUVm7r/dPe3LXvF8w=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "devi",
+    "first_name": "Devi",
+    "last_name": "Singh",
+    "email": "devi@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-24T08:57:40.030Z",
+    "user_type": "customer",
+    "phone": "",
+    "address": "",
+    "billing_first_name": "",
+    "billing_last_name": "",
+    "billing_address": "",
+    "billing_apartment": "",
+    "billing_city": "",
+    "billing_state": "",
+    "billing_zip_code": "",
+    "billing_country": "Nepal",
+    "billing_phone": "",
+    "billing_email": "",
+    "created_at": "2026-03-24T08:57:40.030Z",
+    "updated_at": "2026-03-24T08:57:40.383Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$86dJ4uEUNYik4uTfqLsUQq$Hft0uIAPLjakaAGUjlDq2cWDqcGt/mLeaJURFtfgxsQ=",
+    "last_login": "2026-03-24T14:22:07.294Z",
+    "is_superuser": false,
+    "username": "testuser_api",
+    "first_name": "Test",
+    "last_name": "User",
+    "email": "testuser@api.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-24T14:21:41.352Z",
+    "user_type": "customer",
+    "phone": "9999999999",
+    "address": "Test Address",
+    "billing_first_name": "",
+    "billing_last_name": "",
+    "billing_address": "",
+    "billing_apartment": "",
+    "billing_city": "",
+    "billing_state": "",
+    "billing_zip_code": "",
+    "billing_country": "Nepal",
+    "billing_phone": "",
+    "billing_email": "",
+    "created_at": "2026-03-24T14:21:41.743Z",
+    "updated_at": "2026-03-24T14:22:07.308Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$WWFCQp0gk1kH65H6nZbaZE$LDMysKp7mQIUdlRbV4gfgIyFsc98tDexd7ZecC0wi9A=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ashis",
+    "first_name": "",
+    "last_name": "",
+    "email": "ashis@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-25T13:55:14.519Z",
+    "user_type": "customer",
+    "phone": "",
+    "address": "",
+    "billing_first_name": "",
+    "billing_last_name": "",
+    "billing_address": "",
+    "billing_apartment": "",
+    "billing_city": "",
+    "billing_state": "",
+    "billing_zip_code": "",
+    "billing_country": "Nepal",
+    "billing_phone": "",
+    "billing_email": "",
+    "created_at": "2026-03-25T13:55:15.923Z",
+    "updated_at": "2026-03-25T13:55:15.923Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$xskkctouikjrzDMWh0CdhI$tg07tkdRNh/ER37ut4iuMhEJs1I3/B42+4CM6btcpuw=",
+    "last_login": "2026-03-25T14:50:08.963Z",
+    "is_superuser": false,
+    "username": "testuser123",
+    "first_name": "Test",
+    "last_name": "User",
+    "email": "test123@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-25T14:00:24.246Z",
+    "user_type": "customer",
+    "phone": "",
+    "address": "",
+    "billing_first_name": "",
+    "billing_last_name": "",
+    "billing_address": "",
+    "billing_apartment": "",
+    "billing_city": "",
+    "billing_state": "",
+    "billing_zip_code": "",
+    "billing_country": "Nepal",
+    "billing_phone": "",
+    "billing_email": "",
+    "created_at": "2026-03-25T14:00:24.568Z",
+    "updated_at": "2026-03-25T14:00:24.568Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$QqIlS75GACUe8uz2o7flUg$NaPC8mpC74tTcE3Tk+gJo16/tKK8STIFDLEgYA+fUK4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "anish",
+    "first_name": "Anish",
+    "last_name": "Acharya",
+    "email": "anish@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-25T14:02:44.408Z",
+    "user_type": "customer",
+    "phone": "",
+    "address": "",
+    "billing_first_name": "",
+    "billing_last_name": "",
+    "billing_address": "",
+    "billing_apartment": "",
+    "billing_city": "",
+    "billing_state": "",
+    "billing_zip_code": "",
+    "billing_country": "Nepal",
+    "billing_phone": "",
+    "billing_email": "",
+    "created_at": "2026-03-25T14:02:45.069Z",
+    "updated_at": "2026-03-25T14:02:45.069Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$bBu8zXBkfiW3hKkoZMBiGm$hevyzcF2K1tPxqtpbbe4Tcwm2Ls/YeXP028NjHgcHQk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ram",
+    "first_name": "ram",
+    "last_name": "nepal",
+    "email": "ram@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-25T14:21:12.732Z",
+    "user_type": "customer",
+    "phone": "",
+    "address": "",
+    "billing_first_name": "",
+    "billing_last_name": "",
+    "billing_address": "",
+    "billing_apartment": "",
+    "billing_city": "",
+    "billing_state": "",
+    "billing_zip_code": "",
+    "billing_country": "Nepal",
+    "billing_phone": "",
+    "billing_email": "",
+    "created_at": "2026-03-25T14:21:13.292Z",
+    "updated_at": "2026-03-25T14:21:13.292Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$Z9oXvgHKQ5l7Xyx8VVS12F$UYKmfcZqIDVnhmJSKdNR+Tr1sYDZCD8ZvtLKzDnSlS0=",
+    "last_login": "2026-03-28T12:01:20.087Z",
+    "is_superuser": false,
+    "username": "sonik1",
+    "first_name": "Sonik1",
+    "last_name": "",
+    "email": "sonik1@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-25T14:35:24.368Z",
+    "user_type": "customer",
+    "phone": "",
+    "address": "",
+    "billing_first_name": "sonik",
+    "billing_last_name": "lamsal",
+    "billing_address": "ktm",
+    "billing_apartment": "",
+    "billing_city": "ktm",
+    "billing_state": "Bagmati Province",
+    "billing_zip_code": "12345",
+    "billing_country": "Nepal",
+    "billing_phone": "9810000000",
+    "billing_email": "soniklamsal111@gmail.com",
+    "created_at": "2026-03-25T14:35:24.921Z",
+    "updated_at": "2026-03-26T07:20:45.760Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "product": 28,
+    "created_at": "2026-03-24T08:38:56.214Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "product": 26,
+    "created_at": "2026-03-24T08:38:56.220Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 3,
+  "fields": {
+    "user": 2,
+    "product": 24,
+    "created_at": "2026-03-24T08:38:56.223Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 4,
+  "fields": {
+    "user": 3,
+    "product": 27,
+    "created_at": "2026-03-24T08:38:56.226Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 5,
+  "fields": {
+    "user": 3,
+    "product": 25,
+    "created_at": "2026-03-24T08:38:56.229Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 6,
+  "fields": {
+    "user": 4,
+    "product": 28,
+    "created_at": "2026-03-24T08:38:56.232Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 7,
+  "fields": {
+    "user": 4,
+    "product": 27,
+    "created_at": "2026-03-24T08:38:56.236Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 8,
+  "fields": {
+    "user": 4,
+    "product": 23,
+    "created_at": "2026-03-24T08:38:56.240Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 9,
+  "fields": {
+    "user": 4,
+    "product": 22,
+    "created_at": "2026-03-24T08:38:56.243Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 10,
+  "fields": {
+    "user": 5,
+    "product": 28,
+    "created_at": "2026-03-24T08:57:40.402Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 11,
+  "fields": {
+    "user": 5,
+    "product": 27,
+    "created_at": "2026-03-24T08:57:40.409Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 12,
+  "fields": {
+    "user": 5,
+    "product": 26,
+    "created_at": "2026-03-24T08:57:40.413Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 13,
+  "fields": {
+    "user": 5,
+    "product": 25,
+    "created_at": "2026-03-24T08:57:40.417Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 14,
+  "fields": {
+    "user": 6,
+    "product": 26,
+    "created_at": "2026-03-24T08:57:40.442Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 15,
+  "fields": {
+    "user": 6,
+    "product": 25,
+    "created_at": "2026-03-24T08:57:40.445Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 16,
+  "fields": {
+    "user": 6,
+    "product": 24,
+    "created_at": "2026-03-24T08:57:40.449Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 17,
+  "fields": {
+    "user": 6,
+    "product": 23,
+    "created_at": "2026-03-24T08:57:40.451Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 18,
+  "fields": {
+    "user": 7,
+    "product": 23,
+    "created_at": "2026-03-24T08:57:40.464Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 19,
+  "fields": {
+    "user": 7,
+    "product": 22,
+    "created_at": "2026-03-24T08:57:40.467Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 20,
+  "fields": {
+    "user": 7,
+    "product": 21,
+    "created_at": "2026-03-24T08:57:40.469Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 21,
+  "fields": {
+    "user": 7,
+    "product": 20,
+    "created_at": "2026-03-24T08:57:40.471Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 22,
+  "fields": {
+    "user": 8,
+    "product": 20,
+    "created_at": "2026-03-24T08:57:40.481Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 23,
+  "fields": {
+    "user": 8,
+    "product": 19,
+    "created_at": "2026-03-24T08:57:40.483Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 24,
+  "fields": {
+    "user": 8,
+    "product": 18,
+    "created_at": "2026-03-24T08:57:40.485Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 25,
+  "fields": {
+    "user": 8,
+    "product": 17,
+    "created_at": "2026-03-24T08:57:40.487Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 29,
+  "fields": {
+    "user": 14,
+    "product": 26,
+    "created_at": "2026-03-25T17:07:40.782Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 30,
+  "fields": {
+    "user": 14,
+    "product": 24,
+    "created_at": "2026-03-26T08:07:13.328Z"
+  }
+},
+{
+  "model": "users.wishlist",
+  "pk": 31,
+  "fields": {
+    "user": 14,
+    "product": 28,
+    "created_at": "2026-03-27T10:12:05.856Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "order_number": "ORD-9CB45559",
+    "status": "confirmed",
+    "payment_status": "paid",
+    "subtotal": "21.97",
+    "shipping_cost": "5.99",
+    "tax": "1.76",
+    "discount": "0.00",
+    "total": "29.72",
+    "shipping_address": "123 Main St, Apt 4B",
+    "shipping_city": "New York",
+    "shipping_state": "NY",
+    "shipping_zip_code": "10001",
+    "shipping_country": "USA",
+    "customer_name": "John Doe",
+    "customer_email": "john@example.com",
+    "customer_phone": "+1234567890",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T08:39:32.457Z",
+    "updated_at": "2026-03-24T08:39:32.499Z",
+    "confirmed_at": "2026-03-24T08:39:32.499Z",
+    "shipped_at": null,
+    "delivered_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "order_number": "ORD-72537C0B",
+    "status": "cancelled",
+    "payment_status": "paid",
+    "subtotal": "56.46",
+    "shipping_cost": "5.99",
+    "tax": "4.52",
+    "discount": "0.00",
+    "total": "66.97",
+    "shipping_address": "456 Oak Avenue",
+    "shipping_city": "Los Angeles",
+    "shipping_state": "CA",
+    "shipping_zip_code": "90001",
+    "shipping_country": "USA",
+    "customer_name": "Jane Smith",
+    "customer_email": "jane@example.com",
+    "customer_phone": "+1234567891",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T08:39:32.483Z",
+    "updated_at": "2026-03-24T08:39:32.512Z",
+    "confirmed_at": null,
+    "shipped_at": null,
+    "delivered_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 3,
+  "fields": {
+    "user": 4,
+    "order_number": "ORD-284707DC",
+    "status": "processing",
+    "payment_status": "pending",
+    "subtotal": "33.97",
+    "shipping_cost": "5.99",
+    "tax": "2.72",
+    "discount": "0.00",
+    "total": "42.68",
+    "shipping_address": "789 Pine Road",
+    "shipping_city": "Chicago",
+    "shipping_state": "IL",
+    "shipping_zip_code": "60601",
+    "shipping_country": "USA",
+    "customer_name": "Bob Wilson",
+    "customer_email": "bob@example.com",
+    "customer_phone": "+1234567892",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T08:39:32.491Z",
+    "updated_at": "2026-03-24T08:44:40.657Z",
+    "confirmed_at": null,
+    "shipped_at": null,
+    "delivered_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 4,
+  "fields": {
+    "user": 5,
+    "order_number": "ORD-C21FB490",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "21.97",
+    "shipping_cost": "5.99",
+    "tax": "1.76",
+    "discount": "0.00",
+    "total": "29.72",
+    "shipping_address": "5 Main Street",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Sonik Kumar",
+    "customer_email": "sonik@example.com",
+    "customer_phone": "+1234567890",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T08:57:40.504Z",
+    "updated_at": "2026-03-24T08:57:40.555Z",
+    "confirmed_at": "2026-03-24T08:57:40.548Z",
+    "shipped_at": "2026-03-24T08:57:40.554Z",
+    "delivered_at": "2026-03-24T08:57:40.555Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 5,
+  "fields": {
+    "user": 6,
+    "order_number": "ORD-3D287018",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "38.97",
+    "shipping_cost": "5.99",
+    "tax": "3.12",
+    "discount": "0.00",
+    "total": "48.08",
+    "shipping_address": "6 Main Street",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Bishal Sharma",
+    "customer_email": "bishal@example.com",
+    "customer_phone": "+1234567890",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T08:57:40.521Z",
+    "updated_at": "2026-03-24T08:57:40.587Z",
+    "confirmed_at": "2026-03-24T08:57:40.581Z",
+    "shipped_at": "2026-03-24T08:57:40.584Z",
+    "delivered_at": "2026-03-24T08:57:40.587Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 6,
+  "fields": {
+    "user": 7,
+    "order_number": "ORD-A440D7D5",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "60.96",
+    "shipping_cost": "5.99",
+    "tax": "4.88",
+    "discount": "0.00",
+    "total": "71.83",
+    "shipping_address": "7 Main Street",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Rachana Patel",
+    "customer_email": "rachana@example.com",
+    "customer_phone": "+1234567890",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T08:57:40.532Z",
+    "updated_at": "2026-03-24T08:57:40.605Z",
+    "confirmed_at": "2026-03-24T08:57:40.600Z",
+    "shipped_at": "2026-03-24T08:57:40.604Z",
+    "delivered_at": "2026-03-24T08:57:40.605Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 7,
+  "fields": {
+    "user": 8,
+    "order_number": "ORD-1828EC2F",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "28.97",
+    "shipping_cost": "5.99",
+    "tax": "2.32",
+    "discount": "0.00",
+    "total": "37.28",
+    "shipping_address": "8 Main Street",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Devi Sapkota",
+    "customer_email": "devi@example.com",
+    "customer_phone": "+1234567890",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T08:57:40.540Z",
+    "updated_at": "2026-03-24T09:04:23.653Z",
+    "confirmed_at": "2026-03-24T08:57:40.617Z",
+    "shipped_at": "2026-03-24T08:57:40.621Z",
+    "delivered_at": "2026-03-24T08:57:40.623Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 8,
+  "fields": {
+    "user": 5,
+    "order_number": "ORD-57180806",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "21.97",
+    "shipping_cost": "5.99",
+    "tax": "1.76",
+    "discount": "0.00",
+    "total": "29.72",
+    "shipping_address": "5 Main Street",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Sonik Kumar",
+    "customer_email": "sonik@example.com",
+    "customer_phone": "+1234567890",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T08:58:34.294Z",
+    "updated_at": "2026-03-24T08:58:34.350Z",
+    "confirmed_at": "2026-03-24T08:58:34.341Z",
+    "shipped_at": "2026-03-24T08:58:34.348Z",
+    "delivered_at": "2026-03-24T08:58:34.350Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 9,
+  "fields": {
+    "user": 6,
+    "order_number": "ORD-AB466A8D",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "38.97",
+    "shipping_cost": "5.99",
+    "tax": "3.12",
+    "discount": "0.00",
+    "total": "48.08",
+    "shipping_address": "6 Main Street",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Bishal Sharma",
+    "customer_email": "bishal@example.com",
+    "customer_phone": "+1234567890",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T08:58:34.313Z",
+    "updated_at": "2026-03-24T08:58:34.377Z",
+    "confirmed_at": "2026-03-24T08:58:34.369Z",
+    "shipped_at": "2026-03-24T08:58:34.372Z",
+    "delivered_at": "2026-03-24T08:58:34.377Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 10,
+  "fields": {
+    "user": 7,
+    "order_number": "ORD-DACED007",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "60.96",
+    "shipping_cost": "5.99",
+    "tax": "4.88",
+    "discount": "0.00",
+    "total": "71.83",
+    "shipping_address": "7 Main Street",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Rachana Patel",
+    "customer_email": "rachana@example.com",
+    "customer_phone": "+1234567890",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T08:58:34.324Z",
+    "updated_at": "2026-03-24T08:58:34.400Z",
+    "confirmed_at": "2026-03-24T08:58:34.393Z",
+    "shipped_at": "2026-03-24T08:58:34.398Z",
+    "delivered_at": "2026-03-24T08:58:34.400Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 11,
+  "fields": {
+    "user": 8,
+    "order_number": "ORD-B0004109",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "28.97",
+    "shipping_cost": "5.99",
+    "tax": "2.32",
+    "discount": "0.00",
+    "total": "37.28",
+    "shipping_address": "8 Main Street",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Devi Kumari",
+    "customer_email": "devi@example.com",
+    "customer_phone": "+1234567890",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T08:58:34.335Z",
+    "updated_at": "2026-03-24T09:04:05.718Z",
+    "confirmed_at": "2026-03-24T08:58:34.414Z",
+    "shipped_at": "2026-03-24T08:58:34.417Z",
+    "delivered_at": "2026-03-24T08:58:34.419Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 12,
+  "fields": {
+    "user": 5,
+    "order_number": "ORD-68AC7B4D",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "21.97",
+    "shipping_cost": "5.99",
+    "tax": "1.76",
+    "discount": "0.00",
+    "total": "29.72",
+    "shipping_address": "5 Main Street",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Sonik Kumar",
+    "customer_email": "sonik@example.com",
+    "customer_phone": "+1234567890",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T09:01:06.450Z",
+    "updated_at": "2026-03-24T09:01:06.509Z",
+    "confirmed_at": "2026-03-24T09:01:06.499Z",
+    "shipped_at": "2026-03-24T09:01:06.506Z",
+    "delivered_at": "2026-03-24T09:01:06.509Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 13,
+  "fields": {
+    "user": 6,
+    "order_number": "ORD-E4B7B836",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "38.97",
+    "shipping_cost": "5.99",
+    "tax": "3.12",
+    "discount": "0.00",
+    "total": "48.08",
+    "shipping_address": "6 Main Street",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Bishal Baniya",
+    "customer_email": "bishal@example.com",
+    "customer_phone": "+1234567890",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T09:01:06.468Z",
+    "updated_at": "2026-03-24T09:02:23.996Z",
+    "confirmed_at": "2026-03-24T09:01:06.526Z",
+    "shipped_at": "2026-03-24T09:01:06.529Z",
+    "delivered_at": "2026-03-24T09:01:06.532Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 14,
+  "fields": {
+    "user": 7,
+    "order_number": "ORD-3B111A7C",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "60.96",
+    "shipping_cost": "5.99",
+    "tax": "4.88",
+    "discount": "0.00",
+    "total": "71.83",
+    "shipping_address": "7 Main Street",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Rachana shrestha",
+    "customer_email": "rachana@example.com",
+    "customer_phone": "+1234567890",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T09:01:06.481Z",
+    "updated_at": "2026-03-24T09:02:10.067Z",
+    "confirmed_at": "2026-03-24T09:01:06.546Z",
+    "shipped_at": "2026-03-24T09:01:06.549Z",
+    "delivered_at": "2026-03-24T09:01:06.550Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 15,
+  "fields": {
+    "user": 8,
+    "order_number": "ORD-35E50DCA",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "28.97",
+    "shipping_cost": "5.99",
+    "tax": "2.32",
+    "discount": "0.00",
+    "total": "37.28",
+    "shipping_address": "8 Main Street",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Devi Sapkota",
+    "customer_email": "devi@example.com",
+    "customer_phone": "+1234567890",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T09:01:06.493Z",
+    "updated_at": "2026-03-24T09:01:54.639Z",
+    "confirmed_at": "2026-03-24T09:01:06.566Z",
+    "shipped_at": "2026-03-24T09:01:06.572Z",
+    "delivered_at": "2026-03-24T09:01:06.575Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 16,
+  "fields": {
+    "user": 9,
+    "order_number": "ORD-03D83ED3",
+    "status": "pending",
+    "payment_status": "pending",
+    "subtotal": "22.47",
+    "shipping_cost": "100.00",
+    "tax": "0.00",
+    "discount": "0.00",
+    "total": "122.47",
+    "shipping_address": "123 Test Street",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Test User",
+    "customer_email": "testuser@api.com",
+    "customer_phone": "9876543210",
+    "notes": "Test order from API",
+    "coupon_code": "",
+    "created_at": "2026-03-24T14:21:41.935Z",
+    "updated_at": "2026-03-24T14:21:41.935Z",
+    "confirmed_at": null,
+    "shipped_at": null,
+    "delivered_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 17,
+  "fields": {
+    "user": 9,
+    "order_number": "ORD-DA2F6D3D",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "7.49",
+    "shipping_cost": "100.00",
+    "tax": "0.00",
+    "discount": "0.00",
+    "total": "107.49",
+    "shipping_address": "Test Address",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Test User",
+    "customer_email": "testuser@api.com",
+    "customer_phone": "9876543210",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T14:21:42.121Z",
+    "updated_at": "2026-03-24T14:21:42.121Z",
+    "confirmed_at": null,
+    "shipped_at": null,
+    "delivered_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 18,
+  "fields": {
+    "user": 9,
+    "order_number": "ORD-38D39F2C",
+    "status": "pending",
+    "payment_status": "pending",
+    "subtotal": "22.47",
+    "shipping_cost": "100.00",
+    "tax": "0.00",
+    "discount": "0.00",
+    "total": "122.47",
+    "shipping_address": "123 Test Street",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Test User",
+    "customer_email": "testuser@api.com",
+    "customer_phone": "9876543210",
+    "notes": "Test order from API",
+    "coupon_code": "",
+    "created_at": "2026-03-24T14:22:07.413Z",
+    "updated_at": "2026-03-24T14:22:07.413Z",
+    "confirmed_at": null,
+    "shipped_at": null,
+    "delivered_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 19,
+  "fields": {
+    "user": 9,
+    "order_number": "ORD-4CAB32D4",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "7.49",
+    "shipping_cost": "100.00",
+    "tax": "0.00",
+    "discount": "0.00",
+    "total": "107.49",
+    "shipping_address": "Test Address",
+    "shipping_city": "Kathmandu",
+    "shipping_state": "Bagmati",
+    "shipping_zip_code": "44600",
+    "shipping_country": "Nepal",
+    "customer_name": "Test User",
+    "customer_email": "testuser@api.com",
+    "customer_phone": "9876543210",
+    "notes": "",
+    "coupon_code": "",
+    "created_at": "2026-03-24T14:22:07.485Z",
+    "updated_at": "2026-03-24T14:22:07.485Z",
+    "confirmed_at": null,
+    "shipped_at": null,
+    "delivered_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 20,
+  "fields": {
+    "user": 14,
+    "order_number": "ORD-5530CD8F",
+    "status": "delivered",
+    "payment_status": "paid",
+    "subtotal": "33.45",
+    "shipping_cost": "100.00",
+    "tax": "0.00",
+    "discount": "0.00",
+    "total": "133.45",
+    "shipping_address": "ktm",
+    "shipping_city": "ktm",
+    "shipping_state": "Bagmati Province",
+    "shipping_zip_code": "12345",
+    "shipping_country": "Nepal",
+    "customer_name": "sonik lamsal",
+    "customer_email": "soniklamsal111@gmail.com",
+    "customer_phone": "9810000000",
+    "notes": "jfdlkbjshjsjkdslbs",
+    "coupon_code": "",
+    "created_at": "2026-03-26T06:30:23.410Z",
+    "updated_at": "2026-03-26T06:31:40.556Z",
+    "confirmed_at": "2026-03-26T06:31:14.133Z",
+    "shipped_at": null,
+    "delivered_at": "2026-03-26T06:31:40.555Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 21,
+  "fields": {
+    "user": 14,
+    "order_number": "ORD-99A47E7B",
+    "status": "pending",
+    "payment_status": "pending",
+    "subtotal": "4.99",
+    "shipping_cost": "100.00",
+    "tax": "0.00",
+    "discount": "0.00",
+    "total": "104.99",
+    "shipping_address": "ktm",
+    "shipping_city": "ktm",
+    "shipping_state": "Bagmati Province",
+    "shipping_zip_code": "12345",
+    "shipping_country": "Nepal",
+    "customer_name": "sonik lamsal",
+    "customer_email": "soniklamsal111@gmail.com",
+    "customer_phone": "9810000000",
+    "notes": "mz./lxxcx",
+    "coupon_code": "",
+    "created_at": "2026-03-26T07:20:45.821Z",
+    "updated_at": "2026-03-26T07:20:45.821Z",
+    "confirmed_at": null,
+    "shipped_at": null,
+    "delivered_at": null
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "product": 28,
+    "product_name": "Cheddar Cheese Block 16oz",
+    "product_sku": "",
+    "quantity": 2,
+    "unit_price": "7.49",
+    "discount_price": "7.49",
+    "subtotal": "14.98",
+    "created_at": "2026-03-24T08:39:32.472Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 2,
+  "fields": {
+    "order": 1,
+    "product": 27,
+    "product_name": "Greek Yogurt 32oz",
+    "product_sku": "",
+    "quantity": 1,
+    "unit_price": "6.99",
+    "discount_price": "6.99",
+    "subtotal": "6.99",
+    "created_at": "2026-03-24T08:39:32.479Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 3,
+  "fields": {
+    "order": 2,
+    "product": 26,
+    "product_name": "Free Range Eggs Dozen",
+    "product_sku": "",
+    "quantity": 1,
+    "unit_price": "5.49",
+    "discount_price": "5.49",
+    "subtotal": "5.49",
+    "created_at": "2026-03-24T08:39:32.485Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 4,
+  "fields": {
+    "order": 2,
+    "product": 24,
+    "product_name": "Fresh Cod Fillet 400g",
+    "product_sku": "",
+    "quantity": 3,
+    "unit_price": "16.99",
+    "discount_price": "16.99",
+    "subtotal": "50.97",
+    "created_at": "2026-03-24T08:39:32.487Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 5,
+  "fields": {
+    "order": 3,
+    "product": 23,
+    "product_name": "Ground Turkey 500g",
+    "product_sku": "",
+    "quantity": 2,
+    "unit_price": "8.99",
+    "discount_price": "8.99",
+    "subtotal": "17.98",
+    "created_at": "2026-03-24T08:39:32.492Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 6,
+  "fields": {
+    "order": 3,
+    "product": 22,
+    "product_name": "Fresh Shrimp 300g",
+    "product_sku": "",
+    "quantity": 1,
+    "unit_price": "15.99",
+    "discount_price": "15.99",
+    "subtotal": "15.99",
+    "created_at": "2026-03-24T08:39:32.493Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 7,
+  "fields": {
+    "order": 4,
+    "product": 28,
+    "product_name": "Cheddar Cheese Block 16oz",
+    "product_sku": "",
+    "quantity": 2,
+    "unit_price": "7.49",
+    "discount_price": "7.49",
+    "subtotal": "14.98",
+    "created_at": "2026-03-24T08:57:40.506Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 8,
+  "fields": {
+    "order": 4,
+    "product": 27,
+    "product_name": "Greek Yogurt 32oz",
+    "product_sku": "",
+    "quantity": 1,
+    "unit_price": "6.99",
+    "discount_price": "6.99",
+    "subtotal": "6.99",
+    "created_at": "2026-03-24T08:57:40.508Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 9,
+  "fields": {
+    "order": 5,
+    "product": 25,
+    "product_name": "Organic Whole Milk 1 Gallon",
+    "product_sku": "",
+    "quantity": 1,
+    "unit_price": "4.99",
+    "discount_price": "4.99",
+    "subtotal": "4.99",
+    "created_at": "2026-03-24T08:57:40.522Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 10,
+  "fields": {
+    "order": 5,
+    "product": 24,
+    "product_name": "Fresh Cod Fillet 400g",
+    "product_sku": "",
+    "quantity": 2,
+    "unit_price": "16.99",
+    "discount_price": "16.99",
+    "subtotal": "33.98",
+    "created_at": "2026-03-24T08:57:40.523Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 11,
+  "fields": {
+    "order": 6,
+    "product": 22,
+    "product_name": "Fresh Shrimp 300g",
+    "product_sku": "",
+    "quantity": 3,
+    "unit_price": "15.99",
+    "discount_price": "15.99",
+    "subtotal": "47.97",
+    "created_at": "2026-03-24T08:57:40.533Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 12,
+  "fields": {
+    "order": 6,
+    "product": 21,
+    "product_name": "Chicken Breast 1kg",
+    "product_sku": "",
+    "quantity": 1,
+    "unit_price": "12.99",
+    "discount_price": "12.99",
+    "subtotal": "12.99",
+    "created_at": "2026-03-24T08:57:40.533Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 13,
+  "fields": {
+    "order": 7,
+    "product": 19,
+    "product_name": "Fresh Salmon Fillet 500g",
+    "product_sku": "",
+    "quantity": 1,
+    "unit_price": "18.99",
+    "discount_price": "18.99",
+    "subtotal": "18.99",
+    "created_at": "2026-03-24T08:57:40.541Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 14,
+  "fields": {
+    "order": 7,
+    "product": 18,
+    "product_name": "Bell Peppers Mix 3-Pack",
+    "product_sku": "",
+    "quantity": 2,
+    "unit_price": "4.99",
+    "discount_price": "4.99",
+    "subtotal": "9.98",
+    "created_at": "2026-03-24T08:57:40.542Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 15,
+  "fields": {
+    "order": 8,
+    "product": 28,
+    "product_name": "Cheddar Cheese Block 16oz",
+    "product_sku": "CHED29310",
+    "quantity": 2,
+    "unit_price": "7.49",
+    "discount_price": "7.49",
+    "subtotal": "14.98",
+    "created_at": "2026-03-24T08:58:34.296Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 16,
+  "fields": {
+    "order": 8,
+    "product": 27,
+    "product_name": "Greek Yogurt 32oz",
+    "product_sku": "GRED38091",
+    "quantity": 1,
+    "unit_price": "6.99",
+    "discount_price": "6.99",
+    "subtotal": "6.99",
+    "created_at": "2026-03-24T08:58:34.298Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 17,
+  "fields": {
+    "order": 9,
+    "product": 25,
+    "product_name": "Organic Whole Milk 1 Gallon",
+    "product_sku": "ORG83332A",
+    "quantity": 1,
+    "unit_price": "4.99",
+    "discount_price": "4.99",
+    "subtotal": "4.99",
+    "created_at": "2026-03-24T08:58:34.314Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 18,
+  "fields": {
+    "order": 9,
+    "product": 24,
+    "product_name": "Fresh Cod Fillet 400g",
+    "product_sku": "FRE9A241B",
+    "quantity": 2,
+    "unit_price": "16.99",
+    "discount_price": "16.99",
+    "subtotal": "33.98",
+    "created_at": "2026-03-24T08:58:34.315Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 19,
+  "fields": {
+    "order": 10,
+    "product": 22,
+    "product_name": "Fresh Shrimp 300g",
+    "product_sku": "FRE2C5A38",
+    "quantity": 3,
+    "unit_price": "15.99",
+    "discount_price": "15.99",
+    "subtotal": "47.97",
+    "created_at": "2026-03-24T08:58:34.325Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 20,
+  "fields": {
+    "order": 10,
+    "product": 21,
+    "product_name": "Chicken Breast 1kg",
+    "product_sku": "CHI548C35",
+    "quantity": 1,
+    "unit_price": "12.99",
+    "discount_price": "12.99",
+    "subtotal": "12.99",
+    "created_at": "2026-03-24T08:58:34.327Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 21,
+  "fields": {
+    "order": 11,
+    "product": 19,
+    "product_name": "Fresh Salmon Fillet 500g",
+    "product_sku": "FRE8023B1",
+    "quantity": 1,
+    "unit_price": "18.99",
+    "discount_price": "18.99",
+    "subtotal": "18.99",
+    "created_at": "2026-03-24T08:58:34.336Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 22,
+  "fields": {
+    "order": 11,
+    "product": 18,
+    "product_name": "Bell Peppers Mix 3-Pack",
+    "product_sku": "BELE270AE",
+    "quantity": 2,
+    "unit_price": "4.99",
+    "discount_price": "4.99",
+    "subtotal": "9.98",
+    "created_at": "2026-03-24T08:58:34.337Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 23,
+  "fields": {
+    "order": 12,
+    "product": 28,
+    "product_name": "Cheddar Cheese Block 16oz",
+    "product_sku": "CHED29310",
+    "quantity": 2,
+    "unit_price": "7.49",
+    "discount_price": "7.49",
+    "subtotal": "14.98",
+    "created_at": "2026-03-24T09:01:06.454Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 24,
+  "fields": {
+    "order": 12,
+    "product": 27,
+    "product_name": "Greek Yogurt 32oz",
+    "product_sku": "GRED38091",
+    "quantity": 1,
+    "unit_price": "6.99",
+    "discount_price": "6.99",
+    "subtotal": "6.99",
+    "created_at": "2026-03-24T09:01:06.456Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 25,
+  "fields": {
+    "order": 13,
+    "product": 25,
+    "product_name": "Organic Whole Milk 1 Gallon",
+    "product_sku": "ORG83332A",
+    "quantity": 1,
+    "unit_price": "4.99",
+    "discount_price": "4.99",
+    "subtotal": "4.99",
+    "created_at": "2026-03-24T09:01:06.470Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 26,
+  "fields": {
+    "order": 13,
+    "product": 24,
+    "product_name": "Fresh Cod Fillet 400g",
+    "product_sku": "FRE9A241B",
+    "quantity": 2,
+    "unit_price": "16.99",
+    "discount_price": "16.99",
+    "subtotal": "33.98",
+    "created_at": "2026-03-24T09:01:06.471Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 27,
+  "fields": {
+    "order": 14,
+    "product": 22,
+    "product_name": "Fresh Shrimp 300g",
+    "product_sku": "FRE2C5A38",
+    "quantity": 3,
+    "unit_price": "15.99",
+    "discount_price": "15.99",
+    "subtotal": "47.97",
+    "created_at": "2026-03-24T09:01:06.482Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 28,
+  "fields": {
+    "order": 14,
+    "product": 21,
+    "product_name": "Chicken Breast 1kg",
+    "product_sku": "CHI548C35",
+    "quantity": 1,
+    "unit_price": "12.99",
+    "discount_price": "12.99",
+    "subtotal": "12.99",
+    "created_at": "2026-03-24T09:01:06.483Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 29,
+  "fields": {
+    "order": 15,
+    "product": 19,
+    "product_name": "Fresh Salmon Fillet 500g",
+    "product_sku": "FRE8023B1",
+    "quantity": 1,
+    "unit_price": "18.99",
+    "discount_price": "18.99",
+    "subtotal": "18.99",
+    "created_at": "2026-03-24T09:01:06.493Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 30,
+  "fields": {
+    "order": 15,
+    "product": 18,
+    "product_name": "Bell Peppers Mix 3-Pack",
+    "product_sku": "BELE270AE",
+    "quantity": 2,
+    "unit_price": "4.99",
+    "discount_price": "4.99",
+    "subtotal": "9.98",
+    "created_at": "2026-03-24T09:01:06.494Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 31,
+  "fields": {
+    "order": 16,
+    "product": 28,
+    "product_name": "Cheddar Cheese Block 16oz",
+    "product_sku": "CHED29310",
+    "quantity": 3,
+    "unit_price": "10.99",
+    "discount_price": "7.49",
+    "subtotal": "22.47",
+    "created_at": "2026-03-24T14:21:41.979Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 32,
+  "fields": {
+    "order": 17,
+    "product": 28,
+    "product_name": "Cheddar Cheese Block 16oz",
+    "product_sku": "CHED29310",
+    "quantity": 1,
+    "unit_price": "10.99",
+    "discount_price": "7.49",
+    "subtotal": "7.49",
+    "created_at": "2026-03-24T14:21:42.124Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 33,
+  "fields": {
+    "order": 18,
+    "product": 28,
+    "product_name": "Cheddar Cheese Block 16oz",
+    "product_sku": "CHED29310",
+    "quantity": 3,
+    "unit_price": "10.99",
+    "discount_price": "7.49",
+    "subtotal": "22.47",
+    "created_at": "2026-03-24T14:22:07.416Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 34,
+  "fields": {
+    "order": 19,
+    "product": 28,
+    "product_name": "Cheddar Cheese Block 16oz",
+    "product_sku": "CHED29310",
+    "quantity": 1,
+    "unit_price": "10.99",
+    "discount_price": "7.49",
+    "subtotal": "7.49",
+    "created_at": "2026-03-24T14:22:07.486Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 35,
+  "fields": {
+    "order": 20,
+    "product": 26,
+    "product_name": "Free Range Eggs Dozen",
+    "product_sku": "",
+    "quantity": 2,
+    "unit_price": "7.20",
+    "discount_price": "5.49",
+    "subtotal": "10.98",
+    "created_at": "2026-03-26T06:30:26.505Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 36,
+  "fields": {
+    "order": 20,
+    "product": 28,
+    "product_name": "Cheddar Cheese Block 16oz",
+    "product_sku": "CHED29310",
+    "quantity": 3,
+    "unit_price": "10.99",
+    "discount_price": "7.49",
+    "subtotal": "22.47",
+    "created_at": "2026-03-26T06:30:26.512Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 37,
+  "fields": {
+    "order": 21,
+    "product": 25,
+    "product_name": "Organic Whole Milk 1 Gallon",
+    "product_sku": "ORG83332A",
+    "quantity": 1,
+    "unit_price": "6.50",
+    "discount_price": "4.99",
+    "subtotal": "4.99",
+    "created_at": "2026-03-26T07:20:49.734Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "status": "confirmed",
+    "notes": "Order confirmed by admin - ready for processing",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:39:32.500Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "status": "cancelled",
+    "notes": "Order cancelled - customer requested cancellation",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:39:32.514Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "status": "processing",
+    "notes": "Status changed to Processing",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:44:40.655Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "status": "confirmed",
+    "notes": "Order confirmed",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.550Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 5,
+  "fields": {
+    "order": 4,
+    "status": "processing",
+    "notes": "Order processing",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.553Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 6,
+  "fields": {
+    "order": 4,
+    "status": "shipped",
+    "notes": "Order shipped",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.555Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 7,
+  "fields": {
+    "order": 4,
+    "status": "delivered",
+    "notes": "Order delivered successfully",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.556Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 8,
+  "fields": {
+    "order": 5,
+    "status": "confirmed",
+    "notes": "Order confirmed",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.582Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 9,
+  "fields": {
+    "order": 5,
+    "status": "processing",
+    "notes": "Order processing",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.584Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 10,
+  "fields": {
+    "order": 5,
+    "status": "shipped",
+    "notes": "Order shipped",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.586Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 11,
+  "fields": {
+    "order": 5,
+    "status": "delivered",
+    "notes": "Order delivered successfully",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.588Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 12,
+  "fields": {
+    "order": 6,
+    "status": "confirmed",
+    "notes": "Order confirmed",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.601Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 13,
+  "fields": {
+    "order": 6,
+    "status": "processing",
+    "notes": "Order processing",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.603Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 14,
+  "fields": {
+    "order": 6,
+    "status": "shipped",
+    "notes": "Order shipped",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.605Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 15,
+  "fields": {
+    "order": 6,
+    "status": "delivered",
+    "notes": "Order delivered successfully",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.606Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 16,
+  "fields": {
+    "order": 7,
+    "status": "confirmed",
+    "notes": "Order confirmed",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.619Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 17,
+  "fields": {
+    "order": 7,
+    "status": "processing",
+    "notes": "Order processing",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.620Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 18,
+  "fields": {
+    "order": 7,
+    "status": "shipped",
+    "notes": "Order shipped",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.622Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 19,
+  "fields": {
+    "order": 7,
+    "status": "delivered",
+    "notes": "Order delivered successfully",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:57:40.624Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 20,
+  "fields": {
+    "order": 8,
+    "status": "confirmed",
+    "notes": "Order confirmed",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.344Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 21,
+  "fields": {
+    "order": 8,
+    "status": "processing",
+    "notes": "Order processing",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.347Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 22,
+  "fields": {
+    "order": 8,
+    "status": "shipped",
+    "notes": "Order shipped",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.349Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 23,
+  "fields": {
+    "order": 8,
+    "status": "delivered",
+    "notes": "Order delivered successfully",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.351Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 24,
+  "fields": {
+    "order": 9,
+    "status": "confirmed",
+    "notes": "Order confirmed",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.370Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 25,
+  "fields": {
+    "order": 9,
+    "status": "processing",
+    "notes": "Order processing",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.372Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 26,
+  "fields": {
+    "order": 9,
+    "status": "shipped",
+    "notes": "Order shipped",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.375Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 27,
+  "fields": {
+    "order": 9,
+    "status": "delivered",
+    "notes": "Order delivered successfully",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.379Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 28,
+  "fields": {
+    "order": 10,
+    "status": "confirmed",
+    "notes": "Order confirmed",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.395Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 29,
+  "fields": {
+    "order": 10,
+    "status": "processing",
+    "notes": "Order processing",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.398Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 30,
+  "fields": {
+    "order": 10,
+    "status": "shipped",
+    "notes": "Order shipped",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.400Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 31,
+  "fields": {
+    "order": 10,
+    "status": "delivered",
+    "notes": "Order delivered successfully",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.402Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 32,
+  "fields": {
+    "order": 11,
+    "status": "confirmed",
+    "notes": "Order confirmed",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.415Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 33,
+  "fields": {
+    "order": 11,
+    "status": "processing",
+    "notes": "Order processing",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.416Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 34,
+  "fields": {
+    "order": 11,
+    "status": "shipped",
+    "notes": "Order shipped",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.419Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 35,
+  "fields": {
+    "order": 11,
+    "status": "delivered",
+    "notes": "Order delivered successfully",
+    "changed_by": 1,
+    "created_at": "2026-03-24T08:58:34.420Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 36,
+  "fields": {
+    "order": 12,
+    "status": "confirmed",
+    "notes": "Order confirmed",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.500Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 37,
+  "fields": {
+    "order": 12,
+    "status": "processing",
+    "notes": "Order processing",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.505Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 38,
+  "fields": {
+    "order": 12,
+    "status": "shipped",
+    "notes": "Order shipped",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.508Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 39,
+  "fields": {
+    "order": 12,
+    "status": "delivered",
+    "notes": "Order delivered successfully",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.510Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 40,
+  "fields": {
+    "order": 13,
+    "status": "confirmed",
+    "notes": "Order confirmed",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.527Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 41,
+  "fields": {
+    "order": 13,
+    "status": "processing",
+    "notes": "Order processing",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.528Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 42,
+  "fields": {
+    "order": 13,
+    "status": "shipped",
+    "notes": "Order shipped",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.530Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 43,
+  "fields": {
+    "order": 13,
+    "status": "delivered",
+    "notes": "Order delivered successfully",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.533Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 44,
+  "fields": {
+    "order": 14,
+    "status": "confirmed",
+    "notes": "Order confirmed",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.547Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 45,
+  "fields": {
+    "order": 14,
+    "status": "processing",
+    "notes": "Order processing",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.548Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 46,
+  "fields": {
+    "order": 14,
+    "status": "shipped",
+    "notes": "Order shipped",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.550Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 47,
+  "fields": {
+    "order": 14,
+    "status": "delivered",
+    "notes": "Order delivered successfully",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.553Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 48,
+  "fields": {
+    "order": 15,
+    "status": "confirmed",
+    "notes": "Order confirmed",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.567Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 49,
+  "fields": {
+    "order": 15,
+    "status": "processing",
+    "notes": "Order processing",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.571Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 50,
+  "fields": {
+    "order": 15,
+    "status": "shipped",
+    "notes": "Order shipped",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.574Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 51,
+  "fields": {
+    "order": 15,
+    "status": "delivered",
+    "notes": "Order delivered successfully",
+    "changed_by": 1,
+    "created_at": "2026-03-24T09:01:06.577Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 52,
+  "fields": {
+    "order": 16,
+    "status": "pending",
+    "notes": "Order created",
+    "changed_by": 9,
+    "created_at": "2026-03-24T14:21:41.982Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 53,
+  "fields": {
+    "order": 18,
+    "status": "pending",
+    "notes": "Order created",
+    "changed_by": 9,
+    "created_at": "2026-03-24T14:22:07.418Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 54,
+  "fields": {
+    "order": 20,
+    "status": "pending",
+    "notes": "Order created",
+    "changed_by": 14,
+    "created_at": "2026-03-26T06:30:26.513Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 55,
+  "fields": {
+    "order": 20,
+    "status": "confirmed",
+    "notes": "Status changed to Confirmed",
+    "changed_by": 1,
+    "created_at": "2026-03-26T06:31:11.516Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 56,
+  "fields": {
+    "order": 20,
+    "status": "delivered",
+    "notes": "Status changed to Delivered",
+    "changed_by": 1,
+    "created_at": "2026-03-26T06:31:37.967Z"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 57,
+  "fields": {
+    "order": 21,
+    "status": "pending",
+    "notes": "Order created",
+    "changed_by": 14,
+    "created_at": "2026-03-26T07:20:49.736Z"
+  }
+},
+{
+  "model": "orders.cart",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "session_key": null,
+    "created_at": "2026-03-24T08:38:56.253Z",
+    "updated_at": "2026-03-24T08:38:56.253Z"
+  }
+},
+{
+  "model": "orders.cart",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "session_key": null,
+    "created_at": "2026-03-24T08:39:32.427Z",
+    "updated_at": "2026-03-24T08:39:32.427Z"
+  }
+},
+{
+  "model": "orders.cart",
+  "pk": 3,
+  "fields": {
+    "user": 4,
+    "session_key": null,
+    "created_at": "2026-03-24T08:39:32.440Z",
+    "updated_at": "2026-03-24T08:39:32.440Z"
+  }
+},
+{
+  "model": "orders.cart",
+  "pk": 4,
+  "fields": {
+    "user": 5,
+    "session_key": null,
+    "created_at": "2026-03-24T08:57:40.424Z",
+    "updated_at": "2026-03-24T08:57:40.424Z"
+  }
+},
+{
+  "model": "orders.cart",
+  "pk": 5,
+  "fields": {
+    "user": 6,
+    "session_key": null,
+    "created_at": "2026-03-24T08:57:40.455Z",
+    "updated_at": "2026-03-24T08:57:40.455Z"
+  }
+},
+{
+  "model": "orders.cart",
+  "pk": 6,
+  "fields": {
+    "user": 7,
+    "session_key": null,
+    "created_at": "2026-03-24T08:57:40.473Z",
+    "updated_at": "2026-03-24T08:57:40.473Z"
+  }
+},
+{
+  "model": "orders.cart",
+  "pk": 7,
+  "fields": {
+    "user": 8,
+    "session_key": null,
+    "created_at": "2026-03-24T08:57:40.489Z",
+    "updated_at": "2026-03-24T08:57:40.489Z"
+  }
+},
+{
+  "model": "orders.cart",
+  "pk": 8,
+  "fields": {
+    "user": 9,
+    "session_key": null,
+    "created_at": "2026-03-24T14:21:41.836Z",
+    "updated_at": "2026-03-24T14:21:41.836Z"
+  }
+},
+{
+  "model": "orders.cart",
+  "pk": 9,
+  "fields": {
+    "user": 14,
+    "session_key": null,
+    "created_at": "2026-03-25T15:04:47.820Z",
+    "updated_at": "2026-03-25T15:04:47.820Z"
+  }
+},
+{
+  "model": "orders.cartitem",
+  "pk": 1,
+  "fields": {
+    "cart": 1,
+    "product": 28,
+    "quantity": 2,
+    "created_at": "2026-03-24T08:39:32.410Z",
+    "updated_at": "2026-03-24T08:39:32.410Z"
+  }
+},
+{
+  "model": "orders.cartitem",
+  "pk": 2,
+  "fields": {
+    "cart": 1,
+    "product": 27,
+    "quantity": 1,
+    "created_at": "2026-03-24T08:39:32.419Z",
+    "updated_at": "2026-03-24T08:39:32.419Z"
+  }
+},
+{
+  "model": "orders.cartitem",
+  "pk": 3,
+  "fields": {
+    "cart": 1,
+    "product": 25,
+    "quantity": 3,
+    "created_at": "2026-03-24T08:39:32.425Z",
+    "updated_at": "2026-03-24T08:39:32.425Z"
+  }
+},
+{
+  "model": "orders.cartitem",
+  "pk": 4,
+  "fields": {
+    "cart": 2,
+    "product": 26,
+    "quantity": 1,
+    "created_at": "2026-03-24T08:39:32.431Z",
+    "updated_at": "2026-03-24T08:39:32.431Z"
+  }
+},
+{
+  "model": "orders.cartitem",
+  "pk": 5,
+  "fields": {
+    "cart": 2,
+    "product": 24,
+    "quantity": 2,
+    "created_at": "2026-03-24T08:39:32.434Z",
+    "updated_at": "2026-03-24T08:39:32.434Z"
+  }
+},
+{
+  "model": "orders.cartitem",
+  "pk": 6,
+  "fields": {
+    "cart": 3,
+    "product": 23,
+    "quantity": 1,
+    "created_at": "2026-03-24T08:39:32.441Z",
+    "updated_at": "2026-03-24T08:39:32.441Z"
+  }
+},
+{
+  "model": "orders.cartitem",
+  "pk": 7,
+  "fields": {
+    "cart": 3,
+    "product": 22,
+    "quantity": 2,
+    "created_at": "2026-03-24T08:39:32.445Z",
+    "updated_at": "2026-03-24T08:39:32.445Z"
+  }
+},
+{
+  "model": "orders.cartitem",
+  "pk": 8,
+  "fields": {
+    "cart": 3,
+    "product": 21,
+    "quantity": 1,
+    "created_at": "2026-03-24T08:39:32.447Z",
+    "updated_at": "2026-03-24T08:39:32.447Z"
+  }
+},
+{
+  "model": "orders.cartitem",
+  "pk": 38,
+  "fields": {
+    "cart": 9,
+    "product": 22,
+    "quantity": 1,
+    "created_at": "2026-03-26T07:23:45.300Z",
+    "updated_at": "2026-03-26T07:23:45.300Z"
+  }
+},
+{
+  "model": "orders.cartitem",
+  "pk": 39,
+  "fields": {
+    "cart": 9,
+    "product": 21,
+    "quantity": 1,
+    "created_at": "2026-03-26T07:23:46.420Z",
+    "updated_at": "2026-03-26T07:23:46.420Z"
+  }
+},
+{
+  "model": "orders.cartitem",
+  "pk": 40,
+  "fields": {
+    "cart": 9,
+    "product": 24,
+    "quantity": 1,
+    "created_at": "2026-03-26T07:23:48.324Z",
+    "updated_at": "2026-03-26T07:23:48.324Z"
+  }
+},
+{
+  "model": "orders.cartitem",
+  "pk": 41,
+  "fields": {
+    "cart": 9,
+    "product": 28,
+    "quantity": 1,
+    "created_at": "2026-03-27T10:49:48.112Z",
+    "updated_at": "2026-03-27T10:49:48.112Z"
+  }
+},
+{
+  "model": "blog.blogcategory",
+  "pk": 1,
+  "fields": {
+    "name": "Tech & Tools",
+    "slug": "tech-tools",
+    "description": "Latest technology trends, tools, and innovations in e-commerce and marketplace platforms.",
+    "is_active": true,
+    "created_at": "2026-03-25T13:20:24.993Z",
+    "updated_at": "2026-03-25T13:20:24.993Z"
+  }
+},
+{
+  "model": "blog.blogcategory",
+  "pk": 2,
+  "fields": {
+    "name": "Selling Tips",
+    "slug": "selling-tips",
+    "description": "Expert tips and strategies for successful selling on marketplace platforms.",
+    "is_active": true,
+    "created_at": "2026-03-25T13:20:24.998Z",
+    "updated_at": "2026-03-25T13:20:24.998Z"
+  }
+},
+{
+  "model": "blog.blogcategory",
+  "pk": 3,
+  "fields": {
+    "name": "Business Strategy",
+    "slug": "business-strategy",
+    "description": "Business insights, growth strategies, and marketplace success stories.",
+    "is_active": true,
+    "created_at": "2026-03-25T13:20:25.000Z",
+    "updated_at": "2026-03-25T13:20:25.000Z"
+  }
+},
+{
+  "model": "blog.blogcategory",
+  "pk": 4,
+  "fields": {
+    "name": "Customer Experience",
+    "slug": "customer-experience",
+    "description": "Enhancing customer satisfaction and building lasting relationships.",
+    "is_active": true,
+    "created_at": "2026-03-25T13:20:25.001Z",
+    "updated_at": "2026-03-25T13:20:25.001Z"
+  }
+},
+{
+  "model": "blog.blogcategory",
+  "pk": 5,
+  "fields": {
+    "name": "Product Reviews",
+    "slug": "product-reviews",
+    "description": "In-depth product reviews and marketplace insights.",
+    "is_active": true,
+    "created_at": "2026-03-25T13:20:25.003Z",
+    "updated_at": "2026-03-25T13:20:25.003Z"
+  }
+},
+{
+  "model": "blog.blogtag",
+  "pk": 1,
+  "fields": {
+    "name": "Klbtheme",
+    "slug": "klbtheme",
+    "created_at": "2026-03-25T13:20:25.010Z"
+  }
+},
+{
+  "model": "blog.blogtag",
+  "pk": 2,
+  "fields": {
+    "name": "Themeforest",
+    "slug": "themeforest",
+    "created_at": "2026-03-25T13:20:25.013Z"
+  }
+},
+{
+  "model": "blog.blogtag",
+  "pk": 3,
+  "fields": {
+    "name": "E-commerce",
+    "slug": "e-commerce",
+    "created_at": "2026-03-25T13:20:25.015Z"
+  }
+},
+{
+  "model": "blog.blogtag",
+  "pk": 4,
+  "fields": {
+    "name": "Marketplace",
+    "slug": "marketplace",
+    "created_at": "2026-03-25T13:20:25.016Z"
+  }
+},
+{
+  "model": "blog.blogtag",
+  "pk": 5,
+  "fields": {
+    "name": "Business",
+    "slug": "business",
+    "created_at": "2026-03-25T13:20:25.017Z"
+  }
+},
+{
+  "model": "blog.blogtag",
+  "pk": 6,
+  "fields": {
+    "name": "Technology",
+    "slug": "technology",
+    "created_at": "2026-03-25T13:20:25.019Z"
+  }
+},
+{
+  "model": "blog.blogtag",
+  "pk": 7,
+  "fields": {
+    "name": "Reviews",
+    "slug": "reviews",
+    "created_at": "2026-03-25T13:20:25.020Z"
+  }
+},
+{
+  "model": "blog.blogtag",
+  "pk": 8,
+  "fields": {
+    "name": "Tips",
+    "slug": "tips",
+    "created_at": "2026-03-25T13:20:25.022Z"
+  }
+},
+{
+  "model": "blog.blogtag",
+  "pk": 9,
+  "fields": {
+    "name": "Strategy",
+    "slug": "strategy",
+    "created_at": "2026-03-25T13:20:25.024Z"
+  }
+},
+{
+  "model": "blog.blogtag",
+  "pk": 10,
+  "fields": {
+    "name": "Growth",
+    "slug": "growth",
+    "created_at": "2026-03-25T13:20:25.025Z"
+  }
+},
+{
+  "model": "blog.blogtag",
+  "pk": 11,
+  "fields": {
+    "name": "Selling Tips",
+    "slug": "selling-tips",
+    "created_at": "2026-03-25T13:20:51.716Z"
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 1,
+  "fields": {
+    "title": "Unlocking the Power of Product Reviews",
+    "slug": "unlocking-the-power-of-product-reviews",
+    "excerpt": "Integer mattis ultricies augue, ac bibendum arcu viverra vel. Etiam eu facilisis velit. Mauris auctor efficitur turpis feugiat laoreet. Nam ac posuere eros. Sed blandit et ipsum a porttitor. Curabitur sagittis ligula in ullamcorper vehicula. Sed consequat ipsum vitae ante ultricies tincidunt. Nulla egestas nisi non elementum semper. Aenean molestie mi purus, at commodo massa",
+    "content": "<h2>Understanding the Impact of Customer Reviews</h2>\n<p>Integer mattis ultricies augue, ac bibendum arcu viverra vel. Etiam eu facilisis velit. Mauris auctor efficitur turpis feugiat laoreet. Nam ac posuere eros. Sed blandit et ipsum a porttitor. Curabitur sagittis ligula in ullamcorper vehicula. Sed consequat ipsum vitae ante ultricies tincidunt.</p>\n\n<p>Nulla egestas nisi non elementum semper. Aenean molestie mi purus, at commodo massa placerat non. Donec vel arcu nec nulla egestas imperdiet. Phasellus malesuada sapien quis nunc hendrerit pulvinar. Quisque porttitor, lorem in tempus cursus, leo leo aliquet urna, vitae convallis augue nisl non lacus.</p>\n\n<h3>Why Product Reviews Matter</h3>\n<p>Pellentesque condimentum pharetra ullamcorper. Aenean non sapien sagittis, dignissim elit sit amet, congue metus. Aliquam erat volutpat. Nulla elementum dictum velit et vehicula. Vivamus quis arcu semper, iaculis justo vitae, vehicula massa. Nam viverra ex vel turpis venenatis, id laoreet nibh laoreet.</p>\n\n<ul>\n<li>Build trust with potential customers</li>\n<li>Improve product visibility and SEO</li>\n<li>Gather valuable customer feedback</li>\n<li>Increase conversion rates significantly</li>\n</ul>\n\n<p>Curabitur a libero id lectus malesuada sollicitudin vel non lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt dolor viverra arcu consequat, id porta lorem maximus. Integer mattis ultricies augue, ac bibendum arcu viverra vel.</p>\n\n<h3>Best Practices for Managing Reviews</h3>\n<p>Duis non urna maximus, scelerisque dui quis, rhoncus justo. Donec at nisi et purus congue ultricies vitae in dui. Aliquam erat volutpat. Etiam ex quam, porttitor a sapien eget, lobortis bibendum ligula. In ornare cursus justo, ut condimentum dolor molestie sed.</p>",
+    "featured_image": "blog/unlocking-the-power-of-product-reviews.png",
+    "category": 1,
+    "author": 1,
+    "meta_description": "Learn how product reviews can transform your e-commerce business and build customer trust.",
+    "meta_keywords": "product reviews, customer feedback, e-commerce, trust building",
+    "is_published": true,
+    "is_featured": true,
+    "view_count": 0,
+    "published_at": "2026-03-25T13:20:25.026Z",
+    "created_at": "2026-03-25T13:20:25.034Z",
+    "updated_at": "2026-03-25T13:20:25.074Z",
+    "tags": [
+      1,
+      7,
+      2
+    ]
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 2,
+  "fields": {
+    "title": "Understanding Customer Behavior in E-commerce",
+    "slug": "understanding-customer-behavior-in-e-commerce",
+    "excerpt": "Integer mattis ultricies augue, ac bibendum arcu viverra vel. Etiam eu facilisis velit. Mauris auctor efficitur turpis feugiat laoreet. Nam ac posuere eros. Sed blandit et ipsum a porttitor. Curabitur sagittis ligula in ullamcorper vehicula. Sed consequat ipsum vitae ante ultricies tincidunt. Nulla egestas nisi non elementum semper. Aenean molestie mi purus, at commodo massa",
+    "content": "<h2>Analyzing Customer Shopping Patterns</h2>\n<p>Understanding customer behavior is crucial for e-commerce success. By analyzing shopping patterns, preferences, and pain points, businesses can optimize their marketplace experience and drive more sales.</p>\n\n<h3>Key Customer Behavior Metrics</h3>\n<p>Tracking the right metrics helps you understand what drives customer decisions:</p>\n<ul>\n<li>Browse-to-purchase conversion rates</li>\n<li>Average order value and frequency</li>\n<li>Cart abandonment patterns</li>\n<li>Product page engagement time</li>\n<li>Return customer rate</li>\n</ul>\n\n<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.</p>\n\n<h3>Personalization Strategies</h3>\n<p>Modern customers expect personalized experiences. Implement these strategies to meet their expectations and increase engagement.</p>",
+    "featured_image": "blog/understanding-customer-behavior-in-e-commerce.png",
+    "category": 1,
+    "author": 1,
+    "meta_description": "Discover insights into customer behavior patterns and how to leverage them for e-commerce success.",
+    "meta_keywords": "customer behavior, e-commerce analytics, shopping patterns, personalization",
+    "is_published": true,
+    "is_featured": true,
+    "view_count": 0,
+    "published_at": "2026-03-25T13:20:25.076Z",
+    "created_at": "2026-03-25T13:20:25.077Z",
+    "updated_at": "2026-03-25T13:20:25.095Z",
+    "tags": [
+      5,
+      3,
+      9
+    ]
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 3,
+  "fields": {
+    "title": "Maximize Your Marketplace Success: Tips & Strategies",
+    "slug": "maximize-your-marketplace-success-tips-strategies",
+    "excerpt": "Integer mattis ultricies augue, ac bibendum arcu viverra vel. Etiam eu facilisis velit. Mauris auctor efficitur turpis feugiat laoreet. Nam ac posuere eros. Sed blandit et ipsum a porttitor. Curabitur sagittis ligula in ullamcorper vehicula. Sed consequat ipsum vitae ante ultricies tincidunt. Nulla egestas nisi non elementum semper. Aenean molestie mi purus, at commodo massa",
+    "content": "<h2>Proven Strategies for Marketplace Growth</h2>\n<p>Success in marketplace selling requires a combination of strategic planning, quality products, and excellent customer service. Here are proven strategies to help you maximize your marketplace potential.</p>\n\n<h3>Optimize Your Product Listings</h3>\n<p>Your product listings are your digital storefront. Make them count:</p>\n<ul>\n<li>Use high-quality, professional product images</li>\n<li>Write compelling, SEO-optimized descriptions</li>\n<li>Include detailed specifications and features</li>\n<li>Set competitive pricing strategies</li>\n<li>Maintain accurate inventory levels</li>\n</ul>\n\n<h3>Build Your Brand Reputation</h3>\n<p>Trust is everything in marketplace selling. Focus on building a strong reputation through consistent quality, responsive customer service, and transparent communication.</p>\n\n<p>Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.</p>\n\n<h3>Leverage Marketing Tools</h3>\n<p>Utilize marketplace advertising, social media marketing, and email campaigns to reach more customers and drive sales growth.</p>",
+    "featured_image": "blog/maximize-your-marketplace-success-tips-strategies.png",
+    "category": 2,
+    "author": 1,
+    "meta_description": "Learn essential tips and strategies to maximize your success on marketplace platforms.",
+    "meta_keywords": "marketplace success, selling tips, e-commerce strategies, online selling",
+    "is_published": true,
+    "is_featured": true,
+    "view_count": 0,
+    "published_at": "2026-03-25T13:20:25.097Z",
+    "created_at": "2026-03-25T13:20:25.098Z",
+    "updated_at": "2026-03-25T13:20:25.118Z",
+    "tags": [
+      10,
+      4,
+      8
+    ]
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 4,
+  "fields": {
+    "title": "Building Trust Through Transparent Communication",
+    "slug": "building-trust-through-transparent-communication",
+    "excerpt": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.",
+    "content": "<h2>The Foundation of Customer Trust</h2>\n<p>Transparent communication is the cornerstone of building lasting customer relationships in e-commerce. When customers feel informed and valued, they're more likely to become repeat buyers and brand advocates.</p>\n\n<h3>Key Communication Principles</h3>\n<ul>\n<li>Be honest about product capabilities and limitations</li>\n<li>Provide clear shipping and return policies</li>\n<li>Respond promptly to customer inquiries</li>\n<li>Keep customers updated on order status</li>\n<li>Address issues proactively and professionally</li>\n</ul>\n\n<p>Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n\n<h3>Building Long-term Relationships</h3>\n<p>Trust isn't built overnight. It requires consistent, transparent communication across all customer touchpoints. From product descriptions to post-purchase support, every interaction matters.</p>",
+    "featured_image": "blog/building-trust-through-transparent-communication.png",
+    "category": 3,
+    "author": 1,
+    "meta_description": "Learn how transparent communication builds customer trust and drives business success.",
+    "meta_keywords": "customer trust, transparent communication, business strategy, customer relationships",
+    "is_published": true,
+    "is_featured": true,
+    "view_count": 0,
+    "published_at": "2026-03-25T13:20:25.120Z",
+    "created_at": "2026-03-25T13:20:25.122Z",
+    "updated_at": "2026-03-26T07:44:34.037Z",
+    "tags": [
+      5,
+      9,
+      8
+    ]
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 5,
+  "fields": {
+    "title": "The Future of E-commerce: Trends to Watch",
+    "slug": "the-future-of-e-commerce-trends-to-watch",
+    "excerpt": "Discover the emerging trends shaping the future of e-commerce and marketplace platforms. Stay ahead of the curve with insights into technology, customer expectations, and market dynamics.",
+    "content": "<h2>Emerging E-commerce Trends</h2>\n<p>The e-commerce landscape is constantly evolving. Understanding upcoming trends helps businesses stay competitive and meet changing customer expectations.</p>\n\n<h3>Technology Innovations</h3>\n<ul>\n<li>AI-powered personalization and recommendations</li>\n<li>Augmented reality for product visualization</li>\n<li>Voice commerce and smart assistants</li>\n<li>Blockchain for supply chain transparency</li>\n</ul>\n\n<p>These technologies are transforming how customers discover, evaluate, and purchase products online. Early adopters gain significant competitive advantages.</p>\n\n<h3>Sustainability and Ethics</h3>\n<p>Modern consumers increasingly value sustainability and ethical business practices. Marketplace platforms that prioritize these values attract loyal, engaged customers.</p>",
+    "featured_image": "blog/the-future-of-e-commerce-trends-to-watch.png",
+    "category": 1,
+    "author": 1,
+    "meta_description": "Explore the future of e-commerce with insights into emerging trends and technologies.",
+    "meta_keywords": "e-commerce trends, future of retail, marketplace innovation, technology",
+    "is_published": true,
+    "is_featured": true,
+    "view_count": 1,
+    "published_at": "2026-03-25T13:20:25.133Z",
+    "created_at": "2026-03-25T13:20:25.135Z",
+    "updated_at": "2026-03-26T07:44:34.034Z",
+    "tags": [
+      3,
+      9,
+      6
+    ]
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 6,
+  "fields": {
+    "title": "Effective Pricing Strategies for Marketplace Sellers",
+    "slug": "effective-pricing-strategies-for-marketplace-sellers",
+    "excerpt": "<p>Master the art of pricing to maximize profits while remaining competitive. Learn dynamic pricing strategies, psychological pricing tactics, and how to position your products effectively....1</p>",
+    "content": "<h2>Strategic Pricing for Success1</h2>\r\n\r\n<p>Pricing is both an art and a science. The right pricing strategy can significantly impact your sales volume, profit margins, and market position.</p>\r\n\r\n<h3>Pricing Models to Consider</h3>\r\n\r\n<ul>\r\n\t<li>Competitive pricing based on market analysis</li>\r\n\t<li>Value-based pricing reflecting product quality</li>\r\n\t<li>Dynamic pricing responding to demand</li>\r\n\t<li>Bundle pricing for increased average order value</li>\r\n</ul>\r\n\r\n<h3>Psychological Pricing Tactics</h3>\r\n\r\n<p>Understanding customer psychology helps optimize pricing decisions. Techniques like charm pricing ($9.99 vs $10), anchoring, and tiered pricing can influence purchase decisions.</p>\r\n\r\n<p>Regular price analysis and adjustment based on market conditions, competitor actions, and customer feedback ensures your pricing remains optimal.</p>",
+    "featured_image": "blog/aaa.png",
+    "category": 2,
+    "author": 1,
+    "meta_description": "Learn effective pricing strategies to maximize profits and stay competitive in marketplace selling.",
+    "meta_keywords": "pricing strategy, marketplace pricing, competitive pricing, profit optimization",
+    "is_published": true,
+    "is_featured": true,
+    "view_count": 5,
+    "published_at": "2026-03-25T13:20:25Z",
+    "created_at": "2026-03-25T13:20:25.147Z",
+    "updated_at": "2026-03-26T07:50:48.689Z",
+    "tags": []
+  }
+},
+{
+  "model": "blog.blogcomment",
+  "pk": 1,
+  "fields": {
+    "post": 1,
+    "user": 1,
+    "name": "Admin",
+    "email": "admin@hamropasal.com",
+    "comment": "Great insights on product reviews! This really helps understand how customer feedback can build trust and drive business growth. The transparency aspect is particularly valuable for e-commerce success.",
+    "is_approved": true,
+    "parent": null,
+    "created_at": "2026-03-25T13:20:51.748Z",
+    "updated_at": "2026-03-25T13:20:51.748Z"
+  }
+},
+{
+  "model": "blog.blogcomment",
+  "pk": 2,
+  "fields": {
+    "post": 1,
+    "user": 1,
+    "name": "Admin",
+    "email": "admin@hamropasal.com",
+    "comment": "I completely agree with the points made in this article. Customer engagement through reviews is crucial for building a successful marketplace. The community-driven approach really makes a difference in customer loyalty and trust.",
+    "is_approved": true,
+    "parent": null,
+    "created_at": "2026-03-25T13:20:51.754Z",
+    "updated_at": "2026-03-25T13:20:51.754Z"
+  }
+},
+{
+  "model": "blog.blogcomment",
+  "pk": 3,
+  "fields": {
+    "post": 1,
+    "user": 1,
+    "name": "Admin",
+    "email": "admin@hamropasal.com",
+    "comment": "Excellent article! The social proof aspect of reviews cannot be overstated. When customers see authentic feedback from other buyers, it significantly influences their purchasing decisions and builds confidence in the brand.",
+    "is_approved": true,
+    "parent": null,
+    "created_at": "2026-03-25T13:20:51.756Z",
+    "updated_at": "2026-03-25T13:20:51.756Z"
+  }
+}
+]
